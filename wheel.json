@@ -1,0 +1,283 @@
+{
+  "version": "0.2",
+  "prompt": "How does today feel?",
+  "cores": [
+    {
+      "id": "heavy",
+      "label": "Heavy",
+      "plain": "sad",
+      "colour": "#4A6FA5",
+      "specifics": [
+        {
+          "label": "lonely",
+          "tags": [
+            "loneliness"
+          ]
+        },
+        {
+          "label": "homesick",
+          "tags": [
+            "homesickness"
+          ]
+        },
+        {
+          "label": "grieving",
+          "tags": [
+            "grief"
+          ]
+        },
+        {
+          "label": "heartbroken",
+          "tags": [
+            "heartbreak"
+          ]
+        },
+        {
+          "label": "left out",
+          "tags": [
+            "not_belonging"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "on_edge",
+      "label": "On edge",
+      "plain": "scared",
+      "colour": "#C9A227",
+      "specifics": [
+        {
+          "label": "anxious",
+          "tags": [
+            "anxiety"
+          ]
+        },
+        {
+          "label": "overwhelmed",
+          "tags": [
+            "overwhelm"
+          ]
+        },
+        {
+          "label": "unsure what's next",
+          "tags": [
+            "uncertainty"
+          ]
+        },
+        {
+          "label": "under pressure",
+          "tags": [
+            "pressure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wound_up",
+      "label": "Wound up",
+      "plain": "angry",
+      "colour": "#B5523B",
+      "specifics": [
+        {
+          "label": "frustrated",
+          "tags": [
+            "anger"
+          ]
+        },
+        {
+          "label": "treated unfairly",
+          "tags": [
+            "injustice"
+          ]
+        },
+        {
+          "label": "rejected",
+          "tags": [
+            "rejection"
+          ]
+        },
+        {
+          "label": "let down",
+          "tags": [
+            "rejection",
+            "anger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "small",
+      "label": "Small",
+      "plain": "ashamed / not enough",
+      "colour": "#7B6D8D",
+      "specifics": [
+        {
+          "label": "like a fraud",
+          "tags": [
+            "imposter_feeling"
+          ]
+        },
+        {
+          "label": "like a failure",
+          "tags": [
+            "failure"
+          ]
+        },
+        {
+          "label": "not good enough",
+          "tags": [
+            "self_doubt"
+          ]
+        },
+        {
+          "label": "embarrassed",
+          "tags": [
+            "shame"
+          ]
+        },
+        {
+          "label": "invisible",
+          "tags": [
+            "feeling_unseen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drained",
+      "label": "Drained",
+      "plain": "tired",
+      "colour": "#6E8B74",
+      "specifics": [
+        {
+          "label": "burnt out",
+          "tags": [
+            "burnout"
+          ]
+        },
+        {
+          "label": "stuck",
+          "tags": [
+            "stuck"
+          ]
+        },
+        {
+          "label": "restless",
+          "tags": [
+            "restlessness"
+          ]
+        },
+        {
+          "label": "regretful",
+          "tags": [
+            "regret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unsure",
+      "label": "I'm not sure / it's mixed",
+      "plain": "",
+      "colour": "#9A9A9A",
+      "route": "picture_route"
+    }
+  ],
+  "max_specifics": 3,
+  "intensity": [
+    {
+      "id": 1,
+      "label": "a little"
+    },
+    {
+      "id": 2,
+      "label": "a lot"
+    },
+    {
+      "id": 3,
+      "label": "it's taking over",
+      "rule": "show support options first; only show sources with intensity <= 2; hide aftermath where show_aftermath is false"
+    }
+  ],
+  "situations": [
+    {
+      "label": "Study",
+      "tag": "study"
+    },
+    {
+      "label": "Work",
+      "tag": "work_career"
+    },
+    {
+      "label": "Family",
+      "tag": "family"
+    },
+    {
+      "label": "Relationships",
+      "tag": "relationships"
+    },
+    {
+      "label": "Moving away",
+      "tag": "moving_away"
+    },
+    {
+      "label": "Who I am",
+      "tag": "identity"
+    },
+    {
+      "label": "Losing someone",
+      "tag": "bereavement"
+    },
+    {
+      "label": "Something I'm making",
+      "tag": "creative_work"
+    },
+    {
+      "label": "Being treated differently",
+      "tag": "discrimination"
+    },
+    {
+      "label": "A big decision",
+      "tag": "big_decision"
+    },
+    {
+      "label": "Speaking up / performing",
+      "tag": "public_speaking"
+    },
+    {
+      "label": "Change",
+      "tag": "change_transition"
+    },
+    {
+      "label": "Something else",
+      "tag": null
+    }
+  ],
+  "optional_text": {
+    "starters": [
+      "Today I…",
+      "I can't stop thinking about…",
+      "I wish…"
+    ]
+  },
+  "reflect_back_template": "So today feels {core}, mostly {specifics}{situation_clause}. Is that right?",
+  "scoring": {
+    "specific_tag_match": 3,
+    "core_match": 1,
+    "situation_match": 2,
+    "intensity_rule": "if user intensity == 3: exclude sources with intensity 3"
+  },
+  "picture_route": {
+    "prompt": "Which one feels like today?",
+    "show": 6,
+    "default_set": [
+      "A09",
+      "A19",
+      "A01",
+      "A14",
+      "A02",
+      "A15"
+    ],
+    "rule": "Never show A17 (Van Gogh) or A14 (Icarus) to someone who has chosen 'it's taking over'. Swap in A10 / A20."
+  }
+}
