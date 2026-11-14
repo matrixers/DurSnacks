@@ -1,2 +1,10 @@
-# DurSnacks
-Im da goat
+# Deep Rooted Guidance
+
+## Set Up
+pip install kivy
+
+python main.py 
+
+## Run
+
+python .\Frontend\Main.py
