@@ -1,0 +1,2040 @@
+{
+  "meta": {
+    "project": "DurHack assisted-diary / consolation library",
+    "version": "0.1 (curation draft, 14 Nov 2026)",
+    "how_to_use": "The app reads this file directly. 'written' and 'art' are the two collections; match on feelings/situations/comfort tags; use pairs_with to build the triptych.",
+    "verification_policy": "key_line is filled ONLY where the wording was checked against a source during curation (key_line_status = 'checked'). 'verify' means the line is quoted from a known edition but must be checked against the recommended edition before the demo. null means: copy the passage yourself from the recommended edition (or paraphrase in the app's own words if the only good translation is in copyright).",
+    "rights_policy": "Prefer public-domain texts and translations. Where the only good English translation is still in copyright, the app should show a short paraphrase plus a link out, or the team's own translation from the original-language text.",
+    "safety_fields": "intensity 1 = gentle, 2 = moderate, 3 = heavy. content_notes lists difficult material. show_aftermath = false means 'what_happened_next' contains something that should not be shown to a user in distress (e.g. the author's suicide or early death).",
+    "tag_vocabulary": {
+      "feelings": [
+        "loneliness",
+        "homesickness",
+        "grief",
+        "heartbreak",
+        "self_doubt",
+        "imposter_feeling",
+        "failure",
+        "burnout",
+        "anxiety",
+        "overwhelm",
+        "not_belonging",
+        "injustice",
+        "anger",
+        "shame",
+        "regret",
+        "restlessness",
+        "uncertainty",
+        "rejection",
+        "feeling_unseen",
+        "stuck",
+        "pressure"
+      ],
+      "situations": [
+        "study",
+        "work_career",
+        "moving_away",
+        "family",
+        "relationships",
+        "illness",
+        "bereavement",
+        "identity",
+        "public_speaking",
+        "discrimination",
+        "big_decision",
+        "change_transition",
+        "creative_work"
+      ],
+      "comfort": [
+        "company",
+        "perspective",
+        "advice",
+        "hope",
+        "courage",
+        "permission_to_rest"
+      ]
+    }
+  },
+  "written": [
+    {
+      "id": "W01",
+      "form": "philosophical dialogue (prose and verse)",
+      "title": "The Consolation of Philosophy, Book I",
+      "author": "Boethius",
+      "date": "c. 524 CE",
+      "place": "Pavia, Italy (in prison)",
+      "region": "Europe (late Roman Italy)",
+      "author_gender": "male",
+      "position_in_life": "Former senior statesman, imprisoned awaiting execution",
+      "original_language": "Latin",
+      "recommended_edition": "trans. H. R. James (1897)",
+      "where_to_find": "Project Gutenberg / Wikisource (search 'Consolation of Philosophy James')",
+      "locator": "Book I: opening verse lament, then Prose I-II where Philosophy appears",
+      "key_line": null,
+      "key_line_status": "copy from edition",
+      "summary": "A man who has lost his status, freedom and reputation sits writing self-pitying verse until Philosophy appears at his bedside and asks him to remember who he really is.",
+      "context": "Accused of treason by the Ostrogothic king Theodoric. This is the book that inspired the app.",
+      "what_happened_next": "He was executed soon after. The book became one of the most-read works of the Middle Ages, translated by Alfred the Great, Chaucer and Elizabeth I.",
+      "show_aftermath": true,
+      "feelings": [
+        "injustice",
+        "shame",
+        "failure",
+        "rejection",
+        "stuck"
+      ],
+      "situations": [
+        "work_career",
+        "change_transition"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "imprisonment",
+        "impending execution"
+      ],
+      "rights": "Public domain (text and translation)",
+      "pairs_with": [
+        "A03",
+        "A16"
+      ]
+    },
+    {
+      "id": "W02",
+      "form": "letter",
+      "title": "Moral Letters to Lucilius, Letter 28 ('On Travel as a Cure for Discontent')",
+      "author": "Seneca the Younger",
+      "date": "c. 63-65 CE",
+      "place": "Rome (born in Corduba, Hispania)",
+      "region": "Europe (Roman Empire, born in Spain)",
+      "author_gender": "male",
+      "position_in_life": "Philosopher, former adviser to Nero, in semi-retirement",
+      "original_language": "Latin",
+      "recommended_edition": "trans. R. M. Gummere (Loeb, 1917-25)",
+      "where_to_find": "Wikisource: 'Moral letters to Lucilius'",
+      "locator": "Letter XXVIII",
+      "key_line": "You need a change of soul rather than a change of climate.",
+      "key_line_status": "verify",
+      "summary": "A friend complains that travelling hasn't cured his gloom. Seneca replies that you take yourself with you wherever you go.",
+      "context": "Written late in life to a younger friend.",
+      "what_happened_next": "Nero ordered him to end his own life in 65 CE.",
+      "show_aftermath": false,
+      "feelings": [
+        "restlessness",
+        "anxiety",
+        "overwhelm"
+      ],
+      "situations": [
+        "moving_away",
+        "change_transition"
+      ],
+      "comfort": [
+        "advice",
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "author's forced suicide (aftermath only; do not show)"
+      ],
+      "rights": "Latin PD. Gummere is PD in the US; the translator died in 1969, so check UK status, or use Thomas Lodge's 1614 translation, or paraphrase.",
+      "pairs_with": [
+        "A01",
+        "A15"
+      ]
+    },
+    {
+      "id": "W03",
+      "form": "letter",
+      "title": "Heloise's first letter to Abelard",
+      "author": "Heloise d'Argenteuil",
+      "date": "c. 1132",
+      "place": "The Paraclete convent, Champagne, France",
+      "region": "Europe (France)",
+      "author_gender": "female",
+      "position_in_life": "Abbess and scholar, separated from her husband for over a decade",
+      "original_language": "Latin",
+      "recommended_edition": "trans. C. K. Scott Moncrieff (1925)",
+      "where_to_find": "Internet Archive (search 'Letters of Abelard and Heloise Scott Moncrieff')",
+      "locator": "First letter of Heloise to Abelard",
+      "key_line": null,
+      "key_line_status": "copy from edition",
+      "summary": "Years after they were forced apart, she writes that she still loves him and asks why he writes comfort to others but not to her.",
+      "context": "Their secret marriage ended in scandal and violence; both entered religious life.",
+      "what_happened_next": "She became a respected abbess and leader of her community. They are buried together in Père Lachaise, Paris.",
+      "show_aftermath": true,
+      "feelings": [
+        "heartbreak",
+        "loneliness",
+        "feeling_unseen"
+      ],
+      "situations": [
+        "relationships"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "references the violent assault on Abelard"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A05",
+        "A19"
+      ]
+    },
+    {
+      "id": "W04",
+      "form": "essay / allegory",
+      "title": "The Book of the City of Ladies, opening chapters",
+      "author": "Christine de Pizan",
+      "date": "1405",
+      "place": "Paris, France (born in Venice)",
+      "region": "Europe (France / Italy)",
+      "author_gender": "female",
+      "position_in_life": "Widowed at 25; supported her children and mother as Europe's first known professional woman writer",
+      "original_language": "Middle French",
+      "recommended_edition": "Original on Gallica (BnF). PD English: Bryan Anslay's 1521 translation (early Tudor English). Modern translations are in copyright.",
+      "where_to_find": "Gallica (BnF) for manuscripts; paraphrase for the app",
+      "locator": "Book I, chapters 1-3",
+      "key_line": null,
+      "key_line_status": "paraphrase or own translation",
+      "summary": "After reading a book that sneers at women, she starts to believe the worst about herself, until three crowned Ladies (Reason, Rectitude and Justice) appear and tell her to stop doubting herself. A direct echo of Boethius.",
+      "context": "Written to argue against the misogyny of famous male authors.",
+      "what_happened_next": "Her books were copied and read at royal courts across Europe. She is now seen as a founding voice of feminist thought.",
+      "show_aftermath": true,
+      "feelings": [
+        "self_doubt",
+        "imposter_feeling",
+        "rejection"
+      ],
+      "situations": [
+        "study",
+        "identity",
+        "creative_work"
+      ],
+      "comfort": [
+        "perspective",
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Original PD; use paraphrase or own translation",
+      "pairs_with": [
+        "A18"
+      ]
+    },
+    {
+      "id": "W05",
+      "form": "letter",
+      "title": "Journal-letter to George and Georgiana Keats ('the vale of Soul-making')",
+      "author": "John Keats",
+      "date": "21 April 1819 (part of a letter written Feb-May 1819)",
+      "place": "Hampstead, London",
+      "region": "Europe (England)",
+      "author_gender": "male",
+      "position_in_life": "Trained apothecary-surgeon turned poet; badly reviewed, short of money, recently bereaved of his brother Tom",
+      "original_language": "English",
+      "recommended_edition": "Letters of John Keats, ed. H. Buxton Forman (PD editions)",
+      "where_to_find": "Project Gutenberg / Wikisource (Keats letters)",
+      "locator": "Entry of 21 April 1819",
+      "key_line": "Call the world if you Please \"The vale of Soul-making\"",
+      "key_line_status": "verify",
+      "summary": "Writing to his brother in America, he argues that the world isn't a 'vale of tears' but a place where suffering slowly makes a person into who they are.",
+      "context": "Tom had died of tuberculosis months earlier; George had emigrated.",
+      "what_happened_next": "Within a year he wrote the odes now counted among the greatest poems in English. He died in Rome in 1821, aged 25.",
+      "show_aftermath": true,
+      "feelings": [
+        "grief",
+        "failure",
+        "uncertainty"
+      ],
+      "situations": [
+        "bereavement",
+        "creative_work",
+        "family"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "early death of author (aftermath)"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A20",
+        "A13"
+      ]
+    },
+    {
+      "id": "W06",
+      "form": "letter",
+      "title": "Letter to Theo van Gogh, June 1880",
+      "author": "Vincent van Gogh",
+      "date": "c. 22-24 June 1880",
+      "place": "Cuesmes, Belgium",
+      "region": "Europe (Netherlands / Belgium)",
+      "author_gender": "male",
+      "position_in_life": "Unemployed, dismissed as a lay preacher, poor and estranged from family",
+      "original_language": "Dutch (with French)",
+      "recommended_edition": "Van Gogh Museum edition at vangoghletters.org (letter 155). Check its reuse terms, or use the PD 1927 English translation by Johanna van Gogh-Bonger.",
+      "where_to_find": "vangoghletters.org, letter 155",
+      "locator": "Letter 155",
+      "key_line": null,
+      "key_line_status": "copy from edition (wording varies by translation)",
+      "summary": "After months of silence he writes to his brother admitting he feels useless and misunderstood, but insists something inside him still wants to be of use: a fire in the soul that no one comes to warm themselves at.",
+      "context": "The low point after failing at art dealing, teaching and preaching.",
+      "what_happened_next": "That summer he committed himself to drawing, the start of his life as an artist.",
+      "show_aftermath": true,
+      "feelings": [
+        "failure",
+        "feeling_unseen",
+        "loneliness",
+        "self_doubt"
+      ],
+      "situations": [
+        "work_career",
+        "family",
+        "creative_work"
+      ],
+      "comfort": [
+        "company",
+        "hope"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "keep the aftermath to 1880; do not reference his death"
+      ],
+      "rights": "Original PD; translation terms vary",
+      "pairs_with": [
+        "A14",
+        "A16",
+        "A17"
+      ]
+    },
+    {
+      "id": "W07",
+      "form": "letter",
+      "title": "De Profundis",
+      "author": "Oscar Wilde",
+      "date": "January-March 1897",
+      "place": "Reading Gaol, England",
+      "region": "Europe (Irish author in England)",
+      "author_gender": "male",
+      "position_in_life": "Celebrated playwright, imprisoned for 'gross indecency', bankrupt and publicly disgraced",
+      "original_language": "English",
+      "recommended_edition": "PD editions (1905 abridged; later full texts)",
+      "where_to_find": "Project Gutenberg (search 'De Profundis Wilde')",
+      "locator": "Middle section on sorrow and humility",
+      "key_line": "Where there is sorrow there is holy ground.",
+      "key_line_status": "verify",
+      "summary": "A long letter from prison to the man he loved, working through bitterness and shame towards something like acceptance.",
+      "context": "Written in a cell where he was allowed only one sheet of paper at a time.",
+      "what_happened_next": "He was released in 1897 and died in Paris in 1900. In 2017 he was among the men posthumously pardoned under UK law.",
+      "show_aftermath": true,
+      "feelings": [
+        "shame",
+        "regret",
+        "heartbreak",
+        "anger"
+      ],
+      "situations": [
+        "relationships",
+        "identity"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "imprisonment",
+        "persecution for sexuality"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A16"
+      ]
+    },
+    {
+      "id": "W08",
+      "form": "letter",
+      "title": "Letter to Lady Elizabeth Pelham",
+      "author": "W. B. Yeats",
+      "date": "4 January 1939",
+      "place": "Menton, France",
+      "region": "Europe (Ireland)",
+      "author_gender": "male",
+      "position_in_life": "Nobel-winning poet and former senator, gravely ill, weeks before his death",
+      "original_language": "English",
+      "recommended_edition": "The Letters of W. B. Yeats, ed. Allan Wade (1954)",
+      "where_to_find": "Library copy of Wade's Letters; widely quoted",
+      "locator": "Letter of 4 January 1939",
+      "key_line": "Man can embody truth but he cannot know it.",
+      "key_line_status": "checked",
+      "summary": "In one of his last letters he says he has tried to sum up a lifetime of searching in one phrase: we can't fully know the truth, only live it.",
+      "context": "Written with the knowledge that he was near the end.",
+      "what_happened_next": "He died on 28 January 1939.",
+      "show_aftermath": true,
+      "feelings": [
+        "uncertainty"
+      ],
+      "situations": [
+        "big_decision",
+        "study",
+        "change_transition"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Yeats died in 1939, but the letter was first published in 1954, so UK status is uncertain. A one-line quotation with credit is the safe use.",
+      "pairs_with": [
+        "A02",
+        "A20"
+      ]
+    },
+    {
+      "id": "W09",
+      "form": "diary",
+      "title": "Diaries of Anne Lister",
+      "author": "Anne Lister",
+      "date": "1806-1840 (key entry 29 January 1821)",
+      "place": "Shibden Hall, Halifax, Yorkshire",
+      "region": "Europe (England, Northern)",
+      "author_gender": "female",
+      "position_in_life": "Landowner, traveller and mountaineer; wrote about a sixth of her diaries in a secret code",
+      "original_language": "English (partly coded)",
+      "recommended_edition": "Original volumes: West Yorkshire Archive Service (Calderdale). Modern edited editions are in copyright.",
+      "where_to_find": "West Yorkshire Archive Service; the Anne Lister diary transcription project",
+      "locator": "Entry of 29 January 1821",
+      "key_line": "I love, and only love, the fairer sex",
+      "key_line_status": "verify",
+      "summary": "In coded pages she writes plainly about who she is and who she loves, and about the loneliness of having to hide it.",
+      "context": "A local link: Halifax is about 70 miles from Durham.",
+      "what_happened_next": "In 1834 she and Ann Walker took communion together at Holy Trinity Goodramgate, York, now commemorated as a kind of marriage.",
+      "show_aftermath": true,
+      "feelings": [
+        "loneliness",
+        "not_belonging",
+        "heartbreak"
+      ],
+      "situations": [
+        "identity",
+        "relationships"
+      ],
+      "comfort": [
+        "company",
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Original text PD; transcriptions may have their own terms",
+      "pairs_with": [
+        "A19",
+        "A15"
+      ]
+    },
+    {
+      "id": "W10",
+      "form": "letters (travel)",
+      "title": "Letters Written During a Short Residence in Sweden, Norway, and Denmark",
+      "author": "Mary Wollstonecraft",
+      "date": "1795 (published 1796)",
+      "place": "Scandinavia",
+      "region": "Europe (England / Scandinavia)",
+      "author_gender": "female",
+      "position_in_life": "Writer and philosopher travelling alone with her baby daughter after her partner's betrayal",
+      "original_language": "English",
+      "recommended_edition": "1796 first edition",
+      "where_to_find": "Project Gutenberg (search title)",
+      "locator": "Early letters from Sweden and Norway",
+      "key_line": null,
+      "key_line_status": "copy from edition",
+      "summary": "Letters from a rocky northern coastline in which heartbreak, low mood and the calm of wild landscapes are woven together.",
+      "context": "Written on a business trip for the partner who was leaving her.",
+      "what_happened_next": "The book was a success and changed how people wrote about travel and feeling. She later married William Godwin.",
+      "show_aftermath": true,
+      "feelings": [
+        "heartbreak",
+        "loneliness",
+        "overwhelm"
+      ],
+      "situations": [
+        "relationships",
+        "moving_away"
+      ],
+      "comfort": [
+        "company",
+        "perspective"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "this period of her life included suicide attempts; do not reference them in the app"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A15",
+        "A19"
+      ]
+    },
+    {
+      "id": "W11",
+      "form": "diary",
+      "title": "The Diary of Murasaki Shikibu",
+      "author": "Murasaki Shikibu",
+      "date": "c. 1008-1010",
+      "place": "Heian-kyo (Kyoto), Japan",
+      "region": "East Asia (Japan)",
+      "author_gender": "female",
+      "position_in_life": "Lady-in-waiting at the imperial court; author of The Tale of Genji",
+      "original_language": "Classical Japanese",
+      "recommended_edition": "trans. Annie Shepley Omori and Kochi Doi, Diaries of Court Ladies of Old Japan (1920)",
+      "where_to_find": "Project Gutenberg eBook #47151",
+      "locator": "Diary of Murasaki Shikibu, passages on her life at court and her reputation",
+      "key_line": null,
+      "key_line_status": "copy from edition",
+      "summary": "Surrounded by glittering court life, she feels out of step and judged, and hides how much she knows so as not to seem a show-off.",
+      "context": "Already famous as a novelist, she found court society exhausting.",
+      "what_happened_next": "Her novel is often called the world's first, and she remains one of Japan's most celebrated writers.",
+      "show_aftermath": true,
+      "feelings": [
+        "not_belonging",
+        "imposter_feeling",
+        "loneliness",
+        "self_doubt"
+      ],
+      "situations": [
+        "work_career",
+        "study",
+        "identity"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "PD in the US. One translator (Doi) died in 1979, so check UK status or paraphrase.",
+      "pairs_with": [
+        "A05",
+        "A14"
+      ]
+    },
+    {
+      "id": "W12",
+      "form": "essay / memoir",
+      "title": "Afterword to Records on Metal and Stone",
+      "author": "Li Qingzhao",
+      "date": "c. 1132-1134",
+      "place": "Southern China (as a refugee)",
+      "region": "East Asia (China)",
+      "author_gender": "female",
+      "position_in_life": "Celebrated poet, widowed and displaced by the Jurchen invasion",
+      "original_language": "Classical Chinese",
+      "recommended_edition": "English translations (e.g. Ronald Egan, 2019) are in copyright. Use a short credited quotation or paraphrase.",
+      "where_to_find": "Egan, The Works of Li Qingzhao (De Gruyter, 2019)",
+      "locator": "Full afterword",
+      "key_line": null,
+      "key_line_status": "paraphrase",
+      "summary": "She remembers a happy marriage spent collecting books and art with her husband, then war, flight, his death and the loss of almost everything they gathered. She concludes that what comes together must one day scatter.",
+      "context": "Her husband, Zhao Mingcheng, died in 1129.",
+      "what_happened_next": "She completed and presented his catalogue, and is remembered as China's greatest woman poet.",
+      "show_aftermath": true,
+      "feelings": [
+        "grief",
+        "homesickness",
+        "regret"
+      ],
+      "situations": [
+        "bereavement",
+        "moving_away"
+      ],
+      "comfort": [
+        "perspective",
+        "company"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "war",
+        "bereavement"
+      ],
+      "rights": "Original PD; translations in copyright",
+      "pairs_with": [
+        "A04",
+        "A13"
+      ]
+    },
+    {
+      "id": "W13",
+      "form": "prose preface and rhapsody",
+      "title": "'Return Home!' (Gui qu lai xi ci), with preface",
+      "author": "Tao Yuanming (Tao Qian)",
+      "date": "405 CE",
+      "place": "Pengze county, Jiangxi, China",
+      "region": "East Asia (China)",
+      "author_gender": "male",
+      "position_in_life": "Minor official from a poor family, working for the money",
+      "original_language": "Classical Chinese",
+      "recommended_edition": "Herbert A. Giles, Gems of Chinese Literature (PD), if it includes the piece; otherwise paraphrase",
+      "where_to_find": "Internet Archive (search 'Gems of Chinese Literature Giles')",
+      "locator": "Prose preface",
+      "key_line": null,
+      "key_line_status": "copy from edition or paraphrase",
+      "summary": "He explains he took a job for the money, but within days longed to go home: acting against his own nature hurt more than hunger and cold. After about 80 days he quit.",
+      "context": "The model for every 'I quit to go and grow vegetables' story in Chinese culture.",
+      "what_happened_next": "He never served again, farmed in poverty, and became one of China's most beloved poets.",
+      "show_aftermath": true,
+      "feelings": [
+        "burnout",
+        "stuck",
+        "homesickness"
+      ],
+      "situations": [
+        "work_career",
+        "big_decision"
+      ],
+      "comfort": [
+        "permission_to_rest",
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Original PD; check translation",
+      "pairs_with": [
+        "A02",
+        "A19"
+      ]
+    },
+    {
+      "id": "W14",
+      "form": "spiritual autobiography",
+      "title": "Deliverance from Error (The Confessions of Al Ghazzali)",
+      "author": "Abu Hamid al-Ghazali",
+      "date": "c. 1100-1108 (describing a crisis in 1095)",
+      "place": "Baghdad and Tus (Persia)",
+      "region": "West Asia (Persia / Iraq)",
+      "author_gender": "male",
+      "position_in_life": "Star professor at Baghdad's leading college, at the peak of his career",
+      "original_language": "Arabic",
+      "recommended_edition": "trans. Claud Field, The Confessions of Al Ghazzali (1909)",
+      "where_to_find": "Project Gutenberg eBook #58977; Wikisource",
+      "locator": "Section 'Sufism': his account of the crisis that ended his teaching in Baghdad",
+      "key_line": null,
+      "key_line_status": "copy from edition",
+      "summary": "Realising his work was driven by wanting status, he wavered for months until he physically could not speak to lecture. Doctors could do nothing, so he gave up his post and left.",
+      "context": "One of the most famous accounts of burnout before the word existed.",
+      "what_happened_next": "After about ten years of travel and retreat he returned to teaching, and became one of the most influential thinkers in Islamic history.",
+      "show_aftermath": true,
+      "feelings": [
+        "burnout",
+        "anxiety",
+        "uncertainty",
+        "pressure"
+      ],
+      "situations": [
+        "work_career",
+        "big_decision",
+        "study"
+      ],
+      "comfort": [
+        "permission_to_rest",
+        "hope"
+      ],
+      "intensity": 2,
+      "content_notes": [],
+      "rights": "Public domain (Field, 1909)",
+      "pairs_with": [
+        "A03",
+        "A02"
+      ]
+    },
+    {
+      "id": "W15",
+      "form": "memoir and letter",
+      "title": "Baburnama (Memoirs of Babur): the melon from Kabul",
+      "author": "Zahir-ud-din Muhammad Babur",
+      "date": "c. 1526-1529",
+      "place": "Agra, India (born in Ferghana, Central Asia)",
+      "region": "Central and South Asia",
+      "author_gender": "male",
+      "position_in_life": "Founder of the Mughal Empire; lost his homeland as a teenager and never returned",
+      "original_language": "Chagatai Turkic",
+      "recommended_edition": "trans. Annette S. Beveridge, The Babur-nama in English (1922)",
+      "where_to_find": "Internet Archive (Beveridge translation)",
+      "locator": "Hindustan years; letter quoted in the memoir (Everyman edn of Beveridge, c. p. 646)",
+      "key_line": null,
+      "key_line_status": "copy from Beveridge (the widely quoted wording is a modern translation)",
+      "summary": "Even as emperor, he writes about missing the fruit, running water and gardens of home, and admits he wept the whole time he was eating a melon sent from Kabul.",
+      "context": "Driven out of Ferghana at around 12-19, he spent his life far from home.",
+      "what_happened_next": "His memoir is one of the first true autobiographies in the Islamic world. He asked to be buried in a garden in Kabul, and was.",
+      "show_aftermath": true,
+      "feelings": [
+        "homesickness",
+        "not_belonging"
+      ],
+      "situations": [
+        "moving_away"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain (Beveridge)",
+      "pairs_with": [
+        "A04"
+      ]
+    },
+    {
+      "id": "W16",
+      "form": "autobiography",
+      "title": "An Autobiography, or The Story of My Experiments with Truth, Part II ch. 3 'The First Case'",
+      "author": "M. K. Gandhi",
+      "date": "events c. 1891-92; published 1925-29",
+      "place": "Small Causes Court, Bombay, India",
+      "region": "South Asia (India)",
+      "author_gender": "male",
+      "position_in_life": "Newly qualified barrister back from London, broke and painfully shy",
+      "original_language": "Gujarati",
+      "recommended_edition": "trans. Mahadev Desai",
+      "where_to_find": "Standard Ebooks; mkgandhi.org",
+      "locator": "Part II, chapter 3",
+      "key_line": "My head was reeling and I felt as though the whole court was doing likewise.",
+      "key_line_status": "checked",
+      "summary": "At his first case he stands up to cross-examine a witness and can't think of a single question. He sits down, hands the case to someone else and leaves ashamed.",
+      "context": "He resolved not to take another case until he had the courage.",
+      "what_happened_next": "A job in South Africa in 1893 changed everything. There he found his voice and began the work that made him famous.",
+      "show_aftermath": true,
+      "feelings": [
+        "imposter_feeling",
+        "failure",
+        "anxiety",
+        "shame"
+      ],
+      "situations": [
+        "public_speaking",
+        "work_career",
+        "study"
+      ],
+      "comfort": [
+        "hope",
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Desai translation PD in the UK (translator died 1942)",
+      "pairs_with": [
+        "A09",
+        "A01"
+      ]
+    },
+    {
+      "id": "W17",
+      "form": "letters",
+      "title": "Glimpses of Bengal (letters 1885-1895)",
+      "author": "Rabindranath Tagore",
+      "date": "1885-1895 (English edition 1921)",
+      "place": "Shelidah, on the Padma river, Bengal",
+      "region": "South Asia (India / Bangladesh)",
+      "author_gender": "male",
+      "position_in_life": "Young writer sent to manage his family's rural estates",
+      "original_language": "Bengali",
+      "recommended_edition": "Glimpses of Bengal (Macmillan, 1921)",
+      "where_to_find": "Project Gutenberg / Internet Archive (search title)",
+      "locator": "Letters from the houseboat on the Padma",
+      "key_line": null,
+      "key_line_status": "copy from edition",
+      "summary": "Letters from a houseboat about stillness, the river and village life, and the relief of solitude away from the noise of the city.",
+      "context": "Written to his niece Indira Devi.",
+      "what_happened_next": "In 1913 he became the first non-European to win the Nobel Prize in Literature.",
+      "show_aftermath": true,
+      "feelings": [
+        "overwhelm",
+        "restlessness",
+        "burnout"
+      ],
+      "situations": [
+        "work_career",
+        "change_transition"
+      ],
+      "comfort": [
+        "permission_to_rest",
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain in the UK (author died 1941)",
+      "pairs_with": [
+        "A15",
+        "A19"
+      ]
+    },
+    {
+      "id": "W18",
+      "form": "letters",
+      "title": "Letters to Mary Martin",
+      "author": "Toru Dutt",
+      "date": "1874-1877",
+      "place": "Calcutta (after studying in Cambridge)",
+      "region": "South Asia (India)",
+      "author_gender": "female",
+      "position_in_life": "Young Bengali poet and translator back home after Europe; grieving her sister",
+      "original_language": "English",
+      "recommended_edition": "Harihar Das, Life and Letters of Toru Dutt (OUP, 1921)",
+      "where_to_find": "Internet Archive (search title)",
+      "locator": "Letters to Mary Martin, 1874-77",
+      "key_line": "I have not been to one dinner party or any party at all since we left Europe",
+      "key_line_status": "checked",
+      "summary": "Writing to her friend from Cambridge, she describes missing college life and friends, feeling isolated at home, and fielding constant questions about when she'll marry.",
+      "context": "She attended the Higher Lectures for Women at Cambridge in 1871-73.",
+      "what_happened_next": "She wrote prolifically in English and French and is now seen as a pioneer of Indian writing in English. She died of tuberculosis aged 21.",
+      "show_aftermath": false,
+      "feelings": [
+        "loneliness",
+        "homesickness",
+        "not_belonging",
+        "pressure"
+      ],
+      "situations": [
+        "moving_away",
+        "family",
+        "study"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "early death of author (aftermath)"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A05"
+      ]
+    },
+    {
+      "id": "W19",
+      "form": "prose meditation",
+      "title": "The Prophet, 'On Pain'",
+      "author": "Kahlil Gibran",
+      "date": "1923",
+      "place": "New York (born in Bsharri, Lebanon)",
+      "region": "West Asia / North America (Lebanese diaspora)",
+      "author_gender": "male",
+      "position_in_life": "Immigrant artist and writer, raised in poverty in Boston",
+      "original_language": "English",
+      "recommended_edition": "1923 first edition",
+      "where_to_find": "Project Gutenberg / Wikisource (search 'The Prophet Gibran')",
+      "locator": "Section 'On Pain'",
+      "key_line": "Your pain is the breaking of the shell that encloses your understanding.",
+      "key_line_status": "verify",
+      "summary": "A short meditation suggesting that pain is part of growing, like a seed or shell breaking open.",
+      "context": "He lost his mother, brother and sister within about a year as a young man.",
+      "what_happened_next": "The Prophet became one of the best-selling books of the 20th century.",
+      "show_aftermath": true,
+      "feelings": [
+        "grief",
+        "uncertainty",
+        "heartbreak"
+      ],
+      "situations": [
+        "change_transition",
+        "bereavement"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain (UK and US)",
+      "pairs_with": [
+        "A20",
+        "A06"
+      ]
+    },
+    {
+      "id": "W20",
+      "form": "letter",
+      "title": "Letter to the Rev. Samson Occom",
+      "author": "Phillis Wheatley",
+      "date": "11 February 1774",
+      "place": "Boston (born in West Africa)",
+      "region": "Africa / North America (diaspora)",
+      "author_gender": "female",
+      "position_in_life": "Poet, kidnapped as a child and enslaved; newly freed",
+      "original_language": "English",
+      "recommended_edition": "Connecticut Gazette, 11 March 1774",
+      "where_to_find": "Widely transcribed (e.g. Museum of the American Revolution)",
+      "locator": "Full letter",
+      "key_line": "in every human Breast, God has implanted a Principle, which we call Love of Freedom",
+      "key_line_status": "checked",
+      "summary": "Writing to a Mohegan minister and friend, she argues that the longing for freedom lives in everyone, and calls out those who demand liberty while denying it to others.",
+      "context": "Published widely in New England newspapers in 1774.",
+      "what_happened_next": "She was the first African American woman to publish a book of poetry. She later married John Peters.",
+      "show_aftermath": true,
+      "feelings": [
+        "injustice",
+        "anger"
+      ],
+      "situations": [
+        "discrimination",
+        "identity"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "slavery"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A08",
+        "A11"
+      ]
+    },
+    {
+      "id": "W21",
+      "form": "autobiography",
+      "title": "The Interesting Narrative of the Life of Olaudah Equiano, chapter 2",
+      "author": "Olaudah Equiano",
+      "date": "1789",
+      "place": "London (born in Igboland, West Africa)",
+      "region": "Africa / Europe (diaspora)",
+      "author_gender": "male",
+      "position_in_life": "Kidnapped as a child and enslaved; later freed, a writer and abolitionist",
+      "original_language": "English",
+      "recommended_edition": "1789 first edition",
+      "where_to_find": "Project Gutenberg (search title)",
+      "locator": "Chapter 2: kidnapping and separation from his sister",
+      "key_line": null,
+      "key_line_status": "copy from edition",
+      "summary": "He describes being taken from home as a boy, briefly reunited with his sister and then separated from her for ever.",
+      "context": "One of the most influential abolitionist books in Britain.",
+      "what_happened_next": "He bought his freedom in 1766, his book became a bestseller, and he campaigned to end the slave trade.",
+      "show_aftermath": true,
+      "feelings": [
+        "grief",
+        "homesickness",
+        "loneliness"
+      ],
+      "situations": [
+        "moving_away",
+        "family"
+      ],
+      "comfort": [
+        "company",
+        "hope"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "slavery",
+        "child kidnapping"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A08",
+        "A07"
+      ]
+    },
+    {
+      "id": "W22",
+      "form": "autobiography (dictated)",
+      "title": "The History of Mary Prince, a West Indian Slave",
+      "author": "Mary Prince",
+      "date": "1831",
+      "place": "London (born in Bermuda)",
+      "region": "Caribbean / Europe",
+      "author_gender": "female",
+      "position_in_life": "Formerly enslaved woman living as a domestic worker in London",
+      "original_language": "English",
+      "recommended_edition": "1831 edition",
+      "where_to_find": "Project Gutenberg eBook #17851",
+      "locator": "Closing pages",
+      "key_line": "I have been a slave myself—I know what slaves feel",
+      "key_line_status": "checked",
+      "summary": "She answers English people who claimed enslaved people were content by insisting that her own experience is the authority.",
+      "context": "The first account of the life of a Black woman published in Britain.",
+      "what_happened_next": "The book went through three editions in its first year and fed the campaign that ended slavery in the British Empire in 1833-34.",
+      "show_aftermath": true,
+      "feelings": [
+        "feeling_unseen",
+        "injustice",
+        "anger"
+      ],
+      "situations": [
+        "discrimination",
+        "identity"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "slavery",
+        "physical violence"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A11",
+        "A08"
+      ]
+    },
+    {
+      "id": "W23",
+      "form": "autobiography",
+      "title": "Wonderful Adventures of Mrs Seacole in Many Lands",
+      "author": "Mary Seacole",
+      "date": "1857",
+      "place": "London (born in Kingston, Jamaica)",
+      "region": "Caribbean / Europe",
+      "author_gender": "female",
+      "position_in_life": "Jamaican-Scottish 'doctress' and businesswoman",
+      "original_language": "English",
+      "recommended_edition": "1857 edition",
+      "where_to_find": "Standard Ebooks; Project Gutenberg",
+      "locator": "Chapter on applying to go to the Crimea",
+      "key_line": "Did these ladies shrink from accepting my aid because my blood flowed beneath a somewhat duskier skin than theirs?",
+      "key_line_status": "checked",
+      "summary": "Turned away by every official channel she tried, she wonders whether her skin colour is the reason, then goes to the war anyway at her own expense.",
+      "context": "She built the 'British Hotel' near Balaclava to feed and nurse soldiers.",
+      "what_happened_next": "Her book was a bestseller. In 2004 she was voted the greatest Black Briton, and her statue stands at St Thomas' Hospital.",
+      "show_aftermath": true,
+      "feelings": [
+        "rejection",
+        "injustice",
+        "self_doubt"
+      ],
+      "situations": [
+        "work_career",
+        "discrimination"
+      ],
+      "comfort": [
+        "courage",
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "racism; period language elsewhere in the book"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A09",
+        "A11"
+      ]
+    },
+    {
+      "id": "W24",
+      "form": "letter (open)",
+      "title": "Letter to Thomas Auld",
+      "author": "Frederick Douglass",
+      "date": "3 September 1848",
+      "place": "Rochester, New York",
+      "region": "North America",
+      "author_gender": "male",
+      "position_in_life": "Escaped from slavery ten years earlier; editor of The North Star",
+      "original_language": "English",
+      "recommended_edition": "The North Star, 8 September 1848; reprinted in My Bondage and My Freedom (1855)",
+      "where_to_find": "Project Gutenberg (My Bondage and My Freedom, appendix)",
+      "locator": "Full letter",
+      "key_line": null,
+      "key_line_status": "copy from edition",
+      "summary": "On the tenth anniversary of his escape, he writes directly to the man who enslaved him: firm and unafraid, insisting on his own humanity.",
+      "context": "Published openly as a public act.",
+      "what_happened_next": "He became one of the most important orators and writers of the 19th century. Years later he visited Auld on his deathbed.",
+      "show_aftermath": true,
+      "feelings": [
+        "anger",
+        "injustice"
+      ],
+      "situations": [
+        "family",
+        "discrimination",
+        "identity"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "slavery",
+        "violence"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A08"
+      ]
+    },
+    {
+      "id": "W25",
+      "form": "essay / reportage",
+      "title": "Native Life in South Africa, chapter 1",
+      "author": "Sol T. Plaatje",
+      "date": "1916",
+      "place": "Kimberley, South Africa (written partly at sea and in London)",
+      "region": "Africa (South Africa, Tswana)",
+      "author_gender": "male",
+      "position_in_life": "Journalist, linguist and campaigner",
+      "original_language": "English",
+      "recommended_edition": "1916 (P. S. King)",
+      "where_to_find": "Project Gutenberg eBook #1452",
+      "locator": "Opening line of chapter 1",
+      "key_line": "the South African native found himself, not actually a slave, but a pariah in the land of his birth.",
+      "key_line_status": "checked",
+      "summary": "Overnight, the 1913 Natives Land Act made millions of people strangers in their own country. Plaatje travels to record what it meant for families on the road.",
+      "context": "Written while on a deputation to London to protest the Act.",
+      "what_happened_next": "He was the first Secretary-General of the South African Native National Congress (later the ANC), and wrote one of the first novels in English by a Black South African.",
+      "show_aftermath": true,
+      "feelings": [
+        "injustice",
+        "not_belonging",
+        "homesickness"
+      ],
+      "situations": [
+        "discrimination",
+        "moving_away"
+      ],
+      "comfort": [
+        "courage",
+        "company"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "racial dispossession"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A12",
+        "A10"
+      ]
+    },
+    {
+      "id": "W26",
+      "form": "letter",
+      "title": "Reply to Sister Filotea (Respuesta a Sor Filotea de la Cruz)",
+      "author": "Sor Juana Inés de la Cruz",
+      "date": "1 March 1691",
+      "place": "Mexico City (New Spain)",
+      "region": "Latin America (Mexico)",
+      "author_gender": "female",
+      "position_in_life": "Nun, poet and scholar, largely self-taught",
+      "original_language": "Spanish",
+      "recommended_edition": "Spanish original (PD). English translations are in copyright, so paraphrase or translate yourselves.",
+      "where_to_find": "Biblioteca Virtual Miguel de Cervantes (Spanish text)",
+      "locator": "Early autobiographical section about her childhood learning",
+      "key_line": null,
+      "key_line_status": "paraphrase or own translation",
+      "summary": "Rebuked by a bishop for studying 'worldly' subjects, she writes a long reply defending her lifelong hunger to learn. As a girl she cut off her hair as a punishment if she hadn't learned something by the time it grew back.",
+      "context": "The bishop wrote under a woman's pen name, 'Sor Filotea'.",
+      "what_happened_next": "She is now celebrated as one of the great writers of the Spanish-speaking world and an early advocate for women's education.",
+      "show_aftermath": true,
+      "feelings": [
+        "self_doubt",
+        "rejection",
+        "pressure"
+      ],
+      "situations": [
+        "study",
+        "identity",
+        "discrimination"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Spanish PD; translations in copyright",
+      "pairs_with": [
+        "A18"
+      ]
+    },
+    {
+      "id": "W27",
+      "form": "letter",
+      "title": "First letter to Thomas Wentworth Higginson",
+      "author": "Emily Dickinson",
+      "date": "15 April 1862",
+      "place": "Amherst, Massachusetts",
+      "region": "North America",
+      "author_gender": "female",
+      "position_in_life": "Unpublished poet living in her family home",
+      "original_language": "English",
+      "recommended_edition": "Published by Higginson in The Atlantic Monthly (1891)",
+      "where_to_find": "Dickinson Electronic Archives; Wikisource",
+      "locator": "Opening line",
+      "key_line": "Are you too deeply occupied to say if my Verse is alive?",
+      "key_line_status": "verify",
+      "summary": "She sends four poems to a stranger and asks whether they are 'alive': the terrifying vulnerability of showing someone your work.",
+      "context": "Higginson had just published advice to young writers.",
+      "what_happened_next": "Few poems appeared in her lifetime. After her death, nearly 1,800 were found, and she is now one of the most important poets in English.",
+      "show_aftermath": true,
+      "feelings": [
+        "self_doubt",
+        "imposter_feeling",
+        "anxiety"
+      ],
+      "situations": [
+        "creative_work",
+        "study"
+      ],
+      "comfort": [
+        "company",
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A19",
+        "A20"
+      ]
+    },
+    {
+      "id": "W28",
+      "form": "letter",
+      "title": "Letter to Fanny McCullough",
+      "author": "Abraham Lincoln",
+      "date": "23 December 1862",
+      "place": "Washington, D.C.",
+      "region": "North America",
+      "author_gender": "male",
+      "position_in_life": "President during the Civil War, himself grieving his son Willie",
+      "original_language": "English",
+      "recommended_edition": "Collected Works of Abraham Lincoln",
+      "where_to_find": "Library of Congress; Abraham Lincoln Online",
+      "locator": "Full letter",
+      "key_line": "You are sure to be happy again.",
+      "key_line_status": "verify",
+      "summary": "He writes to a young woman whose father has been killed in battle, telling her honestly that the pain feels permanent but isn't.",
+      "context": "Her father, Lt. Col. William McCullough, had been a friend.",
+      "what_happened_next": "She kept the letter. It is often cited as one of the most compassionate condolence letters ever written.",
+      "show_aftermath": true,
+      "feelings": [
+        "grief"
+      ],
+      "situations": [
+        "bereavement",
+        "family"
+      ],
+      "comfort": [
+        "hope"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "death of a parent in war"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A07",
+        "A13",
+        "A10"
+      ]
+    },
+    {
+      "id": "W29",
+      "form": "memoir essay",
+      "title": "The School Days of an Indian Girl, 'The Cutting of My Long Hair'",
+      "author": "Zitkala-Ša (Gertrude Simmons Bonnin)",
+      "date": "1900 (Atlantic Monthly)",
+      "place": "Indiana boarding school (from the Yankton Reservation, South Dakota)",
+      "region": "North America (Indigenous: Yankton Dakota)",
+      "author_gender": "female",
+      "position_in_life": "Taken to an assimilationist boarding school aged 8; later a writer, violinist and activist",
+      "original_language": "English",
+      "recommended_edition": "Atlantic Monthly (1900); American Indian Stories (1921)",
+      "where_to_find": "Standard Ebooks; Project Gutenberg (American Indian Stories)",
+      "locator": "Section II, 'The Cutting of My Long Hair'",
+      "key_line": "And now my long hair was shingled like a coward's!",
+      "key_line_status": "checked",
+      "summary": "Far from home, she hides to stop the school cutting her braids. In her culture, short hair was for mourners or captured enemies. She is found and her hair is cut.",
+      "context": "Part of a series in which she wrote back against the boarding-school system.",
+      "what_happened_next": "She became a celebrated writer and musician and in 1926 founded the National Council of American Indians.",
+      "show_aftermath": true,
+      "feelings": [
+        "not_belonging",
+        "homesickness",
+        "loneliness",
+        "shame"
+      ],
+      "situations": [
+        "moving_away",
+        "identity",
+        "study"
+      ],
+      "comfort": [
+        "company",
+        "courage"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "forced assimilation of children"
+      ],
+      "rights": "Public domain",
+      "pairs_with": [
+        "A12"
+      ]
+    },
+    {
+      "id": "W30",
+      "form": "letter (dictated)",
+      "title": "Letter to Mr Phillips, Lord Sydney's steward",
+      "author": "Woollarawarre Bennelong",
+      "date": "29 August 1796",
+      "place": "Sydney Cove, New South Wales",
+      "region": "Oceania (Indigenous Australian: Wangal people)",
+      "author_gender": "male",
+      "position_in_life": "Wangal leader and diplomat, recently returned from nearly three years in England",
+      "original_language": "English (dictated to a scribe)",
+      "recommended_edition": "Original manuscript: National Library of Australia, MS 4005",
+      "where_to_find": "NLA Trove (nla.obj-557679852); AIATSIS",
+      "locator": "Full letter",
+      "key_line": "Not me go to England no more. I am at home now.",
+      "key_line_status": "checked",
+      "summary": "Home again, he thanks the family who nursed him while he was ill in England, asks for stockings and handkerchiefs, and says simply that he won't go back: he is home now.",
+      "context": "Believed to be the first known text in English by an Aboriginal Australian.",
+      "what_happened_next": "He lived out his life in his own country. His letter is now a treasured document of Aboriginal history.",
+      "show_aftermath": true,
+      "feelings": [
+        "homesickness"
+      ],
+      "situations": [
+        "moving_away",
+        "change_transition"
+      ],
+      "comfort": [
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "mentions a spear wound from a dispute"
+      ],
+      "rights": "Public domain. Acknowledge the Wangal people; AIATSIS guidance on Indigenous materials is worth reading.",
+      "pairs_with": [
+        "A12"
+      ]
+    }
+  ],
+  "art": [
+    {
+      "id": "A01",
+      "title": "Under the Wave off Kanagawa (The Great Wave)",
+      "artist": "Katsushika Hokusai",
+      "date": "c. 1830-32",
+      "region": "East Asia (Japan)",
+      "artist_gender": "male",
+      "medium": "Woodblock print",
+      "collection": "Many impressions: the Met (New York), Art Institute of Chicago, British Museum and others",
+      "accession": "verify (e.g. Met impression)",
+      "image_source": "Met Open Access or AIC (CC0)",
+      "image_rights": "Public domain; CC0 images available",
+      "description": "Three boats of rowers duck under a giant clawing wave while Mount Fuji sits small and still in the distance.",
+      "zoom_detail": "The crouching rowers inside the boats; then pull back to the tiny, steady Mount Fuji",
+      "zoom_box_pct": null,
+      "feelings": [
+        "overwhelm",
+        "anxiety",
+        "pressure"
+      ],
+      "situations": [
+        "study",
+        "work_career"
+      ],
+      "comfort": [
+        "perspective",
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "pairs_with": [
+        "W02",
+        "W16"
+      ]
+    },
+    {
+      "id": "A02",
+      "title": "Travelers among Mountains and Streams",
+      "artist": "Fan Kuan",
+      "date": "c. 1000",
+      "region": "East Asia (China, Northern Song)",
+      "artist_gender": "male",
+      "medium": "Ink and colour on silk (hanging scroll)",
+      "collection": "National Palace Museum, Taipei",
+      "accession": "verify",
+      "image_source": "NPM Open Data (check resolution and terms)",
+      "image_rights": "Artwork PD; check NPM image terms",
+      "description": "A colossal mountain fills the scroll. At the bottom, almost invisible, a tiny mule train of travellers makes its way along the path.",
+      "zoom_detail": "The tiny mule train and travellers in the lower right",
+      "zoom_box_pct": null,
+      "feelings": [
+        "overwhelm",
+        "uncertainty",
+        "stuck"
+      ],
+      "situations": [
+        "big_decision",
+        "change_transition"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "pairs_with": [
+        "W08",
+        "W13",
+        "W14"
+      ]
+    },
+    {
+      "id": "A03",
+      "title": "Jahangir Preferring a Sufi Shaikh to Kings",
+      "artist": "Bichitr",
+      "date": "c. 1615-18",
+      "region": "South Asia (Mughal India)",
+      "artist_gender": "male",
+      "medium": "Opaque watercolour, ink and gold on paper",
+      "collection": "Freer Gallery of Art, Smithsonian National Museum of Asian Art",
+      "accession": "F1942.15a",
+      "image_source": "asia.si.edu (Smithsonian Open Access; check usage label)",
+      "image_rights": "Artwork PD; Smithsonian usage conditions apply",
+      "description": "The emperor sits on an hourglass throne and hands a book to a Sufi holy man, ignoring the kings (including James I of England) waiting below. Status matters less than meaning.",
+      "zoom_detail": "The painter's own tiny self-portrait in the lower left corner; or the hourglass throne",
+      "zoom_box_pct": null,
+      "feelings": [
+        "pressure",
+        "burnout",
+        "uncertainty"
+      ],
+      "situations": [
+        "work_career",
+        "big_decision"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "pairs_with": [
+        "W14",
+        "W01"
+      ]
+    },
+    {
+      "id": "A04",
+      "title": "The Passing of Shah Jahan",
+      "artist": "Abanindranath Tagore",
+      "date": "1902",
+      "region": "South Asia (India, Bengal School)",
+      "artist_gender": "male",
+      "medium": "Watercolour (miniature style)",
+      "collection": "Victoria Memorial Hall, Kolkata",
+      "accession": "verify",
+      "image_source": "Google Arts & Culture (Victoria Memorial Hall); Wikimedia Commons",
+      "image_rights": "Artwork PD in the UK and India (artist died 1951); check photo terms",
+      "description": "The dying, imprisoned emperor lies gazing across the river at the Taj Mahal he built for his late wife, with his daughter Jahanara at the foot of his bed.",
+      "zoom_detail": "The distant, glowing Taj Mahal; then Jahanara sitting with her father",
+      "zoom_box_pct": null,
+      "feelings": [
+        "grief",
+        "regret",
+        "homesickness"
+      ],
+      "situations": [
+        "bereavement",
+        "family"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "deathbed scene"
+      ],
+      "context_note": "The artist painted it while grieving his young daughter, who died in the 1902 Calcutta plague.",
+      "pairs_with": [
+        "W12",
+        "W15"
+      ]
+    },
+    {
+      "id": "A05",
+      "title": "Three Girls",
+      "artist": "Amrita Sher-Gil",
+      "date": "1935",
+      "region": "South Asia (India; Hungarian-Indian artist)",
+      "artist_gender": "female",
+      "medium": "Oil on canvas",
+      "collection": "National Gallery of Modern Art, New Delhi",
+      "accession": "verify",
+      "image_source": "Wikimedia Commons",
+      "image_rights": "Artwork PD (artist died 1941); check photo terms",
+      "description": "Three young women sit close together in silence, waiting, their faces unreadable. Often read as being about women's futures being decided for them.",
+      "zoom_detail": "The faces and folded hands of the three women",
+      "zoom_box_pct": null,
+      "feelings": [
+        "stuck",
+        "uncertainty",
+        "pressure",
+        "loneliness"
+      ],
+      "situations": [
+        "family",
+        "big_decision",
+        "identity"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "pairs_with": [
+        "W18",
+        "W11",
+        "W03"
+      ]
+    },
+    {
+      "id": "A06",
+      "title": "Portrait of a Young Woman in Red (Fayum mummy portrait)",
+      "artist": "Unknown painter, Roman Egypt",
+      "date": "c. 90-120 CE",
+      "region": "Africa (Egypt)",
+      "artist_gender": "unknown",
+      "medium": "Encaustic on wood",
+      "collection": "The Metropolitan Museum of Art, New York",
+      "accession": "verify",
+      "image_source": "Met Open Access (CC0)",
+      "image_rights": "Public domain; CC0",
+      "description": "A real young woman who lived about 1,900 years ago looks straight at you. It's one of the most direct 'you are not the first' images in existence.",
+      "zoom_detail": "Her eyes",
+      "zoom_box_pct": null,
+      "feelings": [
+        "loneliness",
+        "feeling_unseen"
+      ],
+      "situations": [
+        "identity"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "funerary object; show respectfully"
+      ],
+      "pairs_with": [
+        "W19"
+      ]
+    },
+    {
+      "id": "A07",
+      "title": "Virgin and Child with Archangels Michael and Gabriel (right panel of a diptych)",
+      "artist": "Fǝre Ṣǝyon (Fre Seyon)",
+      "date": "c. 1445-1480",
+      "region": "Africa (Ethiopia)",
+      "artist_gender": "male",
+      "medium": "Glue tempera on panel",
+      "collection": "Institute of Ethiopian Studies, Addis Ababa (lent to the Walters Art Museum, IL.1999.4)",
+      "accession": "IL.1999.4 (loan)",
+      "image_source": "Loaned work: image terms uncertain. CC0 alternative: Walters Art Museum Ethiopian icons by a follower of Fre Seyon (art.thewalters.org).",
+      "image_rights": "Artwork PD; use a Walters CC0 icon image if the loan image isn't licensed",
+      "description": "Mother and child sit protected by two archangels who guard them with drawn swords and shelter them with their wings.",
+      "zoom_detail": "The archangels' wings curving protectively around mother and child",
+      "zoom_box_pct": null,
+      "feelings": [
+        "grief",
+        "anxiety",
+        "loneliness"
+      ],
+      "situations": [
+        "bereavement",
+        "family"
+      ],
+      "comfort": [
+        "company",
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "religious image: present as art and history, not as preaching"
+      ],
+      "pairs_with": [
+        "W28",
+        "W21"
+      ]
+    },
+    {
+      "id": "A08",
+      "title": "Hagar",
+      "artist": "Edmonia Lewis",
+      "date": "1875",
+      "region": "North America (African American and Ojibwe artist, worked in Rome)",
+      "artist_gender": "female",
+      "medium": "Carved marble",
+      "collection": "Smithsonian American Art Museum",
+      "accession": "1983.95.178",
+      "image_source": "americanart.si.edu (CC0)",
+      "image_rights": "Public domain; CC0",
+      "description": "Hagar, cast out into the wilderness after being enslaved and used, stands with clasped hands, praying for her survival and her child's.",
+      "zoom_detail": "Her clasped hands and upturned face",
+      "zoom_box_pct": null,
+      "feelings": [
+        "rejection",
+        "injustice",
+        "loneliness"
+      ],
+      "situations": [
+        "discrimination",
+        "family"
+      ],
+      "comfort": [
+        "courage",
+        "company"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "references slavery and abandonment"
+      ],
+      "pairs_with": [
+        "W20",
+        "W21",
+        "W22",
+        "W24"
+      ]
+    },
+    {
+      "id": "A09",
+      "title": "Approaching Storm",
+      "artist": "Edward Mitchell Bannister",
+      "date": "1886",
+      "region": "North America (African Canadian-American artist)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Smithsonian American Art Museum",
+      "accession": "1983.95.62",
+      "image_source": "americanart.si.edu (marked free to use)",
+      "image_rights": "Public domain; free to use",
+      "description": "A dark storm gathers over a landscape. In the centre, a lone figure walks on, small against the weather.",
+      "zoom_detail": "The small walking figure in the centre",
+      "zoom_box_pct": null,
+      "feelings": [
+        "anxiety",
+        "uncertainty",
+        "pressure"
+      ],
+      "situations": [
+        "study",
+        "public_speaking",
+        "big_decision"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "pairs_with": [
+        "W16",
+        "W23"
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "Landscape with Rainbow",
+      "artist": "Robert S. Duncanson",
+      "date": "1859",
+      "region": "North America (African American artist)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Smithsonian American Art Museum",
+      "accession": "verify",
+      "image_source": "americanart.si.edu",
+      "image_rights": "Public domain; check usage label",
+      "description": "A calm pastoral landscape with a rainbow arching across the sky after rain.",
+      "zoom_detail": "The rainbow; then the small figures in the landscape below",
+      "zoom_box_pct": null,
+      "feelings": [
+        "grief",
+        "stuck"
+      ],
+      "situations": [
+        "change_transition"
+      ],
+      "comfort": [
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "pairs_with": [
+        "W25",
+        "W28"
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "Anna Washington Derry",
+      "artist": "Laura Wheeler Waring",
+      "date": "1927",
+      "region": "North America (African American artist)",
+      "artist_gender": "female",
+      "medium": "Oil on canvas",
+      "collection": "Smithsonian American Art Museum",
+      "accession": "1967.91.1",
+      "image_source": "americanart.si.edu",
+      "image_rights": "Artist died 1948, so PD in the UK. Check the SAAM usage label for US status.",
+      "description": "A dignified portrait of a working laundress: arms folded, face steady, given the gravity usually reserved for the powerful.",
+      "zoom_detail": "Her folded hands; then her face",
+      "zoom_box_pct": null,
+      "feelings": [
+        "feeling_unseen",
+        "pressure"
+      ],
+      "situations": [
+        "work_career",
+        "identity"
+      ],
+      "comfort": [
+        "courage",
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "pairs_with": [
+        "W22",
+        "W23",
+        "W20"
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "Ceremony (also catalogued as 'Figures in possum skin cloaks')",
+      "artist": "William Barak (Beruk)",
+      "date": "1898",
+      "region": "Oceania (Indigenous Australian: Wurundjeri)",
+      "artist_gender": "male",
+      "medium": "Pencil, wash, charcoal, gouache and earth pigments on paper",
+      "collection": "National Gallery of Victoria, Melbourne",
+      "accession": "verify",
+      "image_source": "NGV Collection Online",
+      "image_rights": "Artwork PD (artist died 1903), but some collections say reuse of Barak images requires cultural approval. Ask NGV / Wurundjeri Woi-wurrung, or link out instead of embedding.",
+      "description": "Rows of figures in patterned possum-skin cloaks gather for ceremony, painted by a Wurundjeri leader keeping his culture visible under colonial rule.",
+      "zoom_detail": "The patterned cloaks of the figures standing together",
+      "zoom_box_pct": null,
+      "feelings": [
+        "not_belonging",
+        "homesickness",
+        "loneliness"
+      ],
+      "situations": [
+        "identity",
+        "moving_away"
+      ],
+      "comfort": [
+        "company",
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "Indigenous cultural material: needs permission and acknowledgement"
+      ],
+      "pairs_with": [
+        "W30",
+        "W29",
+        "W25"
+      ]
+    },
+    {
+      "id": "A13",
+      "title": "La ofrenda (The Offering)",
+      "artist": "Saturnino Herrán",
+      "date": "1913",
+      "region": "Latin America (Mexico)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Museo Nacional de Arte (MUNAL), Mexico City",
+      "accession": "verify",
+      "image_source": "MUNAL / INBAL; Wikimedia Commons",
+      "image_rights": "Artwork PD (artist died 1918); check photo terms",
+      "description": "A family of every age travels in a canal boat heaped with marigolds, the flowers that guide the dead home for the Day of the Dead.",
+      "zoom_detail": "The man at the prow, whose face is never shown; then the marigolds",
+      "zoom_box_pct": null,
+      "feelings": [
+        "grief",
+        "uncertainty"
+      ],
+      "situations": [
+        "bereavement",
+        "family",
+        "change_transition"
+      ],
+      "comfort": [
+        "company",
+        "perspective"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "theme of death and remembrance"
+      ],
+      "pairs_with": [
+        "W12",
+        "W28",
+        "W05"
+      ]
+    },
+    {
+      "id": "A14",
+      "title": "Landscape with the Fall of Icarus",
+      "artist": "Attributed to Pieter Bruegel the Elder (probably a copy of his lost original)",
+      "date": "c. 1560s",
+      "region": "Europe (Southern Netherlands)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Royal Museums of Fine Arts of Belgium, Brussels",
+      "accession": "verify",
+      "image_source": "Wikimedia Commons",
+      "image_rights": "Public domain",
+      "description": "A ploughman, a shepherd and a ship carry on with their day. In the corner, almost unnoticed, a boy's legs disappear into the sea.",
+      "zoom_detail": "Icarus's legs splashing in the water near the ship, lower right",
+      "zoom_box_pct": null,
+      "feelings": [
+        "feeling_unseen",
+        "loneliness",
+        "failure"
+      ],
+      "situations": [
+        "study",
+        "work_career"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "implied drowning: avoid for users flagged at risk"
+      ],
+      "pairs_with": [
+        "W06",
+        "W11"
+      ]
+    },
+    {
+      "id": "A15",
+      "title": "The Monk by the Sea",
+      "artist": "Caspar David Friedrich",
+      "date": "1808-10",
+      "region": "Europe (Germany)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Alte Nationalgalerie, Berlin",
+      "accession": "verify",
+      "image_source": "Wikimedia Commons; SMB-digital (check licence)",
+      "image_rights": "Public domain; check photo licence",
+      "description": "A tiny figure stands on a strip of shore before a vast dark sea and an even vaster sky.",
+      "zoom_detail": "The tiny monk on the shore",
+      "zoom_box_pct": null,
+      "feelings": [
+        "loneliness",
+        "uncertainty",
+        "overwhelm"
+      ],
+      "situations": [
+        "change_transition",
+        "moving_away"
+      ],
+      "comfort": [
+        "company",
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "pairs_with": [
+        "W02",
+        "W09",
+        "W10",
+        "W17"
+      ]
+    },
+    {
+      "id": "A16",
+      "title": "Self Portrait at the Age of 63",
+      "artist": "Rembrandt van Rijn",
+      "date": "1669",
+      "region": "Europe (Netherlands)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "The National Gallery, London",
+      "accession": "NG221 (verify)",
+      "image_source": "National Gallery (check licence); Wikimedia Commons",
+      "image_rights": "Public domain; check photo licence",
+      "description": "An old man looks at himself without flattery. He had been bankrupt and had lost his wife and son, yet the painting is calm and honest.",
+      "zoom_detail": "His eyes",
+      "zoom_box_pct": null,
+      "feelings": [
+        "failure",
+        "regret",
+        "shame"
+      ],
+      "situations": [
+        "work_career",
+        "change_transition"
+      ],
+      "comfort": [
+        "perspective",
+        "company"
+      ],
+      "intensity": 2,
+      "content_notes": [],
+      "pairs_with": [
+        "W06",
+        "W07",
+        "W01"
+      ]
+    },
+    {
+      "id": "A17",
+      "title": "Sorrowing Old Man ('At Eternity's Gate')",
+      "artist": "Vincent van Gogh",
+      "date": "1890",
+      "region": "Europe (Netherlands / France)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Kröller-Müller Museum, Otterlo",
+      "accession": "verify",
+      "image_source": "Kröller-Müller Museum; Wikimedia Commons",
+      "image_rights": "Public domain",
+      "description": "An old man sits by the fire, bent forward with his face buried in his fists.",
+      "zoom_detail": "The hands pressed against his face",
+      "zoom_box_pct": null,
+      "feelings": [
+        "grief",
+        "failure",
+        "stuck"
+      ],
+      "situations": [
+        "bereavement"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "painted weeks before the artist's death: never show if the crisis check fires; never mention the aftermath"
+      ],
+      "pairs_with": [
+        "W06"
+      ]
+    },
+    {
+      "id": "A18",
+      "title": "Self-Portrait as the Allegory of Painting",
+      "artist": "Artemisia Gentileschi",
+      "date": "c. 1638-39",
+      "region": "Europe (Italy)",
+      "artist_gender": "female",
+      "medium": "Oil on canvas",
+      "collection": "Royal Collection, UK",
+      "accession": "RCIN 405551 (verify)",
+      "image_source": "Royal Collection Trust (check licence); Wikimedia Commons",
+      "image_rights": "Public domain; check photo licence",
+      "description": "The painter shows herself mid-work, sleeves up, brush raised, completely absorbed. She is painting herself as Painting itself.",
+      "zoom_detail": "Her raised brush hand and focused face",
+      "zoom_box_pct": null,
+      "feelings": [
+        "self_doubt",
+        "imposter_feeling",
+        "rejection"
+      ],
+      "situations": [
+        "creative_work",
+        "work_career",
+        "identity"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "pairs_with": [
+        "W04",
+        "W26"
+      ]
+    },
+    {
+      "id": "A19",
+      "title": "A Corner of the Artist's Room in Paris",
+      "artist": "Gwen John",
+      "date": "1907-09",
+      "region": "Europe (Wales / France)",
+      "artist_gender": "female",
+      "medium": "Oil on canvas on board",
+      "collection": "Amgueddfa Cymru – Museum Wales (a second version is at Sheffield Museums)",
+      "accession": "NMW A 3397",
+      "image_source": "museum.wales collections online; Art UK",
+      "image_rights": "Artwork PD (artist died 1939); check museum image terms",
+      "description": "A quiet attic room: a wicker chair with a dress thrown over it, an open book on a table beneath a half-open window. The artist isn't in the picture but seems present.",
+      "zoom_detail": "The open book under the window; then the empty chair",
+      "zoom_box_pct": null,
+      "feelings": [
+        "loneliness",
+        "overwhelm",
+        "burnout"
+      ],
+      "situations": [
+        "moving_away",
+        "creative_work"
+      ],
+      "comfort": [
+        "permission_to_rest",
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "context_note": "John wrote of the contentment her room gave her. Solitude here is chosen, not imposed.",
+      "pairs_with": [
+        "W09",
+        "W13",
+        "W17",
+        "W27",
+        "W03"
+      ]
+    },
+    {
+      "id": "A20",
+      "title": "The Ten Largest, No. 7, Adulthood",
+      "artist": "Hilma af Klint",
+      "date": "1907",
+      "region": "Europe (Sweden)",
+      "artist_gender": "female",
+      "medium": "Tempera on paper mounted on canvas",
+      "collection": "Hilma af Klint Foundation (often shown at Moderna Museet, Stockholm)",
+      "accession": "verify",
+      "image_source": "Wikimedia Commons; Hilma af Klint Foundation",
+      "image_rights": "Artwork PD (artist died 1944); check photo terms",
+      "description": "A huge abstract painting of swirling shapes and soft colours about a stage of life: feeling painted without words.",
+      "zoom_detail": "Any spiral or flower-like form at the centre",
+      "zoom_box_pct": null,
+      "feelings": [
+        "uncertainty",
+        "overwhelm"
+      ],
+      "situations": [
+        "change_transition",
+        "identity"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "context_note": "Perfect for the 'when words fail' premise: abstract art made before abstraction was 'invented'.",
+      "pairs_with": [
+        "W05",
+        "W19",
+        "W08",
+        "W27"
+      ]
+    }
+  ]
+}
