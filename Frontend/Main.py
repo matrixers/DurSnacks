@@ -10,7 +10,7 @@ import math
 from kivy.animation import Animation
 from kivy.app import App
 from kivy.core.window import Window
-from kivy.graphics import Color, Ellipse, Line, Mesh, Rectangle
+from kivy.graphics import Color, Ellipse, Line, Mesh
 from kivy.lang import Builder
 from kivy.properties import (BooleanProperty, ListProperty, NumericProperty,
                              StringProperty)
@@ -19,37 +19,42 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.widget import Widget
 from kivy.utils import get_color_from_hex
 
-Window.clearcolor = get_color_from_hex("#50836A")  # dark forest green
+Window.clearcolor = get_color_from_hex("#12271D")  # dark forest green
 
 TRUNK = get_color_from_hex("#6B4423")
 TRUNK_DARK = get_color_from_hex("#3E2713")
+GROUND = get_color_from_hex("#2F5A3F")
+
+# Tree proportions, as fractions of the canopy radius R
+TRUNK_LEN = 0.40    # visible trunk between the canopy and the ground
+ROOT_DEPTH = 0.25   # how far the roots reach below the ground
 
 # Core feeling -> (colour, [(secondary feeling, deeper feeling), ...])
 # Order is clockwise, taken from the feelings wheel image.
 FEELINGS = {
-    "Mad": ("#E8212A", [
+    "Mad": ("#DB4B52", [
         ("Hurt", "Distant"), ("Hostile", "Sarcastic"), ("Angry", "Frustrated"),
         ("Selfish", "Jealous"), ("Hateful", "Irritated"), ("Critical", "Skeptical")]),
-    "Scared": ("#F07E22", [
+    "Scared": ("#E99048", [
         ("Confused", "Bewildered"), ("Rejected", "Discouraged"),
         ("Helpless", "Insignificant"), ("Submissive", "Inadequate"),
         ("Insecure", "Embarrassed"), ("Anxious", "Overwhelmed")]),
-    "Joyful": ("#E6DC1E", [
+    "Joyful": ("#D3CC52", [
         ("Excited", "Daring"), ("Sensuous", "Fascinating"),
         ("Energetic", "Stimulating"), ("Cheerful", "Amused"),
         ("Creative", "Playful"), ("Hopeful", "Optimistic")]),
-    "Powerful": ("#6BBE45", [
-        ("Aware", "Surprised"), ("Proud", "Successful"),
-        ("Respected", "Worthwhile"), ("Appreciated", "Valuable"),
-        ("Important", "Discerning"), ("Faithful", "Confident")]),
-    "Peaceful": ("#3F5BB5", [
-        ("Nurturing", "Thankful"), ("Trusting", "Secure"), ("Loving", "Serene"),
-        ("Intimate", "Responsive"), ("Thoughtful", "Pensive"),
-        ("Content", "Relaxed")]),
-    "Sad": ("#B54C9C", [
+    "Sad": ("#E26AC6", [
         ("Tired", "Sleepy"), ("Bored", "Apathetic"), ("Lonely", "Isolated"),
         ("Depressed", "Inferior"), ("Ashamed", "Stupid"),
         ("Guilty", "Remorseful")]),
+    "Peaceful": ("#6984DD", [
+        ("Nurturing", "Thankful"), ("Trusting", "Secure"), ("Loving", "Serene"),
+        ("Intimate", "Responsive"), ("Thoughtful", "Pensive"),
+        ("Content", "Relaxed")]),
+    "Powerful": ("#9AE478", [
+        ("Aware", "Surprised"), ("Proud", "Successful"),
+        ("Respected", "Worthwhile"), ("Appreciated", "Valuable"),
+        ("Important", "Discerning"), ("Faithful", "Confident")]),
 }
 
 
@@ -60,12 +65,6 @@ def lighten(c, amount):
 
 def darken(c, factor):
     return (c[0] * factor, c[1] * factor, c[2] * factor, c[3])
-
-
-def text_colour(c):
-    """Dark text on light leaves, white text on dark leaves."""
-    luminance = 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]
-    return (0.1, 0.1, 0.1, 1) if luminance > 0.55 else (1, 1, 1, 1)
 
 
 class EmotionWheel(Widget):
@@ -95,9 +94,14 @@ class EmotionWheel(Widget):
                   spin=self.redraw, path=self.redraw)
 
     # ---------- data ----------
-    @property
-    def radius(self):
-        return min(self.size) / 2 * 0.95
+    def metrics(self):
+        """Return (cx, cy, R, ground_y): canopy centre, radius and ground level."""
+        total = 2 + TRUNK_LEN + ROOT_DEPTH  # whole tree height, in units of R
+        R = min(self.width / 2 * 0.95, self.height / total * 0.97)
+        bottom = self.y + (self.height - total * R) / 2
+        ground_y = bottom + ROOT_DEPTH * R
+        cy = ground_y + (TRUNK_LEN + 1) * R
+        return self.center_x, cy, R, ground_y
 
     def items(self):
         if not self.path:
@@ -115,62 +119,114 @@ class EmotionWheel(Widget):
         half_w = R * 0.29 * scale
         return r0, r1, half_w
 
-    def _draw_leaf(self, cx, cy, R, ang, rgba, scale):
+    def _cloud_centre(self, i, cx, cy, R, scale):
+        """(x, y, size) of cloud i: cloud 0 in the middle, the other five around it."""
+        if i == 5:
+            return cx, cy, R * 0.4 * scale
+        ang = math.radians((i + 1) * 72 + self.spin)  # 72 degrees apart, clockwise from the top
+        dist = R * 0.5 * scale
+        return cx + math.sin(ang) * dist, cy + math.cos(ang) * dist, R * 0.45 * scale
+
+    def _back_button(self, cx, cy, R):
+        """Position and size of the knot on the trunk that takes you back."""
+        return cx, cy - R * 1.0, R * 0.12
+
+    def _draw_leaf(self, i, cx, cy, R, rgba, scale):
+        """Draws cloud number i as a cluster of overlapping circles."""
         if scale < 0.02:
             return
-        r0, r1, half_w = self._geometry(R, scale)
-        dx, dy = math.sin(ang), math.cos(ang)
-        px, py = dy, -dx  # perpendicular to the leaf's axis
+        x, y, size = self._cloud_centre(i, cx, cy, R, scale)
+        # (sideways, up, radius), in units of the cloud's size
+        puffs = [(0.0, 0.10, 0.55), (0.0, -0.15, 0.45),
+                 (-0.45, -0.05, 0.42), (0.45, -0.05, 0.42),
+                 (-0.25, 0.30, 0.38), (0.25, 0.30, 0.38)]
+        circles = [(x + px * size, y + py * size, pr * size)
+                   for px, py, pr in puffs]
 
-        left, right = [], []
-        steps = 14
+        # Darker outline pass first, then the fills on top
+        Color(*darken(rgba, 0.6))
+        for qx, qy, r in circles:
+            Ellipse(pos=(qx - r - 2, qy - r - 2), size=(2 * r + 4, 2 * r + 4))
+        Color(*rgba)
+        for qx, qy, r in circles:
+            Ellipse(pos=(qx - r, qy - r), size=(2 * r, 2 * r))
+
+    def _strip(self, points, half_widths, rgba):
+        """Draw a tapered ribbon along a centre line."""
+        verts = []
+        n = len(points)
+        for i, (x, y) in enumerate(points):
+            x0, y0 = points[max(i - 1, 0)]
+            x1, y1 = points[min(i + 1, n - 1)]
+            tx, ty = x1 - x0, y1 - y0
+            length = math.hypot(tx, ty) or 1
+            nx, ny = -ty / length, tx / length
+            h = half_widths[i]
+            verts += [x + nx * h, y + ny * h, 0, 0,
+                      x - nx * h, y - ny * h, 0, 0]
+        Color(*rgba)
+        Mesh(vertices=verts, indices=list(range(n * 2)), mode="triangle_strip")
+
+    def _draw_trunk(self, cx, cy, R, ground_y):
+        steps = 16
+        pts, widths = [], []
         for k in range(steps + 1):
             t = k / steps
-            d = r0 + (r1 - r0) * t
-            h = half_w * math.sin(math.pi * t ** 0.85)
-            bx, by = cx + dx * d, cy + dy * d
-            left.append((bx + px * h, by + py * h))
-            right.append((bx - px * h, by - py * h))
-        outline = left + right[::-1]
+            pts.append((cx, cy + (ground_y - cy) * t))
+            # slim at the top, flaring out where it meets the roots
+            widths.append(R * (0.06 + 0.03 * t + 0.14 * t ** 4))
+        self._strip(pts, widths, TRUNK)
 
-        mid = (cx + dx * (r0 + r1) / 2, cy + dy * (r0 + r1) / 2)
-        verts = []
-        for x, y in [mid] + outline + [outline[0]]:
-            verts += [x, y, 0, 0]
+        Color(*TRUNK_DARK)
+        # outline on each side
+        for side in (-1, 1):
+            Line(points=[c for (x, y), w in zip(pts, widths)
+                         for c in (x + side * w, y)], width=1.6)
+        # a few wobbly bark lines
+        for frac in (-0.5, 0.0, 0.5):
+            line = []
+            for k in range(4, steps):
+                x, y = pts[k]
+                wobble = math.sin(k * 0.9 + frac * 5) * R * 0.004
+                line += [x + frac * widths[k] * 0.9 + wobble, y]
+            Line(points=line, width=1.1)
 
-        Color(*rgba)
-        Mesh(vertices=verts, indices=list(range(len(verts) // 4)),
-             mode="triangle_fan")
-        Color(*darken(rgba, 0.6))
-        Line(points=[c for p in outline for c in p], close=True, width=1.2)
-        Color(*lighten(rgba, 0.35))
-        Line(points=[cx + dx * r0, cy + dy * r0,
-                     cx + dx * r1 * 0.95, cy + dy * r1 * 0.95], width=1.1)
+    def _draw_roots(self, cx, R, ground_y):
+        # (sideways reach, depth) for each root, as fractions of R
+        roots = [(-0.55, 0.10), (-0.30, 0.20), (-0.05, 0.25),
+                 (0.22, 0.19), (0.50, 0.11)]
+        for reach, depth in roots:
+            p0 = (cx + reach * R * 0.25, ground_y + R * 0.03)
+            p1 = (cx + reach * R * 0.85, ground_y - depth * R * 0.1)
+            p2 = (cx + reach * R, ground_y - depth * R)
+            pts, widths = [], []
+            for k in range(13):
+                t = k / 12
+                a, b, c = (1 - t) ** 2, 2 * (1 - t) * t, t * t
+                pts.append((a * p0[0] + b * p1[0] + c * p2[0],
+                            a * p0[1] + b * p1[1] + c * p2[1]))
+                widths.append(R * (0.05 * (1 - t) + 0.008))  # taper to a point
+            self._strip(pts, widths, TRUNK)
 
     def redraw(self, *args):
-        cx, cy = self.center
-        R = self.radius
+        cx, cy, R, ground_y = self.metrics()
         items = self.items()
         step = 360 / len(items)
         scale = max(self.progress, 0)
 
         self.canvas.before.clear()
         with self.canvas.before:
-            # trunk
-            Color(*TRUNK)
-            trunk_w = R * 0.1
-            Rectangle(pos=(cx - trunk_w / 2, self.y),
-                      size=(trunk_w, max(cy - self.y, 0)))
+            self._draw_roots(cx, R, ground_y)
+            self._draw_trunk(cx, cy, R, ground_y)
             # leaves
             for i, (_, colour) in enumerate(items):
-                ang = math.radians((i + 0.5) * step + self.spin)
-                self._draw_leaf(cx, cy, R, ang, colour, scale)
-            # knot in the middle (tap to go back)
-            knot = R * 0.19
+                self._draw_leaf(i, cx, cy, R, colour, scale)
+            # knot on the trunk (tap to go back)
+            bx, by, knot = self._back_button(cx, cy, R)
             Color(*TRUNK)
-            Ellipse(pos=(cx - knot, cy - knot), size=(2 * knot, 2 * knot))
+            Ellipse(pos=(bx - knot, by - knot), size=(2 * knot, 2 * knot))
             Color(*TRUNK_DARK)
-            Line(circle=(cx, cy, knot), width=2)
+            Line(circle=(bx, by, knot), width=2)
 
         # labels sit in the middle of each leaf
         r0, r1, _ = self._geometry(R, scale)
@@ -183,18 +239,17 @@ class EmotionWheel(Widget):
                 lbl.text = name
             if abs(lbl.font_size - font_size) > 0.5:
                 lbl.font_size = font_size
-            lbl.color = text_colour(colour)
+            lbl.color = (1, 1, 1, 1)
             lbl.opacity = opacity
-            ang = math.radians((i + 0.5) * step + self.spin)
-            lbl.center = (cx + math.sin(ang) * dmid, cy + math.cos(ang) * dmid)
+            lbl.center = self._cloud_centre(i, cx, cy, R, scale)[:2]
+
 
         back_text = "Back" if self.path else ""
         if self.centre_label.text != back_text:
             self.centre_label.text = back_text
         if abs(self.centre_label.font_size - R * 0.075) > 0.5:
             self.centre_label.font_size = R * 0.075
-        self.centre_label.center = (cx, cy)
-
+        self.centre_label.center = self._back_button(cx, cy, R)[:2]
     # ---------- animation / navigation ----------
     def _transition(self, change, expand=True):
         """Shrink and spin the leaves away, run `change`, then grow new ones."""
@@ -219,8 +274,7 @@ class EmotionWheel(Widget):
 
     def _sync_prompt(self):
         if self.path:
-            self.prompt = (f"Feeling {self.path[0].lower()}, which kind? "
-                           "(tap the centre to go back)")
+            self.prompt = (f"Feeling {self.path[0].lower()}, what kind?")
         else:
             self.prompt = "Tap the leaf that fits best"
 
@@ -248,34 +302,34 @@ class EmotionWheel(Widget):
         self._sync_prompt()
 
     def on_touch_down(self, touch):
-        if not self.collide_point(*touch.pos):
-            return super().on_touch_down(touch)
-        if self.busy:
+        cx, cy, R, _ = self.metrics()
+        bx, by, br = self._back_button(cx, cy, R)
+        if self.path and math.hypot(touch.x - bx, touch.y - by) <= br * 1.5:
+            self.go_back()
             return True
-        dx = touch.x - self.center_x
-        dy = touch.y - self.center_y
-        dist = math.hypot(dx, dy)
-        R = self.radius
-        if dist <= R * 0.19:
-            if self.path:
-                self.go_back()
-            return True
-        if dist <= R:
-            angle = math.degrees(math.atan2(dx, dy)) % 360  # clockwise from top
-            self.choose(int(angle // (360 / len(self.items()))))
-            return True
+        for i in range(len(self.items())):
+            x, y, size = self._cloud_centre(i, cx, cy, R, 1)
+            if math.hypot(touch.x - x, touch.y - y) <= size:
+                self.choose(i)
+                return True
         return super().on_touch_down(touch)
 
 
 class HomeScreen(Screen):
     def on_pre_enter(self, *args):
+        # On startup this fires before the wheel exists, so check first
         wheel = self.ids.get("wheel")
         if wheel:
             wheel.reset()
 
 
-
 class OutputScreen(Screen):
+    pass
+
+class WriteOut(Screen):
+    pass
+
+class InspoPage(Screen):
     pass
 
 
@@ -283,6 +337,8 @@ KV = """
 ScreenManager:
     HomeScreen:
     OutputScreen:
+    WriteOut:
+    InspoPage:
 
 <HomeScreen>:
     name: "home"
@@ -290,9 +346,8 @@ ScreenManager:
         orientation: "vertical"
         padding: dp(24)
         spacing: dp(8)
-
         Label:
-            text: "Deep Rooted Guidance!"
+            text: "Deep Rooted Guidance"
             font_size: "32sp"
             bold: True
             size_hint_y: None
@@ -324,38 +379,142 @@ ScreenManager:
             halign: "center"
             valign: "middle"
 
-
 <OutputScreen>:
     name: "output"
-    BoxLayout:
-        orientation: "vertical"
-        padding: dp(24)
-        spacing: dp(16)
-
-        Label:
-            text: "You're feeling"
-            font_size: "18sp"
-        Label:
-            text: app.secondary
-            font_size: "44sp"
-            bold: True
-        Label:
-            text: "A kind of feeling " + app.core.lower()
-            font_size: "18sp"
-        Label:
-            text: "Deeper down, it might be " + app.deeper.lower()
-            font_size: "18sp"
-            text_size: self.size
-            halign: "center"
-            valign: "middle"
-
-        Button:
-            text: "Back to the tree"
+    AnchorLayout:
+        anchor_y: "top"
+        BoxLayout:
+            orientation: "vertical"
+            padding: dp(24)
+            spacing: dp(8)
             size_hint_y: None
-            height: dp(56)
-            background_normal: ""
-            background_color: 0.42, 0.27, 0.14, 1
-            on_release: root.manager.current = "home"
+            height: self.minimum_height
+
+            Label:
+                text: "You're feeling"
+                font_size: "18sp"
+                size_hint_y: None
+                height: self.texture_size[1] + dp(8)
+            Label:
+                text: app.secondary
+                font_size: "44sp"
+                bold: True
+                size_hint_y: None
+                height: self.texture_size[1] + dp(8)
+            Label:
+                text: "Sub feeling of " + (app.core).lower()
+                font_size: "18sp"
+                size_hint_y: None
+                height: self.texture_size[1] + dp(8)
+            Label:
+                text: "Deeper down, it might be the feeling of " + (app.deeper).lower()
+                font_size: "18sp"
+                size_hint_y: None
+                height: self.texture_size[1] + dp(8)  
+
+            # --- Inputs sent to API --- Emile            
+            TextInput:
+                id: Who
+                hint_text: "Who was involved?"
+                multiline: True
+                size_hint_y: None
+                height: dp(100)
+                background_color: 1, 1, 1, 0.95
+                foreground_color: 0.1, 0.1, 0.1, 1
+                padding: dp(30)
+            TextInput:
+                id: What
+                hint_text: "What happened?"
+                multiline: True
+                size_hint_y: None
+                height: dp(100)
+                background_color: 1, 1, 1, 0.95
+                foreground_color: 0.1, 0.1, 0.1, 1
+                padding: dp(30)
+            TextInput:
+                id: Why
+                hint_text: "Why do you feel this way?"
+                multiline: True
+                size_hint_y: None
+                height: dp(100)
+                background_color: 1, 1, 1, 0.95
+                foreground_color: 0.1, 0.1, 0.1, 1
+                padding: dp(30)
+
+            Button:
+                text: "Let's dig deeper..."
+                size_hint_y: None
+                height: dp(56)
+                background_normal: ""
+                background_color: 0.42, 0.27, 0.14, 1
+                on_release: root.manager.current = "inspo"
+
+<InspoPage>:
+    name: "inspo"
+    AnchorLayout:
+        anchor_y: "top"
+        BoxLayout:
+            orientation: "vertical"
+            padding: dp(24)
+            spacing: dp(8)
+            size_hint_y: None
+            height: self.minimum_height
+            inspirationText = "stuff here"
+            Label:
+                text: "Use the previous inspiration to help lead your tree of thought"
+                font_size: "18sp"
+                size_hint_y: None
+                height: self.texture_size[1] + dp(8)
+            # --- API inputs where text goes --- Emile
+            Label:
+                text: inspirationText
+                font_size: "18sp"
+                size_hint_y: None
+                height: self.texture_size[1] + dp(8)   
+            # --- and Image ---
+            Image:
+                source: "tree.png"
+                size_hint_y: None
+                height: dp(150)
+                
+    Button:
+        text: "Let's write about it..."
+        size_hint_y: None
+        height: dp(56)
+        background_normal: ""
+        background_color: 0.42, 0.27, 0.14, 1
+        on_release: root.manager.current = "write"
+            
+
+
+<WriteOut>:
+    name: "write"
+    AnchorLayout:
+        anchor_y: "top"
+        BoxLayout:
+            orientation: "vertical"
+            padding: dp(24)
+            spacing: dp(16)
+
+            TextInput:
+                id: notes
+                hint_text: "Let's write it out..."
+                multiline: True
+                size_hint_y: None
+                height: dp(400)
+                background_color: 1, 1, 1, 0.95
+                foreground_color: 0.1, 0.1, 0.1, 1
+                padding: dp(30)    
+
+            Button:
+                text: "Back"
+                size_hint_y: None
+                height: dp(56)
+                background_normal: ""
+                background_color: 0.42, 0.27, 0.14, 1
+                on_release: root.manager.current = "home"
+                
+
 """
 
 
