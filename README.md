@@ -10,7 +10,7 @@ npm install express
 pip install -r Backend/requirements.txt
 
 ## Run
-
-
+.\HugCards\.venv\Scripts\python.exe -m Backend.server
+node server.js
 
 python .\Frontend\Main.py
