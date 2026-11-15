@@ -347,6 +347,23 @@ class InspoPage(Screen):
     pass
 
 
+class LoadingSpinner(Widget):
+    """A green arc that turns round a ring while the backend is searching (its look is in the KV below)."""
+    angle = NumericProperty(0)
+    active = BooleanProperty(False)
+    _tick = None
+
+    def on_active(self, *_):
+        if self.active and self._tick is None:
+            self._tick = Clock.schedule_interval(self._turn, 1 / 60)
+        elif not self.active and self._tick is not None:
+            self._tick.cancel()
+            self._tick = None
+
+    def _turn(self, dt):
+        self.angle = (self.angle + 300 * dt) % 360
+
+
 class QuoteBox(BoxLayout):
     """One quote from the backend (its look is in the KV below)."""
     quote = StringProperty("")
@@ -578,6 +595,20 @@ ScreenManager:
         size_hint_y: None
         height: self.texture_size[1]
 
+<LoadingSpinner>:
+    canvas:
+        Color:
+            rgba: 0.18, 0.35, 0.25, 1
+        Line:
+            circle: (self.center_x, self.center_y, min(self.width, self.height) * 0.35)
+            width: dp(3)
+        Color:
+            rgba: 0.60, 0.85, 0.55, 1
+        Line:
+            circle: (self.center_x, self.center_y, min(self.width, self.height) * 0.35, self.angle, self.angle + 100)
+            width: dp(3)
+            cap: "round"
+
 <InspoPage>:
     name: "inspo"
     BoxLayout:
@@ -606,6 +637,13 @@ ScreenManager:
                     halign: "center"
                     size_hint_y: None
                     height: self.texture_size[1] + dp(6)
+                # --- loading animation while the backend searches --- Emile
+                LoadingSpinner:
+                    active: app.loading
+                    size_hint: None, None
+                    size: dp(72), (dp(72) if app.loading else 0)
+                    pos_hint: {"center_x": 0.5}
+                    opacity: 1 if app.loading else 0
                 # --- API output: "Searching..." or an error --- Emile
                 Label:
                     text: app.inspirationText
@@ -663,10 +701,13 @@ ScreenManager:
                     height: self.minimum_height
                     spacing: dp(10)
 
+                # only shown once the quotes have loaded (or the search has failed)
                 Button:
                     text: "Let's write about it..."
                     size_hint_y: None
-                    height: dp(56)
+                    height: dp(56) if not app.loading else 0
+                    opacity: 1 if not app.loading else 0
+                    disabled: app.loading
                     background_normal: ""
                     background_color: 0.42, 0.27, 0.14, 1
                     on_release: root.manager.current = "write"
@@ -725,11 +766,13 @@ class FeelingsApp(App):
     picture_title = StringProperty("")
     picture_caption = StringProperty("")
     has_guidance = BooleanProperty(False)
+    loading = BooleanProperty(False)     # True while the backend searches: spinner on, button hidden
 
     def dig_deeper(self, who, what, why):
         """'Let's dig deeper...': send the feelings and the three boxes to the backend."""
         self.show_guidance({"quotes": []})
-        self.inspirationText = "Searching old letters and diaries (about 30 seconds)..."
+        self.loading = True
+        self.inspirationText = "Exploring archives, please wait"
         self.root.current = "inspo"
         fetch_guidance(self.core, self.secondary, self.deeper,
                        on_success=self.show_guidance, on_error=self.set_backend_text,
@@ -737,6 +780,7 @@ class FeelingsApp(App):
 
     def show_guidance(self, reply):
         """Entry point for the backend's reply: one QuoteBox per quote, then the painting."""
+        self.loading = False
         page = self.root.get_screen("inspo")
         page.ids.quote_list.clear_widgets()
         page.ids.guidance_list.clear_widgets()
@@ -759,7 +803,10 @@ class FeelingsApp(App):
     def set_backend_text(self, text):
         """Entry point for the backend: sets the text shown on the inspiration screen."""
         # Clock makes this safe to call from another thread
-        Clock.schedule_once(lambda dt: setattr(self, "inspirationText", str(text)), 0)
+        def show(dt):
+            self.loading = False          # an error ends the search too: stop the spinner, show the button
+            self.inspirationText = str(text)
+        Clock.schedule_once(show, 0)
 
     def load_backend_json(self, path=backend_JSON):
         try:

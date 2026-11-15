@@ -188,15 +188,22 @@ THE PERSON
 
 PASSAGES
 {passages}
+Then write 3 journalling questions to help them reflect on their own situation in writing:
+open questions (not yes/no), gentle, in plain words, at most 20 words each, about what they actually said.
+At least one should build on the idea in one of your picks. No advice, no diagnosis, and do not add
+feelings or facts they did not mention.
+
 Reply with JSON only, in this format:
-{{"picks": [{{"n": 3, "quote": "..."}}]}}
+{{"picks": [{{"n": 3, "quote": "..."}}], "prompts": ["...", "...", "..."]}}
 - picks: the best first, at most {n}.
 - quote: the part of the PASSAGE that gives the guidance, at most 35 words, copied exactly word for word
-  (no changes, no "..."). Use the whole passage if it is all needed."""
+  (no changes, no "..."). Use the whole passage if it is all needed.
+- prompts: the 3 journalling questions."""
 
 
 def choose_guidance(path, answers, sentence, passages, n=2):
-    """Ask the AI which passages give the best guidance. Returns [(passage number from 1, exact quote or None)]."""
+    """Ask the AI which passages give the best guidance, and for 3 journalling questions.
+    Returns {"picks": [(passage number from 1, exact quote or None)], "prompts": [question, ...]}."""
     person = [f"  feeling: {' > '.join(p for p in path if p)}",
               f"  what's happened: {answers.get('event') or '-'}",
               f"  why they think they feel it: {answers.get('cause') or '-'}",
@@ -211,7 +218,8 @@ def choose_guidance(path, answers, sentence, passages, n=2):
         if 1 <= i <= len(passages) and passages[i - 1]["author"] not in writers:
             picks.append((i, exact_quote(m.get("quote"), passages[i - 1]["text"])))
             writers.add(passages[i - 1]["author"])
-    return picks[:n]
+    prompts = [" ".join(str(p).split()) for p in data.get("prompts", []) if isinstance(p, str)]
+    return {"picks": picks[:n], "prompts": [p for p in prompts if 0 < len(p.split()) <= 30][:3]}
 
 
 def exact_quote(quote, passage):

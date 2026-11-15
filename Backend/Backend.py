@@ -38,24 +38,58 @@ def guidance_library():
     return _guidance
 
 
-def find_guidance(path, answers, sentence, n=2):
-    """n short passages of advice from n different philosophers, as quote boxes.
-    With an API key the AI picks the n wisest and kindest for this person; without, the closest ones."""
+# Journalling questions when the AI can't write them: one for every feeling, one for the core feeling,
+# one that sends them back to the guidance. {feeling} is the deepest feeling picked on the tree.
+REFLECT_FIRST = "In your own words, what happened, and when did you first notice feeling {feeling}?"
+REFLECT_BY_CORE = {
+    "Sad": "What, or who, do you miss most right now, and what did it give you?",
+    "Mad": "What felt unfair to you, and what would putting it right look like?",
+    "Scared": "What are you most afraid will happen, and what could you do if it did?",
+    "Joyful": "What made this feeling possible, and how could you make more room for it?",
+    "Peaceful": "What helped you feel this way, and how could you come back to it on a harder day?",
+    "Powerful": "What did you do to get here, and who helped you along the way?",
+}
+REFLECT_ON_QUOTE = "Read {name}'s words again. Which part feels true for you, and which part doesn't?"
+REFLECT_LAST = "If a close friend told you all this, what would you say to them?"
+
+
+def guide(path, answers, sentence, n=2):
+    """Below the letters: {"guidance": n short pieces of advice from n different philosophers (quote boxes),
+    "reflection": 3 journalling questions}. With an API key the AI picks the n wisest and kindest passages
+    and writes questions about this person's situation; without, the closest passages and set questions."""
     g = guidance_library()
-    if g is None:
-        return []
-    feeling = path[-1].lower() if path else ""
-    shortlist = g.search(f"{sentence} How should I bear feeling {feeling}?", GUIDANCE_POOL)
-    picked = shortlist[:n]
-    if llm.available():
-        try:
-            chosen = llm.choose_guidance(path, answers, sentence, shortlist, n)
-            if chosen:
-                picked = [dict(shortlist[i - 1], quote=q) for i, q in chosen][:n]
-        except Exception:
-            pass                     # keep the plain search
-    return [{"quote": verse(guidance.NUMBERING.sub("", p.get("quote") or p["text"])),   # no 'XLI.' in front
-             "name": p["author"], "years": p["years"]} for p in picked]
+    shortlist, picked, prompts = [], [], []
+    if g is not None:
+        feeling = path[-1].lower() if path else ""
+        shortlist = g.search(f"{sentence} How should I bear feeling {feeling}?", GUIDANCE_POOL)
+        picked = shortlist[:n]
+        if llm.available():
+            try:
+                chosen = llm.choose_guidance(path, answers, sentence, shortlist, n)
+                if chosen["picks"]:
+                    picked = [dict(shortlist[i - 1], quote=q) for i, q in chosen["picks"]][:n]
+                prompts = chosen["prompts"]
+            except Exception:
+                pass                     # keep the plain search and the set questions
+    advice = [{"quote": verse(guidance.NUMBERING.sub("", p.get("quote") or p["text"])),   # no 'XLI.' in front
+               "name": p["author"], "years": p["years"]} for p in picked]
+    if len(prompts) < 3:
+        prompts = reflection_questions(path, advice)
+    return {"guidance": advice, "reflection": prompts}
+
+
+def reflection_questions(path, advice):
+    """The 3 set journalling questions (used when the AI can't write them)."""
+    feeling = sentiment(path)
+    questions = [REFLECT_FIRST.format(feeling=(feeling["deeper"] or (path[-1] if path else "this way")).lower())]
+    questions.append(REFLECT_BY_CORE.get(feeling["emotion"], REFLECT_LAST))
+    questions.append(REFLECT_ON_QUOTE.format(name=advice[0]["name"]) if advice else REFLECT_LAST)
+    return questions
+
+
+def find_guidance(path, answers, sentence, n=2):
+    """Only the guidance quote boxes (see guide)."""
+    return guide(path, answers, sentence, n)["guidance"]
 
 
 def emotions_for(path):

@@ -46,10 +46,12 @@ def answer(ask):
     # one entry per quote box {"quote", "name", "years"}: 3, the first a well-known writer, then two lesser known
     quotes = [Backend.simple(r) for r in result["results"]]
     feeling = Backend.sentiment(path)
-    # two short pieces of advice from the philosophy books {"quote", "name", "years"}
-    guidance = Backend.find_guidance(path, answers, rewritten["sentence"])
+    # two short pieces of advice from the philosophy books {"quote", "name", "years"},
+    # then 3 journalling questions to help them reflect in writing ["...", "...", "..."]
+    guided = Backend.guide(path, answers, rewritten["sentence"])
     return 200, {"sentiment": feeling, "picture": Backend.picture(feeling),
-                 "quotes": quotes, "guidance": guidance, "no_match": result["no_match"],
+                 "quotes": quotes, "guidance": guided["guidance"], "reflection": guided["reflection"],
+                 "no_match": result["no_match"],
                  "message": Backend.as_text(result), "poem": rewritten["poem"],
                  "results": result["results"]}
 

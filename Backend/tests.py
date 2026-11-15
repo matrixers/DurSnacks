@@ -101,6 +101,14 @@ def main():
                   advice[0]["name"] == g[2]["author"] and advice[0]["quote"].split() == g[2]["text"].split()[:6])
             check("a guidance quote not in the passage falls back to the whole passage",
                   advice[1]["quote"].split() == g[0]["text"].split())
+            check("no AI questions: 3 set journalling questions, one naming the first philosopher",
+                  len(Backend.guide(path, answers, "x")["reflection"]) == 3
+                  and advice[0]["name"] in Backend.guide(path, answers, "My closest friend has gone quiet.")
+                  ["reflection"][2])
+            asked = ["What did this friendship give you?", "What would you want to say to them?",
+                     "What do you still have from it?"]
+            llm.call = lambda prompt, model, **kw: json.dumps({"picks": [{"n": 1, "quote": ""}], "prompts": asked})
+            check("the AI's journalling questions are used", Backend.guide(path, answers, "x")["reflection"] == asked)
     finally:
         llm.call, llm.available = real_call, real_available
 
