@@ -10,11 +10,15 @@ app.get('/', (req, res) => {
     res.json({ status: 'ok' });
 });
 
+// The Python backend (python -m Backend.server) that finds the passages
+const PYTHON_BACKEND = process.env.PYTHON_BACKEND || 'http://127.0.0.1:8000';
+
 // The endpoint the Kivy app calls
-// Request:  { "core": "Mad", "secondary": "Hurt", "deeper": "Distant" }
-// Response: { "message": "text to show on the output screen" }
-app.post('/guidance', (req, res) => {
-    const { core, secondary, deeper } = req.body || {};
+// Request:  { "core": "Sad", "secondary": "Lonely", "deeper": "Isolated",
+//             "what": "...", "why": "...", "who": "..." }       (what / why / who optional)
+// Response: { "message": "text to show", "poem": "...", "results": [...] }
+app.post('/guidance', async (req, res) => {
+    const { core, secondary, deeper, what = '', why = '', who = '' } = req.body || {};
 
     if (!core || !secondary || !deeper) {
         return res
@@ -22,14 +26,19 @@ app.post('/guidance', (req, res) => {
             .json({ error: 'core, secondary and deeper are required' });
     }
 
-    // TODO: replace with the real logic (database lookup, AI call, etc.)
-    // Whatever happens, reply with JSON containing a "message" string.
-    const message =
-        `You're feeling ${secondary.toLowerCase()}, which sits under ` +
-        `feeling ${core.toLowerCase()}. Deeper down it may be ` +
-        `${deeper.toLowerCase()}.`;
-
-    res.json({ message });
+    // Pass the request on to the Python backend and send its answer back to the app
+    try {
+        const reply = await fetch(`${PYTHON_BACKEND}/guidance`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ core, secondary, deeper, what, why, who }),
+            signal: AbortSignal.timeout(110000), // a search takes about 30 seconds
+        });
+        res.status(reply.status).json(await reply.json());
+    } catch (err) {
+        console.error('Python backend did not answer:', err.message);
+        res.status(502).json({ error: 'The Python backend is not running (python -m Backend.server)' });
+    }
 });
 
 // Malformed JSON and other errors come back as JSON, not an HTML page

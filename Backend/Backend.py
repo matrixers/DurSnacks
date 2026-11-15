@@ -8,7 +8,7 @@ What the app calls:
     find_in_background(path, answers, on_done) the same, without freezing the app window
     as_text(result)                            the results as text, ready to put on screen
 
-`path` is what was picked on the tree, e.g. ["Sad", "Lonely", "Isolated"] (labels in tree.json).
+`path` is what was picked on the tree, e.g. ["Sad", "Lonely", "Isolated"] (labels in Backend/tree.json).
 `answers` is {"event": ..., "cause": ..., "extra": ...}, the person's answers to the questions.
 
 How a match is found:
@@ -25,9 +25,9 @@ import threading
 import numpy as np
 
 from Backend import fame, llm
-from Backend.library import ROOT, Library
+from Backend.library import Library
 
-TREE = json.load(open(os.path.join(ROOT, "tree.json"), encoding="utf-8"))["cores"]
+TREE = json.load(open(os.path.join(os.path.dirname(__file__), "tree.json"), encoding="utf-8"))["cores"]
 CONTEXT_SENTENCES = 4      # sentences shown (and read by the judge) either side of a passage
 _library = None
 _loading = threading.Lock()
