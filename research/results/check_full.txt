@@ -1,0 +1,32 @@
+library
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  11%|#         | 21/199 [00:00<00:00, 209.12it/s]Loading weights:  33%|###3      | 66/199 [00:00<00:00, 301.79it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 809.42it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  PASS  every passage is verbatim at its stored offsets  44640 passages, 0 mismatches
+  FAIL  no duplicate passages  2 duplicates
+  PASS  sources with passages  292 books used, 2 skipped (no new passages)
+  PASS  passages are 20+ words  0 shorter
+safety (explicit phrases only)
+  PASS  flags: 'I want to kill myself'
+  PASS  flags: 'everyone would be better off without me'
+  PASS  flags: "I don't want to be here anymore"
+  PASS  does not flag: 'I failed my exams and feel stupid'
+  PASS  does not flag: 'my dad died in March and I miss him every day'
+  PASS  does not flag: 'nobody has replied to me in weeks'
+  PASS  find() returns support and no passages for a crisis phrase
+API contract
+  PASS  questions() gives event/cause/meaning
+  PASS  refine() gives a card and a reflect-back
+  PASS  find() gives 3 results, one per author
+  PASS  results are JSON-serialisable
+  PASS  shortlist() gives 20 verified candidates
+judge wiring (fake judge, no API)
+  PASS  judge returns None when call_llm is not implemented
+  PASS  find(use_judge=True) falls back to plain search
+  PASS  a valid judge reply is parsed
+  PASS  'none' is accepted
+  PASS  a 'best' judged 'no' is rejected
+  PASS  judge prompt contains every candidate verbatim
+separation from the frontend
+  PASS  no Backend file imports kivy or Frontend
+
+1 FAILED: no duplicate passages

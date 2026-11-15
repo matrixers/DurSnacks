@@ -1,0 +1,30 @@
+library
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  10%|9         | 19/199 [00:00<00:00, 186.62it/s]Loading weights:  19%|#9        | 38/199 [00:00<00:00, 184.04it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 672.47it/s]
+  PASS  every passage is verbatim at its stored offsets  115380 passages, 0 mismatches
+  PASS  no duplicate passages  0 duplicates
+  PASS  sources with passages  639 books used, 10 skipped (no new passages)
+  PASS  passages are 15+ words (short units)  0 shorter
+API contract
+  PASS  questions() gives event/cause/extra
+  PASS  wheel.json loads (labels and tags)
+  PASS  the emotion scores use exactly the wheel's tags
+  PASS  refine() gives a card and a reflect-back
+  PASS  find() gives 3 results, one per author
+  PASS  results are JSON-serialisable
+  PASS  shortlist() gives 20 verified candidates
+LLM rewrite wiring (fake replies, no API)
+  PASS  refine() puts the rewrite in card.statement
+  PASS  the search compares the rewrite
+  PASS  a failed rewrite falls back to the person's words
+  PASS  judge prompt has the person's own answers and the rewrite
+judge wiring (fake judge, no API)
+  PASS  judge returns None when no LLM is available
+  PASS  find(use_judge=True) falls back to plain search
+  PASS  a valid judge reply is parsed
+  PASS  'none' is accepted
+  PASS  a 'best' judged 'no' is rejected
+  PASS  judge prompt contains every candidate verbatim
+separation from the frontend
+  PASS  no Backend file imports kivy or Frontend
+
+ALL PASS

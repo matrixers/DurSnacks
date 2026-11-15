@@ -457,7 +457,7 @@ ScreenManager:
                 height: dp(56)
                 background_normal: ""
                 background_color: 0.42, 0.27, 0.14, 1
-                on_release: root.manager.current = "inspo"
+                on_release: app.dig_deeper(Who.text, What.text, Why.text)
 
 <InspoPage>:
     name: "inspo"
@@ -478,6 +478,7 @@ ScreenManager:
             Label:
                 text: app.inspirationText
                 font_size: "18sp"
+                text_size: self.width, None
                 size_hint_y: None
                 height: self.texture_size[1] + dp(8)   
             # --- and Image ---
@@ -540,18 +541,22 @@ class FeelingsApp(App):
         if not path:
             return
         self.core, self.secondary, self.deeper = path
-        self.backend_text = "Thinking..."
         self.root.current = "output"
-        fetch_guidance(self.core, self.secondary, self.deeper,
-                       on_success=lambda t: setattr(self, "backend_text", t),
-                       on_error=lambda m: setattr(self, "backend_text", m))
 
     inspirationText = StringProperty("")
 
+    def dig_deeper(self, who, what, why):
+        """'Let's dig deeper...': send the feelings and the three boxes to the backend."""
+        self.inspirationText = "Searching old letters and diaries (about 30 seconds)..."
+        self.root.current = "inspo"
+        fetch_guidance(self.core, self.secondary, self.deeper,
+                       on_success=self.set_backend_text, on_error=self.set_backend_text,
+                       what=what, why=why, who=who)
+
     def set_backend_text(self, text):
-        """Entry point for the backend: sets the text shown on the output screen."""
+        """Entry point for the backend: sets the text shown on the inspiration screen."""
         # Clock makes this safe to call from another thread
-        Clock.schedule_once(lambda dt: setattr(self, "backend_text", str(text)), 0)
+        Clock.schedule_once(lambda dt: setattr(self, "inspirationText", str(text)), 0)
 
     def load_backend_json(self, path=backend_JSON):
         try:
