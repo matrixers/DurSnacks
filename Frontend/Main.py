@@ -15,8 +15,9 @@ from kivy.app import App
 from kivy.core.window import Window
 from kivy.graphics import Color, Ellipse, Line, Mesh
 from kivy.lang import Builder
-from kivy.properties import (BooleanProperty, ListProperty, NumericProperty,
-                             StringProperty)
+from kivy.properties import (BooleanProperty, ColorProperty, ListProperty,
+                             NumericProperty, StringProperty)
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 from kivy.uix.widget import Widget
@@ -29,12 +30,15 @@ Window.clearcolor = get_color_from_hex("#12271D")  # dark forest green
 TRUNK = get_color_from_hex("#6B4423")
 TRUNK_DARK = get_color_from_hex("#3E2713")
 GROUND = get_color_from_hex("#2F5A3F")
+BARK = get_color_from_hex("#3A2A1C")   # guidance boxes
+GOLD = get_color_from_hex("#D9B45B")
 
 # Tree proportions, as fractions of the canopy radius R
 TRUNK_LEN = 0.40    # visible trunk between the canopy and the ground
 ROOT_DEPTH = 0.25   # how far the roots reach below the ground
 
 # API Variables --- Emile
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # the paintings are in data/
 backend_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              "backend_output.json")
 #inspirationImage
@@ -343,6 +347,14 @@ class InspoPage(Screen):
     pass
 
 
+class QuoteBox(BoxLayout):
+    """One quote from the backend (its look is in the KV below)."""
+    quote = StringProperty("")
+    author = StringProperty("")
+    accent = ColorProperty((1, 1, 1, 1))          # stripe and name: the colour of the picked feeling
+    fill = ColorProperty((0.11, 0.24, 0.17, 1))   # box: a lighter green than the background
+
+
 KV = """
 ScreenManager:
     HomeScreen:
@@ -459,42 +471,129 @@ ScreenManager:
                 background_color: 0.42, 0.27, 0.14, 1
                 on_release: app.dig_deeper(Who.text, What.text, Why.text)
 
+# One quote from the backend: a rounded box with a stripe in the feeling's colour,
+# the words as poem lines, and the writer underneath, set further in and to the right.
+<QuoteBox>:
+    orientation: "vertical"
+    size_hint_y: None
+    height: self.minimum_height
+    padding: dp(20), dp(12), dp(14), dp(10)
+    spacing: dp(6)
+    canvas.before:
+        Color:
+            rgba: self.fill
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(12)]
+        Color:
+            rgba: self.accent
+        RoundedRectangle:
+            pos: self.x, self.y + dp(8)
+            size: dp(4), self.height - dp(16)
+            radius: [dp(2)]
+    Label:
+        text: "“" + root.quote + "”"
+        italic: True
+        font_size: "15sp"
+        line_height: 1.1
+        color: 0.95, 0.96, 0.92, 1
+        text_size: self.width, None
+        halign: "left"
+        size_hint_y: None
+        height: self.texture_size[1]
+    Label:
+        text: root.author
+        font_size: "12sp"
+        bold: True
+        color: root.accent
+        padding: dp(40), 0, 0, 0
+        text_size: self.width, None
+        halign: "right"
+        size_hint_y: None
+        height: self.texture_size[1]
+
 <InspoPage>:
     name: "inspo"
-    AnchorLayout:
-        anchor_y: "top"
-        BoxLayout:
-            orientation: "vertical"
-            padding: dp(24)
-            spacing: dp(8)
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20), dp(20), dp(20), dp(16)
+        spacing: dp(12)
+        ScrollView:
+            do_scroll_x: False
+            bar_width: dp(4)
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(14)
+                Label:
+                    text: "Others have felt this too"
+                    font_size: "24sp"
+                    bold: True
+                    size_hint_y: None
+                    height: self.texture_size[1] + dp(4)
+                Label:
+                    text: "Use their words to help lead your tree of thought"
+                    font_size: "15sp"
+                    color: 0.81, 0.91, 0.84, 1
+                    text_size: self.width, None
+                    halign: "center"
+                    size_hint_y: None
+                    height: self.texture_size[1] + dp(6)
+                # --- API output: "Searching..." or an error --- Emile
+                Label:
+                    text: app.inspirationText
+                    font_size: "16sp"
+                    color: 0.81, 0.91, 0.84, 1
+                    text_size: self.width, None
+                    halign: "center"
+                    size_hint_y: None
+                    height: self.texture_size[1] + dp(8) if self.text else 0
+                    opacity: 1 if self.text else 0
+                # --- API output: the 3 quote boxes go here (filled in show_guidance) --- Emile
+                BoxLayout:
+                    id: quote_list
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: self.minimum_height
+                    spacing: dp(10)
+                # --- the painting for the feeling (from the backend) ---
+                Image:
+                    source: app.picture_path
+                    fit_mode: "contain"
+                    size_hint_y: None
+                    height: dp(360) if app.picture_path else 0
+                    opacity: 1 if app.picture_path else 0
+                Label:
+                    text: app.picture_caption
+                    font_size: "12sp"
+                    color: 0.81, 0.91, 0.84, 0.8
+                    text_size: self.width, None
+                    halign: "center"
+                    size_hint_y: None
+                    height: self.texture_size[1] + dp(8) if self.text else 0
+                # --- API output: 2 pieces of advice from the philosophy books --- Emile
+                Label:
+                    text: "Words to guide you" if app.has_guidance else ""
+                    font_size: "20sp"
+                    bold: True
+                    size_hint_y: None
+                    height: self.texture_size[1] + dp(4) if self.text else 0
+                BoxLayout:
+                    id: guidance_list
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: self.minimum_height
+                    spacing: dp(10)
+
+        Button:
+            text: "Let's write about it..."
             size_hint_y: None
-            height: self.minimum_height
-            Label:
-                text: "Use the previous inspiration to help lead your tree of thought"
-                font_size: "18sp"
-                size_hint_y: None
-                height: self.texture_size[1] + dp(8)
-            # --- API inputs where text goes --- Emile
-            Label:
-                text: app.inspirationText
-                font_size: "18sp"
-                text_size: self.width, None
-                size_hint_y: None
-                height: self.texture_size[1] + dp(8)   
-            # --- and Image ---
-            Image:
-                source: "download(1).png"
-                size_hint_y: None
-                height: dp(150)
-                
-    Button:
-        text: "Let's write about it..."
-        size_hint_y: None
-        height: dp(56)
-        background_normal: ""
-        background_color: 0.42, 0.27, 0.14, 1
-        on_release: root.manager.current = "write"
-            
+            height: dp(56)
+            background_normal: ""
+            background_color: 0.42, 0.27, 0.14, 1
+            on_release: root.manager.current = "write"
 
 
 <WriteOut>:
@@ -544,14 +643,39 @@ class FeelingsApp(App):
         self.root.current = "output"
 
     inspirationText = StringProperty("")
+    picture_path = StringProperty("")
+    picture_caption = StringProperty("")
+    has_guidance = BooleanProperty(False)
 
     def dig_deeper(self, who, what, why):
         """'Let's dig deeper...': send the feelings and the three boxes to the backend."""
+        self.show_guidance({"quotes": []})
         self.inspirationText = "Searching old letters and diaries (about 30 seconds)..."
         self.root.current = "inspo"
         fetch_guidance(self.core, self.secondary, self.deeper,
-                       on_success=self.set_backend_text, on_error=self.set_backend_text,
+                       on_success=self.show_guidance, on_error=self.set_backend_text,
                        what=what, why=why, who=who)
+
+    def show_guidance(self, reply):
+        """Entry point for the backend's reply: one QuoteBox per quote, then the painting."""
+        page = self.root.get_screen("inspo")
+        page.ids.quote_list.clear_widgets()
+        page.ids.guidance_list.clear_widgets()
+        accent = get_color_from_hex(FEELINGS.get(self.core, ("#CFE8D6",))[0])
+        for q in reply.get("quotes", []):
+            page.ids.quote_list.add_widget(QuoteBox(quote=q["quote"], accent=accent,
+                                                    author=f"— {q['name']}  ({q['years']})"))
+        # advice from the philosophy books: warm brown boxes with a gold stripe, set apart from the letters
+        for q in reply.get("guidance", []):
+            page.ids.guidance_list.add_widget(QuoteBox(quote=q["quote"], accent=GOLD, fill=BARK,
+                                                       author=f"— {q['name']}  ({q['years']})"))
+        self.has_guidance = bool(reply.get("guidance"))
+        self.inspirationText = "" if reply.get("quotes") else (reply.get("message") or "")
+        picture = reply.get("picture")
+        path = os.path.join(PROJECT_DIR, picture["imageURL"]) if picture else ""
+        self.picture_path = path if os.path.exists(path) else ""
+        self.picture_caption = (f"{picture['title']}, {picture['artist']} ({picture['year']})"
+                                if self.picture_path else "")
 
     def set_backend_text(self, text):
         """Entry point for the backend: sets the text shown on the inspiration screen."""

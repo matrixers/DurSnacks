@@ -177,6 +177,43 @@ def judge(path, answers, sentence, passages):
     return matches, best
 
 
+# --- 3. guidance: pick the advice from the philosophy books ---------------------------------------
+GUIDANCE_PROMPT = """A person is struggling. Below are short passages from philosophy and wisdom books.
+Pick the {n} that would give this person the most helpful, kind and wise guidance for what they are going
+through right now: advice they could actually use, not just a passage that shares a word with their problem.
+Leave out anything harsh, preachy, cold or off-topic. Each pick must be from a different writer.
+
+THE PERSON
+{person}
+
+PASSAGES
+{passages}
+Reply with JSON only, in this format:
+{{"picks": [{{"n": 3, "quote": "..."}}]}}
+- picks: the best first, at most {n}.
+- quote: the part of the PASSAGE that gives the guidance, at most 35 words, copied exactly word for word
+  (no changes, no "..."). Use the whole passage if it is all needed."""
+
+
+def choose_guidance(path, answers, sentence, passages, n=2):
+    """Ask the AI which passages give the best guidance. Returns [(passage number from 1, exact quote or None)]."""
+    person = [f"  feeling: {' > '.join(p for p in path if p)}",
+              f"  what's happened: {answers.get('event') or '-'}",
+              f"  why they think they feel it: {answers.get('cause') or '-'}",
+              f"  in general terms: {sentence}"]
+    listing = "".join(f"[{i}] {p['author']}: {p['text']}\n" for i, p in enumerate(passages, 1))
+    reply = call(GUIDANCE_PROMPT.format(n=n, person="\n".join(person), passages=listing), JUDGE_MODEL,
+                 max_tokens=4000, effort=JUDGE_EFFORT)
+    data = json.loads(reply[reply.find("{"): reply.rfind("}") + 1])
+    picks, writers = [], set()
+    for m in data.get("picks", []):
+        i = int(m.get("n", 0))
+        if 1 <= i <= len(passages) and passages[i - 1]["author"] not in writers:
+            picks.append((i, exact_quote(m.get("quote"), passages[i - 1]["text"])))
+            writers.add(passages[i - 1]["author"])
+    return picks[:n]
+
+
 def exact_quote(quote, passage):
     """The judge's short quote, but only if it really is word for word in the passage."""
     quote = " ".join(str(quote or "").split()).strip("\"“”'")

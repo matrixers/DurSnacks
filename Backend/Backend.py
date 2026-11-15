@@ -1,38 +1,20 @@
-"""
-Deep Rooted Guidance backend: finds passages from real old letters and diaries where
-the writer went through the same thing as you.
 
-What the app calls:
-    questions(path)                            the questions to ask after the tree
-    find(path, answers)                        one well-known writer + two lesser-known ones
-    sentiment(path), picture(sentiment)        the picked feeling (keyed like the picture JSON) and its painting
-    find_in_background(path, answers, on_done) the same, without freezing the app window
-    as_text(result)                            the results as text, ready to put on screen
-
-`path` is what was picked on the tree, e.g. ["Sad", "Lonely", "Isolated"] (labels in Backend/tree.json).
-`answers` is {"event": ..., "cause": ..., "extra": ...}, the person's answers to the questions.
-
-How a match is found:
-    1. rewrite   the answers become one short, general sentence (and a 3-line poem to show back)
-    2. search    every passage is scored against that sentence; the best 10 from well-known writers
-                 and the best 10 from lesser-known ones are kept, one per writer
-    3. judge     Claude reads those 20 with the sentences around them and keeps only the real matches
-Without an API key, steps 1 and 3 are skipped and the person's own words are searched.
-"""
 import json
 import os
 import threading
 
 import numpy as np
 
-from Backend import fame, llm
+from Backend import fame, guidance, llm
 from Backend.library import ROOT, Library
 
 TREE = json.load(open(os.path.join(os.path.dirname(__file__), "tree.json"), encoding="utf-8"))["cores"]
 CONTEXT_SENTENCES = 4      # sentences shown (and read by the judge) either side of a passage
 ALWAYS_THREE = True        # True = always fill the 3 quote boxes: if the judge keeps fewer, the closest
                            # other search results fill the rest. False = show only what the judge kept.
+GUIDANCE_POOL = 8          # wisdom passages the AI chooses the 2 guidance quotes from
 _library = None
+_guidance = None
 _loading = threading.Lock()
 
 
@@ -44,6 +26,36 @@ def library():
         if _library is None:
             _library = Library()
     return _library
+
+
+def guidance_library():
+    """The philosophy and wisdom books (Backend/guidance.py), or None if data/guidance.db isn't built."""
+    global _guidance
+    lib = library()
+    with _loading:
+        if _guidance is None and os.path.exists(guidance.DB_PATH):
+            _guidance = guidance.Guidance(lib.model)
+    return _guidance
+
+
+def find_guidance(path, answers, sentence, n=2):
+    """n short passages of advice from n different philosophers, as quote boxes.
+    With an API key the AI picks the n wisest and kindest for this person; without, the closest ones."""
+    g = guidance_library()
+    if g is None:
+        return []
+    feeling = path[-1].lower() if path else ""
+    shortlist = g.search(f"{sentence} How should I bear feeling {feeling}?", GUIDANCE_POOL)
+    picked = shortlist[:n]
+    if llm.available():
+        try:
+            chosen = llm.choose_guidance(path, answers, sentence, shortlist, n)
+            if chosen:
+                picked = [dict(shortlist[i - 1], quote=q) for i, q in chosen][:n]
+        except Exception:
+            pass                     # keep the plain search
+    return [{"quote": verse(p.get("quote") or p["text"]), "name": p["author"], "years": p["years"]}
+            for p in picked]
 
 
 def emotions_for(path):
@@ -203,13 +215,36 @@ def display_name(author):
     return name
 
 
+def verse(text, width=7):
+    """The same words laid out like a poem: a new line after a comma or full stop, or after about
+    `width` words. Only line breaks are added; the words stay exactly as written."""
+    def pause(word):
+        return word[-1] in ",;:.!?" or word.endswith("--")
+
+    words = text.split()
+    lines, line = [], []
+    for i, word in enumerate(words):
+        line.append(word)
+        ahead = words[i + 1:]
+        left = sum(any(c.isalnum() for c in w) for w in ahead)      # real words still to come
+        if left and pause(word) and len(line) >= 3:
+            lines.append(" ".join(line))
+            line = []
+        elif left >= 3 and len(line) >= width and not any(pause(w) for w in ahead[:2]):
+            lines.append(" ".join(line))
+            line = []
+    if line:
+        lines.append(" ".join(line))
+    return "\n".join(lines)
+
+
 def simple(r):
-    """One quote box: the words, who wrote them and when they lived."""
-    return {"quote": r["quote"] or r["text"], "name": display_name(r["author"]), "years": r["when"]}
+    """One quote box: the words (as poem lines), who wrote them and when they lived."""
+    return {"quote": verse(r["quote"] or r["text"]), "name": display_name(r["author"]), "years": r["when"]}
 
 
 def as_text(result):
     if not result["results"]:
         return "Nobody in the library has written about quite this yet. Try saying a little more about what happened."
     boxes = [simple(r) for r in result["results"]]
-    return "\n\n".join(f"“{b['quote']}”\n    — {b['name']} ({b['years']})" for b in boxes)
+    return "\n\n".join(f"“{b['quote']}”\n            — {b['name']} ({b['years']})" for b in boxes)

@@ -12,7 +12,10 @@ TIMEOUT = 120     # seconds (a search takes about 30)
 def fetch_guidance(core, secondary, deeper, on_success, on_error, what="", why="", who=""):
     """Send the three feelings and the What / Why / Who boxes to the backend.
 
-    on_success(text) is called with the backend's message string.
+    on_success(reply) is called with the backend's whole reply (a dict), mainly
+        reply["quotes"]: [{"quote", "name", "years"}, ...]  (3, one per quote box)
+        reply["picture"]: {"imageURL", "title", "artist", "year", "link"} or None
+        (example: Backend/example_output.json)
     on_error(text) is called with a short, user-friendly error message.
     Both callbacks run on Kivy's main thread, so they can update the UI.
     """
@@ -20,14 +23,15 @@ def fetch_guidance(core, secondary, deeper, on_success, on_error, what="", why="
                "what": what, "why": why, "who": who}
 
     if USE_MOCK:
-        text = f"(placeholder) {secondary} sits under feeling {core.lower()}."
-        Clock.schedule_once(lambda dt: on_success(text), 0.5)
+        reply = {"quotes": [{"quote": f"(placeholder)\n{secondary} sits under\nfeeling {core.lower()}.",
+                             "name": "Nobody yet", "years": "2026"}], "picture": None}
+        Clock.schedule_once(lambda dt: on_success(reply), 0.5)
         return
 
     def success(req, result):
-        try:
-            on_success(str(result["message"]))
-        except (KeyError, TypeError):
+        if isinstance(result, dict) and isinstance(result.get("quotes"), list):
+            on_success(result)
+        else:
             on_error("Unexpected reply from the server")
 
     def failure(req, result):  # server answered with an HTTP error code

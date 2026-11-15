@@ -85,6 +85,22 @@ def main():
         check("find() uses the judge's quote", result["judged"] and any(x["quote"] for x in result["results"]))
         llm.call = lambda prompt, model, **kw: '{"matches": [], "best": "none"}'
         check("the judge can say nothing matches", Backend.find(path, answers)["no_match"])
+
+        if Backend.guidance_library() is not None:
+            def fake_guide(prompt, model, **kw):      # picks [3] (first 6 words) and [1] (a made-up quote)
+                third = re.search(r"\n\[3\] [^:]*: (.*)", prompt).group(1)
+                return json.dumps({"picks": [{"n": 3, "quote": " ".join(third.split()[:6])},
+                                             {"n": 1, "quote": "not in the passage"}]})
+            llm.call = fake_guide
+            advice = Backend.find_guidance(path, answers, "My closest friend has gone quiet.")
+            check("2 guidance quotes from 2 different writers",
+                  len(advice) == 2 and advice[0]["name"] != advice[1]["name"])
+            g = Backend.guidance_library().search("My closest friend has gone quiet. How should I bear "
+                                                  "feeling isolated?", Backend.GUIDANCE_POOL)
+            check("the AI's guidance pick and exact quote are used",
+                  advice[0]["name"] == g[2]["author"] and advice[0]["quote"].split() == g[2]["text"].split()[:6])
+            check("a guidance quote not in the passage falls back to the whole passage",
+                  advice[1]["quote"].split() == g[0]["text"].split())
     finally:
         llm.call, llm.available = real_call, real_available
 
