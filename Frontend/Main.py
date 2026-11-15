@@ -362,44 +362,109 @@ ScreenManager:
     WriteOut:
     InspoPage:
 
+
+<Owl@Widget>:
+    size_hint: None, None
+    size: dp(64), dp(64)
+    canvas:
+        # body
+        Color:
+            rgba: 0.55, 0.37, 0.24, 1
+        Ellipse:
+            pos: self.x + self.width * 0.12, self.y + self.height * 0.02
+            size: self.width * 0.76, self.height * 0.84
+        # ear tufts
+        Triangle:
+            points: [self.x + self.width * 0.15, self.y + self.height * 0.70, self.x + self.width * 0.20, self.y + self.height * 0.98, self.x + self.width * 0.42, self.y + self.height * 0.80]
+        Triangle:
+            points: [self.x + self.width * 0.85, self.y + self.height * 0.70, self.x + self.width * 0.80, self.y + self.height * 0.98, self.x + self.width * 0.58, self.y + self.height * 0.80]
+        # belly
+        Color:
+            rgba: 0.85, 0.72, 0.55, 1
+        Ellipse:
+            pos: self.x + self.width * 0.27, self.y + self.height * 0.06
+            size: self.width * 0.46, self.height * 0.46
+        # eyes
+        Color:
+            rgba: 1, 1, 1, 1
+        Ellipse:
+            pos: self.x + self.width * 0.18, self.y + self.height * 0.50
+            size: self.width * 0.30, self.height * 0.30
+        Ellipse:
+            pos: self.x + self.width * 0.52, self.y + self.height * 0.50
+            size: self.width * 0.30, self.height * 0.30
+        # pupils
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1
+        Ellipse:
+            pos: self.x + self.width * 0.27, self.y + self.height * 0.58
+            size: self.width * 0.13, self.height * 0.13
+        Ellipse:
+            pos: self.x + self.width * 0.60, self.y + self.height * 0.58
+            size: self.width * 0.13, self.height * 0.13
+        # beak
+        Color:
+            rgba: 0.95, 0.65, 0.15, 1
+        Triangle:
+            points: [self.x + self.width * 0.44, self.y + self.height * 0.50, self.x + self.width * 0.56, self.y + self.height * 0.50, self.x + self.width * 0.50, self.y + self.height * 0.36]
+
 <HomeScreen>:
     name: "home"
     BoxLayout:
         orientation: "vertical"
         padding: dp(24)
         spacing: dp(8)
+
         Label:
             text: "Deep Rooted Guidance"
-            font_size: "32sp"
+            font_size: "55sp"
+            font_name: "Assets/ChanceryLaneBold.ttf"
             bold: True
             size_hint_y: None
-            height: dp(90)
+            height: dp(80)
             text_size: self.size
             halign: "center"
             valign: "middle"
 
         Label:
-            text: "Let the past unearth your future, how are you feeling?"
+            text: "A new world isn't always tomorrow. Explore your thoughts with yesterday's wisdom"
             color: 0.81, 0.91, 0.84, 1
-            font_size: "16sp"
+            font_size: "20sp"
+            font_name: "Assets/Butler-Free-Med.otf"
             size_hint_y: None
-            height: dp(56)
+            height: dp(60)
+            padding: dp(12), dp(8)
             text_size: self.size
             halign: "center"
             valign: "middle"
+            canvas.before:
+                Color:
+                    rgba: 0.18, 0.35, 0.25, 0.9
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [dp(14)]
+                Color:
+                    rgba: 0.55, 0.75, 0.6, 1
+                Line:
+                    rounded_rectangle: (self.x, self.y, self.width, self.height, dp(14))
+                    width: 1.2
 
         EmotionWheel:
             id: wheel
             on_result_path: app.show_result(self.result_path)
 
+        Owl:
+            pos_hint: {"right": 0.98, "y": 0.03}
+
         Label:
             text: wheel.prompt
             font_size: "14sp"
             size_hint_y: None
-            height: dp(40)
+            height: dp(30)
             text_size: self.size
             halign: "center"
-            valign: "middle"
+            valign: "middle" 
 
 <OutputScreen>:
     name: "output"
