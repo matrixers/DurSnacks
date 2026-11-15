@@ -1,269 +1,231 @@
 [
-    [],
-    [
-        {
-            "name":"Hurt",
-            "text":"",
-            "imageURL":"data/01_Mad_Hurt-Distant.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Hostile",
-            "text":"",
-            "imageURL":"data/02_Mad_Hostile-Sarcastic.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Angry",
-            "text":"",
-            "imageURL":"data/03_Mad_Angry-Jealous.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Selfish",
-            "text":"",
-            "imageURL":"data/04_Mad_Selfish-Jealous.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Hateful",
-            "text":"",
-            "imageURL":"data/05_Mad_Hateful-Irritated.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Critical",
-            "text":"",
-            "imageURL":"data/06_Mad_Critical-Skeptical.png",
-            "emotion":"Mad"
-        }
-    ],
-    [
-        {
-            "name":"Hurt",
-            "text":"",
-            "imageURL":"data/01_Mad_Hurt-Distant.png",
-            "emotion":"Scared"
-        },
-        {
-            "name":"Hostile",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Angry",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Selfish",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Hateful",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Critical",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Scared"
-        }
-    ],
-[
-        {
-            "name":"Hurt",
-            "text":"",
-            "imageURL":"data/01_Mad_Hurt-Distant.png",
-            "emotion":"Joyful"
-        },
-        {
-            "name":"Hostile",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Angry",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Selfish",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Hateful",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Critical",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        }
-    ],
-[
-        {
-            "name":"Hurt",
-            "text":"",
-            "imageURL":"data/01_Mad_Hurt-Distant.png",
-            "emotion":"Sad"
-        },
-        {
-            "name":"Hostile",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Angry",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Selfish",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Hateful",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Critical",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        }
-    ],
-[
-        {
-            "name":"Hurt",
-            "text":"",
-            "imageURL":"data/01_Mad_Hurt-Distant.png",
-            "emotion":"Peaceful"
-        },
-        {
-            "name":"Hostile",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Angry",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Selfish",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Hateful",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Critical",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        }
-    ],
-[
-        {
-            "name":"Hurt",
-            "text":"",
-            "imageURL":"data/01_Mad_Hurt-Distant.png",
-            "emotion":"Powerful"
-        },
-        {
-            "name":"Hostile",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Angry",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Selfish",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Hateful",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Critical",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        }
-    ],
-[
-        {
-            "name":"Hurt",
-            "text":"",
-            "imageURL":"data/01_Mad_Hurt-Distant.png",
-            "emotion":"Successful"
-        },
-        {
-            "name":"Hostile",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Angry",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Selfish",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Hateful",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        },
-        {
-            "name":"Critical",
-            "text":"",
-            "imageURL":"data/portal2.png",
-            "emotion":"Mad"
-        }
-    ]
+  [],
+  [
+    {
+      "name": "Hurt",
+      "text": "",
+      "imageURL": "data/01_Mad_Hurt-Distant.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Hostile",
+      "text": "",
+      "imageURL": "data/02_Mad_Hostile-Sarcastic.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Angry",
+      "text": "",
+      "imageURL": "data/03_Mad_Angry-Jealous.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Selfish",
+      "text": "",
+      "imageURL": "data/04_Mad_Selfish-Jealous.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Hateful",
+      "text": "",
+      "imageURL": "data/05_Mad_Hateful-Irritated.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Critical",
+      "text": "",
+      "imageURL": "data/06_Mad_Critical-Skeptical.png",
+      "emotion": "Mad"
+    }
+  ],
+  [
+    {
+      "name": "Confused",
+      "text": "",
+      "imageURL": "data/07_Scared_Confused-Bewildered.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Rejected",
+      "text": "",
+      "imageURL": "data/08_Scared_Rejected-Dismissed.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Helpless",
+      "text": "",
+      "imageURL": "data/09_Scared_Helpless-Overwhelmed.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Submissive",
+      "text": "",
+      "imageURL": "data/10_Scared_Submissive-Inferior.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Insecure",
+      "text": "",
+      "imageURL": "data/11_Scared_Insecure-Inadequate.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Anxious",
+      "text": "",
+      "imageURL": "data/12_Scared_Anxious-Worried.png",
+      "emotion": "Scared"
+    }
+  ],
+  [
+    {
+      "name": "Excited",
+      "text": "",
+      "imageURL": "data/13_Joyful_Excited-Aroused.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Sensous",
+      "text": "",
+      "imageURL": "data/14_Joyful_Sensous-Festive.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Energetic",
+      "text": "",
+      "imageURL": "data/15_Joyful_Energetic-Lively.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Cheerful",
+      "text": "",
+      "imageURL": "data/16_Joyful_Cheerful-Amused.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Creative",
+      "text": "",
+      "imageURL": "data/17_Joyful_Creative-Playful.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Hopeful",
+      "text": "",
+      "imageURL": "data/18_Joyful_Hopeful-Optimistic.png",
+      "emotion": "Joyful"
+    }
+  ],
+  [
+    {
+      "name": "Tired",
+      "text": "",
+      "imageURL": "data/19_Sad_Tired-Sleepy.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Bored",
+      "text": "",
+      "imageURL": "data/20_Sad_Bored-Indifferent.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Lonely",
+      "text": "",
+      "imageURL": "data/21_Sad_Lonely-Isolated.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Depressed",
+      "text": "",
+      "imageURL": "data/22_Sad_Depressed-Inferior.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Ashamed",
+      "text": "",
+      "imageURL": "data/23_Sad_Ashamed-Embarrassed.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Guilty",
+      "text": "",
+      "imageURL": "data/24_Sad_Guilty-Remorseful.png",
+      "emotion": "Sad"
+    }
+  ],
+  [
+    {
+      "name": "Nurturing",
+      "text": "",
+      "imageURL": "data/25_Peaceful_Nurturing-Caring.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Trusting",
+      "text": "",
+      "imageURL": "data/26_Peaceful_Trusting-Secure.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Loving",
+      "text": "",
+      "imageURL": "data/27_Peaceful_Loving-Intimate.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Intimate",
+      "text": "",
+      "imageURL": "data/28_Peaceful_Intimate-Open.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Thoughtful",
+      "text": "",
+      "imageURL": "data/29_Peaceful_Thoughtful-Reflective.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Content",
+      "text": "",
+      "imageURL": "data/30_Peaceful_Content-Serene.png",
+      "emotion": "Peaceful"
+    }
+  ],
+  [
+    {
+      "name": "Aware",
+      "text": "",
+      "imageURL": "data/31_Powerful_Aware-Confident.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Proud",
+      "text": "",
+      "imageURL": "data/32_Powerful_Proud-Successful.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Respected",
+      "text": "",
+      "imageURL": "data/33_Powerful_Respected-Valued.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Appreciated",
+      "text": "",
+      "imageURL": "data/34_Powerful_Appreciated-Worthy.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Important",
+      "text": "",
+      "imageURL": "data/35_Powerful_Important-Significant.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Faithful",
+      "text": "",
+      "imageURL": "data/36_Powerful_Faithful-Loyal.png",
+      "emotion": "Powerful"
+    }
+  ]
 ]
