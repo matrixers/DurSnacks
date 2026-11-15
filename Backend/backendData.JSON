@@ -10,31 +10,31 @@
         {
             "name":"Hostile",
             "text":"",
-            "imageURL":"data/portal2.png",
+            "imageURL":"data/02_Mad_Hostile-Sarcastic.png",
             "emotion":"Mad"
         },
         {
             "name":"Angry",
             "text":"",
-            "imageURL":"data/portal2.png",
+            "imageURL":"data/03_Mad_Angry-Jealous.png",
             "emotion":"Mad"
         },
         {
             "name":"Selfish",
             "text":"",
-            "imageURL":"data/portal2.png",
+            "imageURL":"data/04_Mad_Selfish-Jealous.png",
             "emotion":"Mad"
         },
         {
             "name":"Hateful",
             "text":"",
-            "imageURL":"data/portal2.png",
+            "imageURL":"data/05_Mad_Hateful-Irritated.png",
             "emotion":"Mad"
         },
         {
             "name":"Critical",
             "text":"",
-            "imageURL":"data/portal2.png",
+            "imageURL":"data/06_Mad_Critical-Skeptical.png",
             "emotion":"Mad"
         }
     ],
