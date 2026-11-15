@@ -55,7 +55,12 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    ThreadingHTTPServer.allow_reuse_address = False      # on Windows it would let two servers share the port
+    try:
+        server = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
+    except OSError:
+        sys.exit(f"Port {PORT} is already in use: the backend is probably already running in another window.")
     print("Loading the library (about a minute)...", flush=True)
     Backend.library()
     print(f"Ready on http://127.0.0.1:{PORT}  (Ctrl+C to stop)", flush=True)
-    ThreadingHTTPServer(("127.0.0.1", PORT), Handler).serve_forever()
+    server.serve_forever()
