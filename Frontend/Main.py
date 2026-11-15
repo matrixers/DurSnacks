@@ -565,10 +565,21 @@ ScreenManager:
                     size_hint_y: None
                     height: dp(360) if app.picture_path else 0
                     opacity: 1 if app.picture_path else 0
+                # the painting's title (from the backend's picture JSON), then who painted it and when
+                Label:
+                    text: app.picture_title
+                    font_size: "17sp"
+                    italic: True
+                    bold: True
+                    color: 0.95, 0.96, 0.92, 1
+                    text_size: self.width, None
+                    halign: "center"
+                    size_hint_y: None
+                    height: self.texture_size[1] + dp(2) if self.text else 0
                 Label:
                     text: app.picture_caption
-                    font_size: "12sp"
-                    color: 0.81, 0.91, 0.84, 0.8
+                    font_size: "13sp"
+                    color: 0.81, 0.91, 0.84, 0.85
                     text_size: self.width, None
                     halign: "center"
                     size_hint_y: None
@@ -644,6 +655,7 @@ class FeelingsApp(App):
 
     inspirationText = StringProperty("")
     picture_path = StringProperty("")
+    picture_title = StringProperty("")
     picture_caption = StringProperty("")
     has_guidance = BooleanProperty(False)
 
@@ -674,8 +686,8 @@ class FeelingsApp(App):
         picture = reply.get("picture")
         path = os.path.join(PROJECT_DIR, picture["imageURL"]) if picture else ""
         self.picture_path = path if os.path.exists(path) else ""
-        self.picture_caption = (f"{picture['title']}, {picture['artist']} ({picture['year']})"
-                                if self.picture_path else "")
+        self.picture_title = picture["title"] if self.picture_path else ""
+        self.picture_caption = f"{picture['artist']}, {picture['year']}" if self.picture_path else ""
 
     def set_backend_text(self, text):
         """Entry point for the backend: sets the text shown on the inspiration screen."""

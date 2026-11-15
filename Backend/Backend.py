@@ -54,8 +54,8 @@ def find_guidance(path, answers, sentence, n=2):
                 picked = [dict(shortlist[i - 1], quote=q) for i, q in chosen][:n]
         except Exception:
             pass                     # keep the plain search
-    return [{"quote": verse(p.get("quote") or p["text"]), "name": p["author"], "years": p["years"]}
-            for p in picked]
+    return [{"quote": verse(guidance.NUMBERING.sub("", p.get("quote") or p["text"])),   # no 'XLI.' in front
+             "name": p["author"], "years": p["years"]} for p in picked]
 
 
 def emotions_for(path):

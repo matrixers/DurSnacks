@@ -44,7 +44,7 @@ BOOKS = [
 ]
 # sections inside the text that are not the writer's own words
 NOT_THE_WRITER = re.compile(r"^(FOOTNOTES|NOTES?\b|SUMMARY|ETEXT EDITOR|CONTENTS)", re.I)
-NUMBERING = re.compile(r"^(?:(?:CHAPTER|CHAP\.|Ch\.)\s+[IVXLC\d]+\.\s+)?(?:\d+\.\s+)?")
+NUMBERING = re.compile(r"^(?:(?:CHAPTER|CHAP\.|Ch\.)\s+[IVXLC\d]+\.\s+)?(?:(?:\d+|[IVXLC]{2,})\.\s+)?")
 
 
 def download(book_id):
