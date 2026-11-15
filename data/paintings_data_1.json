@@ -1,0 +1,231 @@
+[
+  [],
+  [
+    {
+      "name": "Hurt",
+      "text": "Leaving Home by Henry Herbert La Thangue (1890)",
+      "imageURL": "data/01_Mad_Hurt-Distant.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Hostile",
+      "text": "The Laughing Youth by Annibale Carracci (1583)",
+      "imageURL": "data/02_Mad_Hostile-Sarcastic.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Angry",
+      "text": "A Fight by Adriaen van Ostade (1637)",
+      "imageURL": "data/03_Mad_Angry-Jealous.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Selfish",
+      "text": "The Moneylender and His Wife by Quentin Matsys (1514)",
+      "imageURL": "data/04_Mad_Selfish-Jealous.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Hateful",
+      "text": "Beggars Fighting by Adriaen van de Venne (1634)",
+      "imageURL": "data/05_Mad_Hateful-Irritated.png",
+      "emotion": "Mad"
+    },
+    {
+      "name": "Critical",
+      "text": "Fair Critics by Charles Courtney Curran (1887)",
+      "imageURL": "data/06_Mad_Critical-Skeptical.png",
+      "emotion": "Mad"
+    }
+  ],
+  [
+    {
+      "name": "Confused",
+      "text": "Composition with Taches by Victor Hugo (1875)",
+      "imageURL": "data/07_Scared_Confused-Bewildered.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Rejected",
+      "text": "Bad Night by Francisco Goya (1799)",
+      "imageURL": "data/08_Scared_Rejected-Dismissed.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Helpless",
+      "text": "The Shipwreck by J.M.W. Turner (1805)",
+      "imageURL": "data/09_Scared_Helpless-Overwhelmed.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Submissive",
+      "text": "The Gleaners by Jean-François Millet (1857)",
+      "imageURL": "data/10_Scared_Submissive-Inadequate.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Insecure",
+      "text": "Portrait of Gerolamo Casio by Giovanni Antonio Boltraffio (1495)",
+      "imageURL": "data/11_Scared_Insecure-Inadequate.png",
+      "emotion": "Scared"
+    },
+    {
+      "name": "Anxious",
+      "text": "Christ in the Storm by Rembrandt (1633)",
+      "imageURL": "data/12_Scared_Anxious-Worried.png",
+      "emotion": "Scared"
+    }
+  ],
+  [
+    {
+      "name": "Excited",
+      "text": "The Races at Longchamps by Giuseppe de Nittis (1883)",
+      "imageURL": "data/13_Joyful_Excited-Aroused.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Sensous",
+      "text": "Celia Thaxter’s Garden, Appledore by Childe Hassam (1890)",
+      "imageURL": "data/14_Joyful_Sensous-Festive.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Energetic",
+      "text": "Dance at Moulin de la Galette by Pierre-Auguste Renoir (1876)",
+      "imageURL": "data/15_Joyful_Energetic-Lively.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Cheerful",
+      "text": "Laughing Children with a Cat by Judith Leyster (1629)",
+      "imageURL": "data/16_Joyful_Cheerful-Amused.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Creative",
+      "text": "Children Playing on the Beach by Mary Cassatt (1884)",
+      "imageURL": "data/17_Joyful_Creative-Playful.png",
+      "emotion": "Joyful"
+    },
+    {
+      "name": "Hopeful",
+      "text": "Landscape with Rainbow by Caspar David Friedrich (1810)",
+      "imageURL": "data/18_Joyful_Hopeful-Optimistic.png",
+      "emotion": "Joyful"
+    }
+  ],
+  [
+    {
+      "name": "Tired",
+      "text": "Anachorète endormi (The Sleeping Hermit) by Joseph-Marie Vien (1751)",
+      "imageURL": "data/19_Sad_Tired-Sleepy.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Bored",
+      "text": "Yawning Apprentice by Mihály Munkácsy (1869)",
+      "imageURL": "data/20_Sad_Bored-Apathetic.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Lonely",
+      "text": "Saint Jerome in the Wilderness by Pinturicchio (1480)",
+      "imageURL": "data/21_Sad_Lonely-Isolated.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Depressed",
+      "text": "The Absinthe Drinker by Edgar Degas (1876)",
+      "imageURL": "data/22_Sad_Depressed-Inferior.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Ashamed",
+      "text": "Broken Eggs by Jean-Baptiste Greuze (1756)",
+      "imageURL": "data/23_Sad_Ashamed-Stupid.png",
+      "emotion": "Sad"
+    },
+    {
+      "name": "Guilty",
+      "text": "Ashes by Edvard Munch (1894)",
+      "imageURL": "data/24_Sad_Guilty-Remorseful.png",
+      "emotion": "Sad"
+    }
+  ],
+  [
+    {
+      "name": "Nurturing",
+      "text": "Young Mother Contemplating Her Sleeping Child by Albert Anker (1875)",
+      "imageURL": "data/25_Peaceful_Nurturing-Thankful.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Trusting",
+      "text": "The Cradle by Berthe Morisot (1872)",
+      "imageURL": "data/26_Peaceful_Trusting-Secure.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Loving",
+      "text": "Reconciliation by Tom Roberts (1887)",
+      "imageURL": "data/27_Peaceful_Loving-Serene.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Intimate",
+      "text": "Thomas and Henry Sergeant by Charles Willson Peale (1787)",
+      "imageURL": "data/28_Peaceful_Intimate-Responsive.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Thoughtful",
+      "text": "Woman Reading in a Landscape by Camille Corot (1869)",
+      "imageURL": "data/29_Peaceful_Thoughtful-Pensive.png",
+      "emotion": "Peaceful"
+    },
+    {
+      "name": "Content",
+      "text": "The Hammock by Giovanni Boldini (1872–1874)",
+      "imageURL": "data/30_Peaceful_Content-Relaxed.png",
+      "emotion": "Peaceful"
+    }
+  ],
+  [
+    {
+      "name": "Aware",
+      "text": "The Alchemist Discovering Phosphorus by Joseph Wright of Derby (1771)",
+      "imageURL": "data/31_Powerful_Aware-Surprised.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Proud",
+      "text": "Self-Portrait at Twenty-Eight by Albrecht Dürer (1500)",
+      "imageURL": "data/32_Powerful_Proud-Successful.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Respected",
+      "text": "The White Cloud, Head Chief of the Iowa by George Catlin (1845)",
+      "imageURL": "data/33_Powerful_Respected-Worthwhile.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Appreciated",
+      "text": "A Studio in the Batignolles by Henri Fantin-Latour (1870)",
+      "imageURL": "data/34_Powerful_Appreciated-Valuable.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Important",
+      "text": "The Three Philosophers by Giorgione (1508–1509)",
+      "imageURL": "data/35_Powerful_Important-Discerning.png",
+      "emotion": "Powerful"
+    },
+    {
+      "name": "Faithful",
+      "text": "Napoleon Crossing the Alps by Jacques-Louis David (1800–1801)",
+      "imageURL": "data/36_Powerful_Faithful-Confident.png",
+      "emotion": "Powerful"
+    }
+  ]
+]

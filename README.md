@@ -7,8 +7,10 @@ npm init -y
 
 npm install express
 
+pip install -r Backend/requirements.txt
+
 ## Run
 
-node server.js
+
 
 python .\Frontend\Main.py
