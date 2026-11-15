@@ -6,8 +6,11 @@ Config.set("graphics", "height", "1000")
 Config.set("graphics", "resizable", False)
 
 import math
+import json
+import os
 
 from kivy.animation import Animation
+from kivy.clock import Clock
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.graphics import Color, Ellipse, Line, Mesh
@@ -18,6 +21,8 @@ from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 from kivy.uix.widget import Widget
 from kivy.utils import get_color_from_hex
+from client import fetch_guidance
+
 
 Window.clearcolor = get_color_from_hex("#12271D")  # dark forest green
 
@@ -28,6 +33,11 @@ GROUND = get_color_from_hex("#2F5A3F")
 # Tree proportions, as fractions of the canopy radius R
 TRUNK_LEN = 0.40    # visible trunk between the canopy and the ground
 ROOT_DEPTH = 0.25   # how far the roots reach below the ground
+
+# API Variables --- Emile
+backend_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             "backend_output.json")
+#inspirationImage
 
 # Core feeling -> (colour, [(secondary feeling, deeper feeling), ...])
 # Order is clockwise, taken from the feelings wheel image.
@@ -459,7 +469,6 @@ ScreenManager:
             spacing: dp(8)
             size_hint_y: None
             height: self.minimum_height
-            inspirationText = "stuff here"
             Label:
                 text: "Use the previous inspiration to help lead your tree of thought"
                 font_size: "18sp"
@@ -467,13 +476,13 @@ ScreenManager:
                 height: self.texture_size[1] + dp(8)
             # --- API inputs where text goes --- Emile
             Label:
-                text: inspirationText
+                text: app.inspirationText
                 font_size: "18sp"
                 size_hint_y: None
                 height: self.texture_size[1] + dp(8)   
             # --- and Image ---
             Image:
-                source: "tree.png"
+                source: "download(1).png"
                 size_hint_y: None
                 height: dp(150)
                 
@@ -531,7 +540,26 @@ class FeelingsApp(App):
         if not path:
             return
         self.core, self.secondary, self.deeper = path
+        self.backend_text = "Thinking..."
         self.root.current = "output"
+        fetch_guidance(self.core, self.secondary, self.deeper,
+                       on_success=lambda t: setattr(self, "backend_text", t),
+                       on_error=lambda m: setattr(self, "backend_text", m))
+
+    inspirationText = StringProperty("")
+
+    def set_backend_text(self, text):
+        """Entry point for the backend: sets the text shown on the output screen."""
+        # Clock makes this safe to call from another thread
+        Clock.schedule_once(lambda dt: setattr(self, "backend_text", str(text)), 0)
+
+    def load_backend_json(self, path=backend_JSON):
+        try:
+            with open(path, encoding="utf-8") as f:
+                data = json.load(f)
+            self.set_backend_text(data.get("message", ""))
+        except (FileNotFoundError, json.JSONDecodeError):
+            self.set_backend_text("Waiting for the backend...")
 
 
 if __name__ == "__main__":
