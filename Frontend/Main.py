@@ -663,13 +663,15 @@ ScreenManager:
                     height: self.minimum_height
                     spacing: dp(10)
 
-        Button:
-            text: "Let's write about it..."
-            size_hint_y: None
-            height: dp(56)
-            background_normal: ""
-            background_color: 0.42, 0.27, 0.14, 1
-            on_release: root.manager.current = "write"
+                Button:
+                    text: "Let's write about it..."
+                    size_hint_y: None
+                    height: dp(56)
+                    background_normal: ""
+                    background_color: 0.42, 0.27, 0.14, 1
+                    on_release: root.manager.current = "write"
+
+       
 
 
 <WriteOut>:
