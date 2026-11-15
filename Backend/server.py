@@ -1,15 +1,4 @@
-"""
-A small web server so the app (its client.py) can ask the backend for passages.
 
-    python -m Backend.server          starts on http://127.0.0.1:8000 (loads the library first, ~1 min)
-
-    GET  /           {"status": "ok"}  (quick check that it is running)
-    POST /guidance   {"core": "Sad", "secondary": "Lonely", "deeper": "Isolated",
-                      "what": "...", "why": "...", "who": "..."}        (what / why / who are optional)
-                  -> {"message": "the passages as text", "poem": "...", "results": [...]}
-
-The API key stays here on the server; the app never sees it.
-"""
 import json
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -38,19 +27,29 @@ class Handler(BaseHTTPRequestHandler):
             ask = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
         except json.JSONDecodeError:
             return self._reply(400, {"error": "the request is not JSON"})
-        path = [ask.get(k, "") for k in ("core", "secondary", "deeper") if ask.get(k)]
-        if not path:
-            return self._reply(400, {"error": "core, secondary and deeper are needed"})
-        who = (ask.get("who") or "").strip()
-        answers = {"event": ask.get("what", ""), "cause": ask.get("why", ""),
-                   "extra": f"People involved: {who}" if who else ""}
-        rewritten = Backend.rewrite(path, answers)
-        result = Backend.find(path, answers, sentence=rewritten["sentence"])
-        self._reply(200, {"message": Backend.as_text(result), "poem": rewritten["poem"],
-                          "results": result["results"]})
+        self._reply(*answer(ask))
 
     def log_message(self, *args):
         pass
+
+
+def answer(ask):
+    """The reply to one /guidance request: (status code, data)."""
+    path = [ask.get(k, "") for k in ("core", "secondary", "deeper") if ask.get(k)]
+    if not path:
+        return 400, {"error": "core, secondary and deeper are needed"}
+    who = (ask.get("who") or "").strip()
+    answers = {"event": ask.get("what", ""), "cause": ask.get("why", ""),
+               "extra": f"People involved: {who}" if who else ""}
+    rewritten = Backend.rewrite(path, answers)
+    result = Backend.find(path, answers, sentence=rewritten["sentence"])
+    # one entry per quote box {"quote", "name", "years"}: 3, the first a well-known writer, then two lesser known
+    quotes = [Backend.simple(r) for r in result["results"]]
+    feeling = Backend.sentiment(path)
+    return 200, {"sentiment": feeling, "picture": Backend.picture(feeling),
+                 "quotes": quotes, "no_match": result["no_match"],
+                 "message": Backend.as_text(result), "poem": rewritten["poem"],
+                 "results": result["results"]}
 
 
 if __name__ == "__main__":

@@ -1,12 +1,4 @@
-"""
-The passage library: short pieces (15-60 words) of real letters, diaries and
-autobiographies from Project Gutenberg, stored in data/library.db.
 
-Every passage keeps its exact position in the book, so we can always check that
-what we show is word for word what the writer wrote (verify).
-
-To build the database, see build_library.py.
-"""
 import os
 import re
 import sqlite3

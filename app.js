@@ -16,7 +16,11 @@ const PYTHON_BACKEND = process.env.PYTHON_BACKEND || 'http://127.0.0.1:8000';
 // The endpoint the Kivy app calls
 // Request:  { "core": "Sad", "secondary": "Lonely", "deeper": "Isolated",
 //             "what": "...", "why": "...", "who": "..." }       (what / why / who optional)
-// Response: { "message": "text to show", "poem": "...", "results": [...] }
+// Response: { "sentiment": { emotion, name, deeper },    (same keys as Backend/backend_JSON.JSON)
+//             "picture": { imageURL, title, artist, year, link },
+//             "quotes":[{ quote, name, years }, ...],   (one per quote box, 3)
+//             "no_match": false, "message": "all quotes as one text", "poem": "...", "results": [...] }
+//           (passed on unchanged from the Python backend; example in Backend/example_output.json)
 app.post('/guidance', async (req, res) => {
     const { core, secondary, deeper, what = '', why = '', who = '' } = req.body || {};
 

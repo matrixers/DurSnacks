@@ -10,6 +10,8 @@ import textwrap
 from Backend import llm
 from Backend.Backend import TREE, find, library, questions, rewrite, short_title
 
+SHOW_SUMMARY = False    # True = also print the short summary of their answers and the sentence searched for
+
 SHOWCASE = [
     (["Sad", "Guilty", "Remorseful"], {"event": "My grandad died last month", "cause": "I never got to say goodbye"}),
     (["Sad", "Lonely", "Isolated"], {"event": "My best friend stopped replying to my messages",
@@ -72,7 +74,7 @@ def chat():
             hint = "  (optional, press Enter to skip)" if q["optional"] else ""
             answers[q["key"]] = input(f"\n{q['text']}{hint}\n  > ").strip()
         rewritten = rewrite(path, answers)
-        if rewritten["poem"]:
+        if SHOW_SUMMARY and rewritten["poem"]:
             print("\nSo what you're saying is:\n\n" + "\n".join("    " + l for l in rewritten["poem"].splitlines()))
         print("\nSearching old letters and diaries (about 30 seconds)...", flush=True)
         show(find(path, answers, sentence=rewritten["sentence"]))
@@ -92,7 +94,8 @@ def showcase():
                 print(f"  {q['text']}  {answers[q['key']]}")
         print("\nSearching (about 30 seconds)...", flush=True)
         result = find(path, answers)
-        print(f"Searched for: {result['sentence']}")
+        if SHOW_SUMMARY:
+            print(f"Searched for: {result['sentence']}")
         show(result, ask=False)
     print(f"\n(API cost of this run: ${llm.spent['usd']:.3f})")
 
