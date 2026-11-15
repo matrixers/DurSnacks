@@ -1,0 +1,21 @@
+archive: 430 letters/diaries books selected from the PG catalogue
+  skip 1146 (HTTPError)
+  25/430
+  50/430
+  75/430
+  100/430
+  125/430
+  150/430
+  175/430
+  200/430
+  225/430
+  250/430
+  275/430
+  300/430
+  325/430
+  350/430
+  375/430
+  400/430
+  425/430
+  skip 79044 (HTTPError)
+archive: 428 books cached in C:/Users/emile_uw/Documents/GitHub/DurSnacks/Testing/texts

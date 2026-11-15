@@ -1,0 +1,21 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   6%|5         | 11/199 [00:00<00:02, 92.81it/s]Loading weights:  16%|#6        | 32/199 [00:00<00:01, 154.94it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 720.09it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+build: 110 sources already in the database, 329 to add
+  10/329 books, +392 passages, 0 min
+  20/329 books, +864 passages, 1 min
+  30/329 books, +7378 passages, 5 min
+  40/329 books, +10210 passages, 7 min
+  50/329 books, +10761 passages, 7 min
+  60/329 books, +12997 passages, 8 min
+  70/329 books, +14132 passages, 9 min
+  80/329 books, +15745 passages, 10 min
+  90/329 books, +17020 passages, 11 min
+  100/329 books, +18441 passages, 11 min
+  110/329 books, +20825 passages, 13 min
+  120/329 books, +21069 passages, 13 min
+  130/329 books, +21634 passages, 13 min
+  140/329 books, +23431 passages, 15 min
+  150/329 books, +25406 passages, 16 min
+  160/329 books, +27652 passages, 17 min
+  170/329 books, +29229 passages, 18 min
+  180/329 books, +30978 passages, 19 min

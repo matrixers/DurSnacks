@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  11%|#1        | 22/199 [00:00<00:00, 216.70it/s]Loading weights:  22%|##2       | 44/199 [00:00<00:01, 152.16it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 710.66it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+### step1 (2026-11-14 21:41) - library 44640 passages, embedder all-mpnet-base-v2
+
+| method | Test A same problem, top-2 (chance 0.06, n=33) | Test B NN problem / topic only (n=18) | Test C NN cause / feeling+situation only (chance 0.30 / 0.09, n=24) | pairs.json top-5 |
+|---|---|---|---|---|
+| raw (w=0.0) | 0.67 | 0.56 / 0.44 | 0.00 / 1.00 | missing |
+| profile (w=1.0) | 0.70 | 0.83 / 0.06 | 0.17 / 0.83 | missing |
+| blend (w=0.6) | 0.67 | 0.56 / 0.33 | 0.00 / 1.00 | missing |
+
+pairs.json is missing (Backend/pairs.json): no historian query->passage pairs yet.
+review sheet: C:\Users\emile_uw\Documents\GitHub\DurSnacks-backend\results\review_step1.md

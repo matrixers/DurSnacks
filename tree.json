@@ -1,0 +1,47 @@
+{
+ "about": "The app's feelings tree (Frontend/Main.py FEELINGS: core -> secondary -> deeper). Labels copied from the app; tags are the closest search steers from Backend/library.py TAG_ANCHORS ([] = no steer, the person's own words do the work). Colours and drawing stay in the frontend.",
+ "cores": [
+  {"id": "mad", "label": "Mad", "specifics": [
+   {"label": "Hurt", "deeper": "Distant", "tags": ["rejection", "loneliness"]},
+   {"label": "Hostile", "deeper": "Sarcastic", "tags": ["anger"]},
+   {"label": "Angry", "deeper": "Frustrated", "tags": ["anger", "stuck"]},
+   {"label": "Selfish", "deeper": "Jealous", "tags": ["feeling_unseen"]},
+   {"label": "Hateful", "deeper": "Irritated", "tags": ["anger"]},
+   {"label": "Critical", "deeper": "Skeptical", "tags": ["injustice"]}]},
+  {"id": "scared", "label": "Scared", "specifics": [
+   {"label": "Confused", "deeper": "Bewildered", "tags": ["uncertainty"]},
+   {"label": "Rejected", "deeper": "Discouraged", "tags": ["rejection", "failure"]},
+   {"label": "Helpless", "deeper": "Insignificant", "tags": ["stuck", "feeling_unseen"]},
+   {"label": "Submissive", "deeper": "Inadequate", "tags": ["self_doubt", "pressure"]},
+   {"label": "Insecure", "deeper": "Embarrassed", "tags": ["self_doubt", "shame"]},
+   {"label": "Anxious", "deeper": "Overwhelmed", "tags": ["anxiety", "overwhelm"]}]},
+  {"id": "joyful", "label": "Joyful", "specifics": [
+   {"label": "Excited", "deeper": "Daring", "tags": []},
+   {"label": "Sensuous", "deeper": "Fascinating", "tags": []},
+   {"label": "Energetic", "deeper": "Stimulating", "tags": []},
+   {"label": "Cheerful", "deeper": "Amused", "tags": []},
+   {"label": "Creative", "deeper": "Playful", "tags": []},
+   {"label": "Hopeful", "deeper": "Optimistic", "tags": []}]},
+  {"id": "sad", "label": "Sad", "specifics": [
+   {"label": "Tired", "deeper": "Sleepy", "tags": ["burnout"]},
+   {"label": "Bored", "deeper": "Apathetic", "tags": ["stuck", "restlessness"]},
+   {"label": "Lonely", "deeper": "Isolated", "tags": ["loneliness", "not_belonging"]},
+   {"label": "Depressed", "deeper": "Inferior", "tags": ["self_doubt", "failure"]},
+   {"label": "Ashamed", "deeper": "Stupid", "tags": ["shame"]},
+   {"label": "Guilty", "deeper": "Remorseful", "tags": ["regret"]}]},
+  {"id": "peaceful", "label": "Peaceful", "specifics": [
+   {"label": "Nurturing", "deeper": "Thankful", "tags": []},
+   {"label": "Trusting", "deeper": "Secure", "tags": []},
+   {"label": "Loving", "deeper": "Serene", "tags": []},
+   {"label": "Intimate", "deeper": "Responsive", "tags": []},
+   {"label": "Thoughtful", "deeper": "Pensive", "tags": []},
+   {"label": "Content", "deeper": "Relaxed", "tags": []}]},
+  {"id": "powerful", "label": "Powerful", "specifics": [
+   {"label": "Aware", "deeper": "Surprised", "tags": []},
+   {"label": "Proud", "deeper": "Successful", "tags": []},
+   {"label": "Respected", "deeper": "Worthwhile", "tags": []},
+   {"label": "Appreciated", "deeper": "Valuable", "tags": []},
+   {"label": "Important", "deeper": "Discerning", "tags": []},
+   {"label": "Faithful", "deeper": "Confident", "tags": []}]}
+ ]
+}
