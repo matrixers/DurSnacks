@@ -1,0 +1,3980 @@
+{
+  "meta": {
+    "project": "DurHack assisted-diary / consolation library",
+    "version": "0.3 (15 Nov 2026): team's Feelings Wheel (6 cores x 6 pairs); 15 gap-fill texts added (W31-W45)",
+    "how_to_use": "Input comes from wheel.json (core, pair, intensity, situation, optional text). Each written entry has wheel_tags (primary/secondary pairs). Artworks are used only in the 'not sure' picture route.",
+    "rights_policy": "Prefer public-domain texts and translations. Where the only good English translation is still in copyright, the app should show a short paraphrase plus a link out, or the team's own translation from the original-language text.",
+    "tag_vocabulary": {
+      "wheel": "see wheel.json",
+      "situations": [
+        "study",
+        "work_career",
+        "moving_away",
+        "family",
+        "relationships",
+        "illness",
+        "bereavement",
+        "identity",
+        "public_speaking",
+        "discrimination",
+        "big_decision",
+        "change_transition",
+        "creative_work"
+      ],
+      "comfort": [
+        "company",
+        "perspective",
+        "advice",
+        "hope",
+        "courage",
+        "permission_to_rest"
+      ]
+    },
+    "extract_types": {
+      "verbatim_pd": "word-for-word from a public-domain edition (checked in the source text)",
+      "own_translation": "translated for this project from the public-domain original",
+      "short_quote": "one line quoted plus a retelling",
+      "summary": "a retelling only; label it as such in the app"
+    },
+    "safety": "intensity 1-3 (3 = heavy). If user picks 'it's taking over', show support first and only intensity <= 2. show_aftermath=false: hide what_happened_next. content_notes lists difficult material."
+  },
+  "written": [
+    {
+      "id": "W01",
+      "form": "philosophical dialogue (prose and verse)",
+      "title": "The Consolation of Philosophy, Book I",
+      "author": "Boethius",
+      "date": "c. 524 CE",
+      "place": "Pavia, Italy (in prison)",
+      "region": "Europe (late Roman Italy)",
+      "author_gender": "male",
+      "position_in_life": "Former senior statesman, imprisoned awaiting execution",
+      "original_language": "Latin",
+      "recommended_edition": "trans. H. R. James (1897)",
+      "where_to_find": "Project Gutenberg / Wikisource (search 'Consolation of Philosophy James')",
+      "locator": "Book I: opening verse lament, then Prose I-II where Philosophy appears",
+      "key_line": "For awhile he has forgotten himself; he will easily recover his memory",
+      "summary": "A man who has lost his status, freedom and reputation sits writing self-pitying verse until Philosophy appears at his bedside and asks him to remember who he really is.",
+      "context": "Accused of treason by the Ostrogothic king Theodoric. This is the book that inspired the app.",
+      "what_happened_next": "He was executed soon after. The book became one of the most-read works of the Middle Ages, translated by Alfred the Great, Chaucer and Elizabeth I.",
+      "show_aftermath": true,
+      "situations": [
+        "work_career",
+        "change_transition"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "imprisonment",
+        "impending execution"
+      ],
+      "rights": "Public domain (text and translation)",
+      "extract": "Who wrought my studious numbers\nSmoothly once in happier days,\nNow perforce in tears and sadness\nLearn a mournful strain to raise.\nLo, the Muses, grief-dishevelled,\nGuide my pen and voice my woe;\nDown their cheeks unfeigned the tear drops\nTo my sad complainings flow!\n\n[...] While I was thus mutely pondering within myself, and recording my sorrowful complainings with my pen, it seemed to me that there appeared above my head a woman of a countenance exceeding venerable. Her eyes were bright as fire, and of a more than human keenness. [...]\n\n'There is no danger; these are the symptoms of lethargy, the usual sickness of deluded minds. For awhile he has forgotten himself; he will easily recover his memory, if only he first recognises me. And that he may do so, let me now wipe his eyes that are clouded with a mist of mortal things.' Thereat, with a fold of her robe, she dried my eyes all swimming with tears.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "trans. H. R. James (1897), Project Gutenberg #14328",
+      "extract_locator": "Book I, Song I (opening lines); Prose I; Prose II",
+      "extract_notes": "",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Depressed / Inferior",
+          "words": [
+            "Depressed",
+            "Inferior"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Helpless / Insignificant",
+          "words": [
+            "Helpless",
+            "Insignificant"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Hurt / Distant",
+          "words": [
+            "Hurt",
+            "Distant"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Thoughtful / Pensive",
+          "words": [
+            "Thoughtful",
+            "Pensive"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Peaceful",
+        "Sad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W02",
+      "form": "letter",
+      "title": "Moral Letters to Lucilius, Letter 28 ('On Travel as a Cure for Discontent')",
+      "author": "Seneca the Younger",
+      "date": "c. 63-65 CE",
+      "place": "Rome (born in Corduba, Hispania)",
+      "region": "Europe (Roman Empire, born in Spain)",
+      "author_gender": "male",
+      "position_in_life": "Philosopher, former adviser to Nero, in semi-retirement",
+      "original_language": "Latin",
+      "recommended_edition": "trans. R. M. Gummere (Loeb, 1917-25)",
+      "where_to_find": "Wikisource: 'Moral letters to Lucilius'",
+      "locator": "Letter XXVIII",
+      "key_line": "You need to change your soul, not your sky.",
+      "summary": "A friend complains that travelling hasn't cured his gloom. Seneca replies that you take yourself with you wherever you go.",
+      "context": "Written late in life to a younger friend.",
+      "what_happened_next": "Nero ordered him to end his own life in 65 CE.",
+      "show_aftermath": false,
+      "situations": [
+        "moving_away",
+        "change_transition"
+      ],
+      "comfort": [
+        "advice",
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "author's forced suicide (aftermath only; do not show)"
+      ],
+      "rights": "Latin PD. Gummere is PD in the US; the translator died in 1969, so check UK status, or use Thomas Lodge's 1614 translation, or paraphrase.",
+      "extract": "Do you think this has happened to you alone? Are you surprised, as if it were something new, that after such a long journey and so many changes of scene you still haven't shaken off the gloom and heaviness in your mind? You need to change your soul, not your sky. [...] The same thing that drove you away is still pressing on you. What good can new lands do? Or getting to know new cities and places? All that rushing about comes to nothing. You ask why running away isn't helping? You are taking yourself with you.",
+      "extract_type": "own_translation",
+      "extract_source": "Translated for this project from the Latin (Epistulae Morales 28.1-2)",
+      "extract_locator": "Letter 28, sections 1-2",
+      "extract_original_language_text": "Hoc tibi soli putas accidisse et admiraris quasi rem novam, quod peregrinatione tam longa et tot locorum varietatibus non discussisti tristitiam gravitatemque mentis? Animum debes mutare, non caelum. [...] Premit te eadem causa, quae expulit. Quid terrarum iuvare novitas potest? Quid cognitio urbium aut locorum? In inritum cedit ista iactatio. Quaeris quare te fuga ista non adiuvet? Tecum fugis.",
+      "extract_notes": "Translation is ours, so no rights issue. Latin text checked against two online transcriptions.",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Bored / Apathetic",
+          "words": [
+            "Bored",
+            "Apathetic"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Confused / Bewildered",
+          "words": [
+            "Confused",
+            "Bewildered"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Anxious / Overwhelmed",
+          "words": [
+            "Anxious",
+            "Overwhelmed"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Sad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W03",
+      "form": "letter",
+      "title": "Heloise's first letter to Abelard",
+      "author": "Heloise d'Argenteuil",
+      "date": "c. 1132",
+      "place": "The Paraclete convent, Champagne, France",
+      "region": "Europe (France)",
+      "author_gender": "female",
+      "position_in_life": "Abbess and scholar, separated from her husband for over a decade",
+      "original_language": "Latin",
+      "recommended_edition": "trans. C. K. Scott Moncrieff (1925)",
+      "where_to_find": "Internet Archive (search 'Letters of Abelard and Heloise Scott Moncrieff')",
+      "locator": "First letter of Heloise to Abelard",
+      "key_line": "when I receive any letter from you I shall know you still remember me.",
+      "summary": "Years after they were forced apart, she writes that she still loves him and asks why he writes comfort to others but not to her.",
+      "context": "Their secret marriage ended in scandal and violence; both entered religious life.",
+      "what_happened_next": "She became a respected abbess and leader of her community. They are buried together in Père Lachaise, Paris.",
+      "show_aftermath": true,
+      "situations": [
+        "relationships"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "references the violent assault on Abelard"
+      ],
+      "rights": "Public domain",
+      "extract": "A consolatory letter of yours to a friend happened some days since to fall into my hands; my knowledge of the writing and my love of the hand gave me the curiosity to open it. [...] What reflections did I not make! I began to consider the whole afresh, and perceived myself pressed with the same weight of grief as when we first began to be miserable. Though length of time ought to have closed up my wounds, yet the seeing them described by your hand was sufficient to make them all open and bleed afresh. [...]\n\nWrite to me then immediately and wait not for miracles; they are too scarce, and we too much accustomed to misfortunes to expect a happy turn. I shall always have this, if you please, and this will always be agreeable to me, that when I receive any letter from you I shall know you still remember me.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "The Love Letters of Abelard and Heloise (Seymour, 1903; reprinting the 1722 English version), Project Gutenberg #40227",
+      "extract_locator": "Heloise's first letter to Abelard",
+      "extract_notes": "This 18th-century English version is a loose rendering (via French), not a close translation of the Latin. Say 'from an 18th-century English version' in the app.",
+      "wheel_tags": [
+        {
+          "core": "Mad",
+          "pair": "Hurt / Distant",
+          "words": [
+            "Hurt",
+            "Distant"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Lonely / Isolated",
+          "words": [
+            "Lonely",
+            "Isolated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Intimate / Responsive",
+          "words": [
+            "Intimate",
+            "Responsive"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Peaceful",
+        "Sad"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W04",
+      "form": "essay / allegory",
+      "title": "The Book of the City of Ladies, opening chapters",
+      "author": "Christine de Pizan",
+      "date": "1405",
+      "place": "Paris, France (born in Venice)",
+      "region": "Europe (France / Italy)",
+      "author_gender": "female",
+      "position_in_life": "Widowed at 25; supported her children and mother as Europe's first known professional woman writer",
+      "original_language": "Middle French",
+      "recommended_edition": "Original on Gallica (BnF). PD English: Bryan Anslay's 1521 translation (early Tudor English). Modern translations are in copyright.",
+      "where_to_find": "Gallica (BnF) for manuscripts; paraphrase for the app",
+      "locator": "Book I, chapters 1-3",
+      "key_line": null,
+      "summary": "After reading a book that sneers at women, she starts to believe the worst about herself, until three crowned Ladies (Reason, Rectitude and Justice) appear and tell her to stop doubting herself. A direct echo of Boethius.",
+      "context": "Written to argue against the misogyny of famous male authors.",
+      "what_happened_next": "Her books were copied and read at royal courts across Europe. She is now seen as a founding voice of feminist thought.",
+      "show_aftermath": true,
+      "situations": [
+        "study",
+        "identity",
+        "creative_work"
+      ],
+      "comfort": [
+        "perspective",
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Original PD; use paraphrase or own translation",
+      "extract": "[A retelling, not a quotation] Christine is sitting in her study, surrounded by books, when she picks up a volume that insults women. She can't stop thinking about it. So many famous, learned men have said such things, she reasons, that they must be right, and she begins to despise herself and every woman she knows. In that low moment a light falls across her lap, and three crowned women appear: Reason, Rectitude and Justice. Reason tells her gently to stop believing the worst about herself just because powerful people have said it. Then they invite her to build something with them: a city, made of the stories of women who proved those men wrong.",
+      "extract_type": "summary",
+      "extract_source": "Our own retelling of Book I, chapters 1-3 (no PD English translation suitable for quoting)",
+      "extract_locator": "Book I, chapters 1-3",
+      "extract_notes": "Must be labelled as a retelling in the app. Could be replaced later with the team's own translation from the Middle French.",
+      "wheel_tags": [
+        {
+          "core": "Scared",
+          "pair": "Insecure / Embarrassed",
+          "words": [
+            "Insecure",
+            "Embarrassed"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Submissive / Inadequate",
+          "words": [
+            "Submissive",
+            "Inadequate"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Depressed / Inferior",
+          "words": [
+            "Depressed",
+            "Inferior"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Faithful / Confident",
+          "words": [
+            "Faithful",
+            "Confident"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Powerful",
+        "Sad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W05",
+      "form": "letter",
+      "title": "Journal-letter to George and Georgiana Keats ('the vale of Soul-making')",
+      "author": "John Keats",
+      "date": "21 April 1819 (part of a letter written Feb-May 1819)",
+      "place": "Hampstead, London",
+      "region": "Europe (England)",
+      "author_gender": "male",
+      "position_in_life": "Trained apothecary-surgeon turned poet; badly reviewed, short of money, recently bereaved of his brother Tom",
+      "original_language": "English",
+      "recommended_edition": "Letters of John Keats, ed. H. Buxton Forman (PD editions)",
+      "where_to_find": "Project Gutenberg / Wikisource (Keats letters)",
+      "locator": "Entry of 21 April 1819",
+      "key_line": "Do you not see how necessary a World of Pains and troubles is to school an Intelligence and make it a soul?",
+      "summary": "Writing to his brother in America, he argues that the world isn't a 'vale of tears' but a place where suffering slowly makes a person into who they are.",
+      "context": "Tom had died of tuberculosis months earlier; George had emigrated.",
+      "what_happened_next": "Within a year he wrote the odes now counted among the greatest poems in English. He died in Rome in 1821, aged 25.",
+      "show_aftermath": true,
+      "situations": [
+        "bereavement",
+        "creative_work",
+        "family"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "early death of author (aftermath)"
+      ],
+      "rights": "Public domain",
+      "extract": "The common cognomen of this world among the misguided and superstitious is \"a vale of tears,\" from which we are to be redeemed by a certain arbitrary interposition of God and taken to Heaven--What a little circumscribed straightened notion! Call the world if you please \"The vale of Soul-making.\" Then you will find out the use of the world [...] There may be intelligences or sparks of the divinity in millions--but they are not Souls till they acquire identities, till each one is personally itself. [...] Do you not see how necessary a World of Pains and troubles is to school an Intelligence and make it a soul? A Place where the heart must feel and suffer in a thousand diverse ways.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Letters of John Keats to His Family and Friends, ed. Sidney Colvin (1891), Project Gutenberg #35698",
+      "extract_locator": "Letter to George and Georgiana Keats, Feb 14 - May 3 1819 (entry of 21 April)",
+      "extract_notes": "",
+      "wheel_tags": [
+        {
+          "core": "Peaceful",
+          "pair": "Thoughtful / Pensive",
+          "words": [
+            "Thoughtful",
+            "Pensive"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Hopeful / Optimistic",
+          "words": [
+            "Hopeful",
+            "Optimistic"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Aware / Surprised",
+          "words": [
+            "Aware",
+            "Surprised"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Peaceful",
+        "Powerful"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W06",
+      "form": "letter",
+      "title": "Letter to Theo van Gogh, June 1880",
+      "author": "Vincent van Gogh",
+      "date": "c. 22-24 June 1880",
+      "place": "Cuesmes, Belgium",
+      "region": "Europe (Netherlands / Belgium)",
+      "author_gender": "male",
+      "position_in_life": "Unemployed, dismissed as a lay preacher, poor and estranged from family",
+      "original_language": "Dutch (with French)",
+      "recommended_edition": "Van Gogh Museum edition at vangoghletters.org (letter 155). Check its reuse terms, or use the PD 1927 English translation by Johanna van Gogh-Bonger.",
+      "where_to_find": "vangoghletters.org, letter 155",
+      "locator": "Letter 155",
+      "key_line": "There may be a great fire in our soul, but no one ever comes to warm himself by it",
+      "summary": "After months of silence he writes to his brother admitting he feels useless and misunderstood, but insists something inside him still wants to be of use: a fire in the soul that no one comes to warm themselves at.",
+      "context": "The low point after failing at art dealing, teaching and preaching.",
+      "what_happened_next": "That summer he committed himself to drawing, the start of his life as an artist.",
+      "show_aftermath": true,
+      "situations": [
+        "work_career",
+        "family",
+        "creative_work"
+      ],
+      "comfort": [
+        "company",
+        "hope"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "keep the aftermath to 1880; do not reference his death"
+      ],
+      "rights": "Original PD; translation terms vary",
+      "extract": "As a result one cannot rid oneself of melancholy, one feels emptiness where there might have been friendship and sublime and genuine affection, and one feels dreadful disappointment gnawing at one's spiritual energy [...] There may be a great fire in our soul, but no one ever comes to warm himself by it, all that passers-by can see is a little smoke coming out of the chimney, and they walk on. All right, then, what is to be done, should one tend that inward fire, turn to oneself for strength, wait patiently - yet with how much impatience! - wait, I say, for the moment when someone who wants to comes and sits down beside one's fire and perhaps stays on? [...]\n\nWhat the moulting season is for birds - the time when they lose their feathers - setbacks, misfortune and hard times are for us human beings. You can cling on to the moulting season, you can also emerge from it reborn",
+      "extract_type": "verbatim_pd",
+      "extract_source": "WebExhibits 'Van Gogh's Letters' (letter 133 in the old numbering; 155 at vangoghletters.org). The page states the letter 'may be freely used, in accordance with the terms of this site.'",
+      "extract_locator": "Letter to Theo, Cuesmes, June/July 1880",
+      "extract_notes": "Credit WebExhibits. The same letter contains a line about wanting to 'cease to be'; it has been cut and must stay out.",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Lonely / Isolated",
+          "words": [
+            "Lonely",
+            "Isolated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Rejected / Discouraged",
+          "words": [
+            "Rejected",
+            "Discouraged"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Hopeful / Optimistic",
+          "words": [
+            "Hopeful",
+            "Optimistic"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Sad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W07",
+      "form": "letter",
+      "title": "De Profundis",
+      "author": "Oscar Wilde",
+      "date": "January-March 1897",
+      "place": "Reading Gaol, England",
+      "region": "Europe (Irish author in England)",
+      "author_gender": "male",
+      "position_in_life": "Celebrated playwright, imprisoned for 'gross indecency', bankrupt and publicly disgraced",
+      "original_language": "English",
+      "recommended_edition": "PD editions (1905 abridged; later full texts)",
+      "where_to_find": "Project Gutenberg (search 'De Profundis Wilde')",
+      "locator": "Middle section on sorrow and humility",
+      "key_line": "Where there is sorrow there is holy ground.",
+      "summary": "A long letter from prison to the man he loved, working through bitterness and shame towards something like acceptance.",
+      "context": "Written in a cell where he was allowed only one sheet of paper at a time.",
+      "what_happened_next": "He was released in 1897 and died in Paris in 1900. In 2017 he was among the men posthumously pardoned under UK law.",
+      "show_aftermath": true,
+      "situations": [
+        "relationships",
+        "identity"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "imprisonment",
+        "persecution for sexuality"
+      ],
+      "rights": "Public domain",
+      "extract": "Suffering is one very long moment. We cannot divide it by seasons. We can only record its moods, and chronicle their return. With us time itself does not progress. It revolves. It seems to circle round one centre of pain. [...]\n\nWhere there is sorrow there is holy ground. Some day people will realise what that means. They will know nothing of life till they do.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "De Profundis (Methuen, 1913), Project Gutenberg #921",
+      "extract_locator": "Opening; and the passage on sorrow",
+      "extract_notes": "",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Guilty / Remorseful",
+          "words": [
+            "Guilty",
+            "Remorseful"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Ashamed / Stupid",
+          "words": [
+            "Ashamed",
+            "Stupid"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Thoughtful / Pensive",
+          "words": [
+            "Thoughtful",
+            "Pensive"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Peaceful",
+        "Sad"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W08",
+      "form": "letter",
+      "title": "Letter to Lady Elizabeth Pelham",
+      "author": "W. B. Yeats",
+      "date": "4 January 1939",
+      "place": "Menton, France",
+      "region": "Europe (Ireland)",
+      "author_gender": "male",
+      "position_in_life": "Nobel-winning poet and former senator, gravely ill, weeks before his death",
+      "original_language": "English",
+      "recommended_edition": "The Letters of W. B. Yeats, ed. Allan Wade (1954)",
+      "where_to_find": "Library copy of Wade's Letters; widely quoted",
+      "locator": "Letter of 4 January 1939",
+      "key_line": "Man can embody truth but he cannot know it.",
+      "summary": "In one of his last letters he says he has tried to sum up a lifetime of searching in one phrase: we can't fully know the truth, only live it.",
+      "context": "Written with the knowledge that he was near the end.",
+      "what_happened_next": "He died on 28 January 1939.",
+      "show_aftermath": true,
+      "situations": [
+        "big_decision",
+        "study",
+        "change_transition"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Yeats died in 1939, but the letter was first published in 1954, so UK status is uncertain. A one-line quotation with credit is the safe use.",
+      "extract": "[One line, then a retelling] \"Man can embody truth but he cannot know it.\" Writing a few weeks before he died, Yeats told a friend that if he had to put everything he had learned into one phrase, it would be this: we never get to fully know what life means, but we can live it, and that is what he meant to do with the time he had left.",
+      "extract_type": "short_quote",
+      "extract_source": "The Letters of W. B. Yeats, ed. Allan Wade (1954)",
+      "extract_locator": "Letter of 4 January 1939",
+      "extract_notes": "Keep to the single line (rights in the full letter are uncertain).",
+      "wheel_tags": [
+        {
+          "core": "Peaceful",
+          "pair": "Thoughtful / Pensive",
+          "words": [
+            "Thoughtful",
+            "Pensive"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Confused / Bewildered",
+          "words": [
+            "Confused",
+            "Bewildered"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Important / Discerning",
+          "words": [
+            "Important",
+            "Discerning"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Peaceful",
+        "Powerful",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W09",
+      "form": "diary",
+      "title": "Diaries of Anne Lister",
+      "author": "Anne Lister",
+      "date": "1806-1840 (key entry 29 January 1821)",
+      "place": "Shibden Hall, Halifax, Yorkshire",
+      "region": "Europe (England, Northern)",
+      "author_gender": "female",
+      "position_in_life": "Landowner, traveller and mountaineer; wrote about a sixth of her diaries in a secret code",
+      "original_language": "English (partly coded)",
+      "recommended_edition": "Original volumes: West Yorkshire Archive Service (Calderdale). Modern edited editions are in copyright.",
+      "where_to_find": "West Yorkshire Archive Service; the Anne Lister diary transcription project",
+      "locator": "Entry of 29 January 1821",
+      "key_line": "I love, and only love, the fairer sex",
+      "summary": "In coded pages she writes plainly about who she is and who she loves, and about the loneliness of having to hide it.",
+      "context": "A local link: Halifax is about 70 miles from Durham.",
+      "what_happened_next": "In 1834 she and Ann Walker took communion together at Holy Trinity Goodramgate, York, now commemorated as a kind of marriage.",
+      "show_aftermath": true,
+      "situations": [
+        "identity",
+        "relationships"
+      ],
+      "comfort": [
+        "company",
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Original text PD; transcriptions may have their own terms",
+      "extract": "[One line, then a retelling] \"I love, and only love, the fairer sex\" In pages she wrote in her own secret code, Anne Lister set down plainly who she was and who she loved, at a time when she could say it almost nowhere else. The diaries are full of longing, loneliness and an unshakable sense of herself.",
+      "extract_type": "short_quote",
+      "extract_source": "Anne Lister's diary (original at West Yorkshire Archive Service, Calderdale)",
+      "extract_locator": "Entry of 29 January 1821",
+      "extract_notes": "VERIFY the line against the archive's transcription before demo.",
+      "wheel_tags": [
+        {
+          "core": "Peaceful",
+          "pair": "Loving / Serene",
+          "words": [
+            "Loving",
+            "Serene"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Faithful / Confident",
+          "words": [
+            "Faithful",
+            "Confident"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Lonely / Isolated",
+          "words": [
+            "Lonely",
+            "Isolated"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Peaceful",
+        "Powerful",
+        "Sad"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W10",
+      "form": "letters (travel)",
+      "title": "Letters Written During a Short Residence in Sweden, Norway, and Denmark",
+      "author": "Mary Wollstonecraft",
+      "date": "1795 (published 1796)",
+      "place": "Scandinavia",
+      "region": "Europe (England / Scandinavia)",
+      "author_gender": "female",
+      "position_in_life": "Writer and philosopher travelling alone with her baby daughter after her partner's betrayal",
+      "original_language": "English",
+      "recommended_edition": "1796 first edition",
+      "where_to_find": "Project Gutenberg (search title)",
+      "locator": "Early letters from Sweden and Norway",
+      "key_line": "I was alone, till some involuntary sympathetic emotion [...] made me feel that I was still a part of a mighty whole",
+      "summary": "Letters from a rocky northern coastline in which heartbreak, low mood and the calm of wild landscapes are woven together.",
+      "context": "Written on a business trip for the partner who was leaving her.",
+      "what_happened_next": "The book was a success and changed how people wrote about travel and feeling. She later married William Godwin.",
+      "show_aftermath": true,
+      "situations": [
+        "relationships",
+        "moving_away"
+      ],
+      "comfort": [
+        "company",
+        "perspective"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "this period of her life included suicide attempts; do not reference them in the app"
+      ],
+      "rights": "Public domain",
+      "extract": "My child was sleeping with equal calmness--innocent and sweet as the closing flowers. Some recollections, attached to the idea of home, mingled with reflections respecting the state of society I had been contemplating that evening, made a tear drop on the rosy cheek I had just kissed [...]\n\nHow frequently has melancholy and even misanthropy taken possession of me, when the world has disgusted me, and friends have proved unkind. I have then considered myself as a particle broken off from the grand mass of mankind; I was alone, till some involuntary sympathetic emotion, like the attraction of adhesion, made me feel that I was still a part of a mighty whole, from which I could not sever myself",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Letters Written During a Short Residence in Sweden, Norway, and Denmark (1796), Project Gutenberg #3529",
+      "extract_locator": "Letter I (night in Sweden)",
+      "extract_notes": "SAFETY: the original sentence continues with an allusion to ending one's life. The extract stops before it. Do not extend.",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Lonely / Isolated",
+          "words": [
+            "Lonely",
+            "Isolated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Loving / Serene",
+          "words": [
+            "Loving",
+            "Serene"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Critical / Skeptical",
+          "words": [
+            "Critical",
+            "Skeptical"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Peaceful",
+        "Sad"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W11",
+      "form": "diary",
+      "title": "The Diary of Murasaki Shikibu",
+      "author": "Murasaki Shikibu",
+      "date": "c. 1008-1010",
+      "place": "Heian-kyo (Kyoto), Japan",
+      "region": "East Asia (Japan)",
+      "author_gender": "female",
+      "position_in_life": "Lady-in-waiting at the imperial court; author of The Tale of Genji",
+      "original_language": "Classical Japanese",
+      "recommended_edition": "trans. Annie Shepley Omori and Kochi Doi, Diaries of Court Ladies of Old Japan (1920)",
+      "where_to_find": "Project Gutenberg eBook #47151",
+      "locator": "Diary of Murasaki Shikibu, passages on her life at court and her reputation",
+      "key_line": "I had passed my life without feeling any sort of contempt of myself until I went to Court",
+      "summary": "Surrounded by glittering court life, she feels out of step and judged, and hides how much she knows so as not to seem a show-off.",
+      "context": "Already famous as a novelist, she found court society exhausting.",
+      "what_happened_next": "Her novel is often called the world's first, and she remains one of Japan's most celebrated writers.",
+      "show_aftermath": true,
+      "situations": [
+        "work_career",
+        "study",
+        "identity"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "PD in the US. One translator (Doi) died in 1979, so check UK status or paraphrase.",
+      "extract": "Although an unimportant person I had passed my life without feeling any sort of contempt of myself until I went to Court--since then, alas! I have experienced all the bitterness of it. [...]\n\nFather, who was devoted to study, regretted that I had not been a son, but I heard people saying that it is not beautiful even for a man to be proud of his learning, and after that I did not write so much as the figure one in Chinese.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Diaries of Court Ladies of Old Japan, trans. Omori & Doi (1920), Project Gutenberg #47151",
+      "extract_locator": "The Diary of Murasaki Shikibu",
+      "extract_notes": "PD in the US. One translator died in 1979, so UK status is uncertain. Kept short; consider our own paraphrase for a public launch.",
+      "wheel_tags": [
+        {
+          "core": "Scared",
+          "pair": "Insecure / Embarrassed",
+          "words": [
+            "Insecure",
+            "Embarrassed"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Depressed / Inferior",
+          "words": [
+            "Depressed",
+            "Inferior"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Hurt / Distant",
+          "words": [
+            "Hurt",
+            "Distant"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Sad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W12",
+      "form": "essay / memoir",
+      "title": "Afterword to Records on Metal and Stone",
+      "author": "Li Qingzhao",
+      "date": "c. 1132-1134",
+      "place": "Southern China (as a refugee)",
+      "region": "East Asia (China)",
+      "author_gender": "female",
+      "position_in_life": "Celebrated poet, widowed and displaced by the Jurchen invasion",
+      "original_language": "Classical Chinese",
+      "recommended_edition": "English translations (e.g. Ronald Egan, 2019) are in copyright. Use a short credited quotation or paraphrase.",
+      "where_to_find": "Egan, The Works of Li Qingzhao (De Gruyter, 2019)",
+      "locator": "Full afterword",
+      "key_line": "Yet where there is having there must be losing; what gathers together must scatter.",
+      "summary": "She remembers a happy marriage spent collecting books and art with her husband, then war, flight, his death and the loss of almost everything they gathered. She concludes that what comes together must one day scatter.",
+      "context": "Her husband, Zhao Mingcheng, died in 1129.",
+      "what_happened_next": "She completed and presented his catalogue, and is remembered as China's greatest woman poet.",
+      "show_aftermath": true,
+      "situations": [
+        "bereavement",
+        "moving_away"
+      ],
+      "comfort": [
+        "perspective",
+        "company"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "war",
+        "bereavement"
+      ],
+      "rights": "Original PD; translations in copyright",
+      "extract": "Today I suddenly opened this book again, and it was like meeting an old friend. I remembered him in the hall at Donglai, the scrolls just newly mounted [...] Every evening, once the clerks had gone home, he would check two scrolls and write a note on one. [...] Now his handwriting looks as fresh as ever, yet the trees on his grave have already grown thick. How sad! [...] How hard these things were to gather, and how easily they were lost! Ah, from when I was eighteen until now, at fifty-two, in thirty-four years, how much worry and sorrow, how much gained and lost! Yet where there is having there must be losing; what gathers together must scatter. That is the ordinary way of things. Someone loses a bow, someone else finds it; why make so much of it?",
+      "extract_type": "own_translation",
+      "extract_source": "Translated for this project from the Chinese original (金石錄後序, 1132), text via Chinese Wikisource",
+      "extract_locator": "Closing section of the Afterword",
+      "extract_original_language_text": "今日忽閱此書，如見故人。因憶侯在東萊靜治堂，裝卷初就……每日晚，吏散，輒校勘二卷，跋題一卷。……今手澤如新，而墓木已拱，悲夫﹗……何得之艱而失之易也﹗嗚呼﹗余自少陸機作賦之二年，至過蘧瑗知非之兩歲，三十四年之間，憂患得失，何其多也﹗然有有必有無，有聚必有散，乃理之常。人亡弓，人得之，又胡足道？",
+      "extract_notes": "Ages follow the classical allusions in the text (Lu Ji at 20, minus two; Qu Boyu at 50, plus two).",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Lonely / Isolated",
+          "words": [
+            "Lonely",
+            "Isolated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Thoughtful / Pensive",
+          "words": [
+            "Thoughtful",
+            "Pensive"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Helpless / Insignificant",
+          "words": [
+            "Helpless",
+            "Insignificant"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Peaceful",
+        "Sad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W13",
+      "form": "prose preface and rhapsody",
+      "title": "'Return Home!' (Gui qu lai xi ci), with preface",
+      "author": "Tao Yuanming (Tao Qian)",
+      "date": "405 CE",
+      "place": "Pengze county, Jiangxi, China",
+      "region": "East Asia (China)",
+      "author_gender": "male",
+      "position_in_life": "Minor official from a poor family, working for the money",
+      "original_language": "Classical Chinese",
+      "recommended_edition": "Herbert A. Giles, Gems of Chinese Literature (PD), if it includes the piece; otherwise paraphrase",
+      "where_to_find": "Internet Archive (search 'Gems of Chinese Literature Giles')",
+      "locator": "Prose preface",
+      "key_line": "Hunger and cold are real enough, but going against myself made me sick in body and mind.",
+      "summary": "He explains he took a job for the money, but within days longed to go home: acting against his own nature hurt more than hunger and cold. After about 80 days he quit.",
+      "context": "The model for every 'I quit to go and grow vegetables' story in Chinese culture.",
+      "what_happened_next": "He never served again, farmed in poverty, and became one of China's most beloved poets.",
+      "show_aftermath": true,
+      "situations": [
+        "work_career",
+        "big_decision"
+      ],
+      "comfort": [
+        "permission_to_rest",
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Original PD; check translation",
+      "extract": "My family was poor, and farming could not feed us. The house was full of small children and there was no grain in the jar. [...] So when a post came up in Pengze, a hundred li from home, I took it. But within a few days I felt a longing to go home. Why? My nature is what it is; it cannot be forced into another shape. Hunger and cold are real enough, but going against myself made me sick in body and mind. [...]\n\nReturn home! The fields and garden will soon be overgrown; why not go back?\nI have made my mind the servant of my body; why be miserable and grieve alone?\nI see now the past can't be put right, but I know the future can still be reached.\nI have not gone so far down the wrong road; I can see today is right and yesterday was wrong.",
+      "extract_type": "own_translation",
+      "extract_source": "Translated for this project from the Chinese original (歸去來兮辭并序, 405 CE), text via Chinese Wikisource",
+      "extract_locator": "Prose preface, and the opening lines of the rhapsody",
+      "extract_original_language_text": "余家貧，耕植不足以自給。幼稚盈室，缾無儲粟……及少日，眷然有歸歟之情。何則？質性自然，非矯勵所得。飢凍雖切，違己交病。……歸去來兮，田園將蕪胡不歸？既自以心為形役，奚惆悵而獨悲！悟已往之不諫，知來者之可追；實迷途其未遠，覺今是而昨非。",
+      "extract_notes": "",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Tired / Sleepy",
+          "words": [
+            "Tired",
+            "Sleepy"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Guilty / Remorseful",
+          "words": [
+            "Guilty",
+            "Remorseful"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Content / Relaxed",
+          "words": [
+            "Content",
+            "Relaxed"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Peaceful",
+        "Sad"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W14",
+      "form": "spiritual autobiography",
+      "title": "Deliverance from Error (The Confessions of Al Ghazzali)",
+      "author": "Abu Hamid al-Ghazali",
+      "date": "c. 1100-1108 (describing a crisis in 1095)",
+      "place": "Baghdad and Tus (Persia)",
+      "region": "West Asia (Persia / Iraq)",
+      "author_gender": "male",
+      "position_in_life": "Star professor at Baghdad's leading college, at the peak of his career",
+      "original_language": "Arabic",
+      "recommended_edition": "trans. Claud Field, The Confessions of Al Ghazzali (1909)",
+      "where_to_find": "Project Gutenberg eBook #58977; Wikisource",
+      "locator": "Section 'Sufism': his account of the crisis that ended his teaching in Baghdad",
+      "key_line": "I advanced one step and immediately relapsed.",
+      "summary": "Realising his work was driven by wanting status, he wavered for months until he physically could not speak to lecture. Doctors could do nothing, so he gave up his post and left.",
+      "context": "One of the most famous accounts of burnout before the word existed.",
+      "what_happened_next": "After about ten years of travel and retreat he returned to teaching, and became one of the most influential thinkers in Islamic history.",
+      "show_aftermath": true,
+      "situations": [
+        "work_career",
+        "big_decision",
+        "study"
+      ],
+      "comfort": [
+        "permission_to_rest",
+        "hope"
+      ],
+      "intensity": 2,
+      "content_notes": [],
+      "rights": "Public domain (Field, 1909)",
+      "extract": "Still a prey to uncertainty, one day I decided to leave Bagdad and to give up everything; the next day I gave up my resolution. I advanced one step and immediately relapsed. [...] the Tempter, returning to the attack, said, \"You are suffering from a transitory feeling; don't give way to it, for it will soon pass. If you obey it, if you give up this fine position, this honourable post exempt from trouble and rivalry, this seat of authority safe from attack, you will regret it later on without being able to recover it.\"\n\nThus I remained, torn asunder by the opposite forces of earthly passions and religious aspirations, for about six months [...] At the close of them my will yielded and I gave myself up to destiny. God caused an impediment to chain my tongue and prevented me from lecturing. Vainly I desired, in the interest of my pupils, to go on with my teaching, but my mouth became dumb.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "The Confessions of Al Ghazzali, trans. Claud Field (1909), Project Gutenberg #58977",
+      "extract_locator": "Section 'Sufism'",
+      "extract_notes": "The following lines describe losing appetite and doctors fearing for his life; cut for the app.",
+      "wheel_tags": [
+        {
+          "core": "Scared",
+          "pair": "Anxious / Overwhelmed",
+          "words": [
+            "Anxious",
+            "Overwhelmed"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Confused / Bewildered",
+          "words": [
+            "Confused",
+            "Bewildered"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Tired / Sleepy",
+          "words": [
+            "Tired",
+            "Sleepy"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Sad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W15",
+      "form": "memoir and letter",
+      "title": "Baburnama (Memoirs of Babur): the melon from Kabul",
+      "author": "Zahir-ud-din Muhammad Babur",
+      "date": "c. 1526-1529",
+      "place": "Agra, India (born in Ferghana, Central Asia)",
+      "region": "Central and South Asia",
+      "author_gender": "male",
+      "position_in_life": "Founder of the Mughal Empire; lost his homeland as a teenager and never returned",
+      "original_language": "Chagatai Turkic",
+      "recommended_edition": "trans. Annette S. Beveridge, The Babur-nama in English (1922)",
+      "where_to_find": "Internet Archive (Beveridge translation)",
+      "locator": "Hindustan years; letter quoted in the memoir (Everyman edn of Beveridge, c. p. 646)",
+      "key_line": "a melon was brought to me; to cut and eat it affected me strangely; I was all tears!",
+      "summary": "Even as emperor, he writes about missing the fruit, running water and gardens of home, and admits he wept the whole time he was eating a melon sent from Kabul.",
+      "context": "Driven out of Ferghana at around 12-19, he spent his life far from home.",
+      "what_happened_next": "His memoir is one of the first true autobiographies in the Islamic world. He asked to be buried in a garden in Kabul, and was.",
+      "show_aftermath": true,
+      "situations": [
+        "moving_away"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain (Beveridge)",
+      "extract": "Boundless and infinite is my desire to go to those parts. [...]\n\nHow should a person forget the pleasant things of those countries, especially one who has repented and vowed to sin no more? How should he banish from his mind the permitted flavours of melons and grapes? Taking this opportunity, a melon was brought to me; to cut and eat it affected me strangely; I was all tears!",
+      "extract_type": "verbatim_pd",
+      "extract_source": "The Babur-nama in English, trans. Annette S. Beveridge (1922), Project Gutenberg #44608",
+      "extract_locator": "Copy of a letter to Khwaja Kalan (early 1529), quoted in the memoir",
+      "extract_notes": "Footnote markers removed. 'Repented' refers to his giving up wine.",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Lonely / Isolated",
+          "words": [
+            "Lonely",
+            "Isolated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Sensuous / Fascinating",
+          "words": [
+            "Sensuous",
+            "Fascinating"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Sad"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W16",
+      "form": "autobiography",
+      "title": "An Autobiography, or The Story of My Experiments with Truth, Part II ch. 3 'The First Case'",
+      "author": "M. K. Gandhi",
+      "date": "events c. 1891-92; published 1925-29",
+      "place": "Small Causes Court, Bombay, India",
+      "region": "South Asia (India)",
+      "author_gender": "male",
+      "position_in_life": "Newly qualified barrister back from London, broke and painfully shy",
+      "original_language": "Gujarati",
+      "recommended_edition": "trans. Mahadev Desai",
+      "where_to_find": "Standard Ebooks; mkgandhi.org",
+      "locator": "Part II, chapter 3",
+      "key_line": "I stood up, but my heart sank into my boots.",
+      "summary": "At his first case he stands up to cross-examine a witness and can't think of a single question. He sits down, hands the case to someone else and leaves ashamed.",
+      "context": "He resolved not to take another case until he had the courage.",
+      "what_happened_next": "A job in South Africa in 1893 changed everything. There he found his voice and began the work that made him famous.",
+      "show_aftermath": true,
+      "situations": [
+        "public_speaking",
+        "work_career",
+        "study"
+      ],
+      "comfort": [
+        "hope",
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Desai translation PD in the UK (translator died 1942)",
+      "extract": "This was my debut in the Small Causes Court. I appeared for the defendant and had thus to cross-examine the plaintiff's witnesses. I stood up, but my heart sank into my boots. My head was reeling and I felt as though the whole court was doing likewise. I could think of no question to ask. The judge must have laughed and the vakils no doubt enjoyed the spectacle. But I was past seeing anything. I sat down and told the agent that I could not conduct the case [...]\n\nI hastened from the Court, not knowing whether my client won or lost her case, but I was ashamed of myself, and decided not to take up any more cases until I had courage enough to conduct them.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "An Autobiography, or The Story of My Experiments with Truth, trans. Mahadev Desai (Navajivan, 1927-29), via Internet Archive",
+      "extract_locator": "Part II, chapter 3, 'The First Case'",
+      "extract_notes": "'vakils' = court pleaders.",
+      "wheel_tags": [
+        {
+          "core": "Scared",
+          "pair": "Insecure / Embarrassed",
+          "words": [
+            "Insecure",
+            "Embarrassed"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Ashamed / Stupid",
+          "words": [
+            "Ashamed",
+            "Stupid"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Submissive / Inadequate",
+          "words": [
+            "Submissive",
+            "Inadequate"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Anxious / Overwhelmed",
+          "words": [
+            "Anxious",
+            "Overwhelmed"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Sad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W17",
+      "form": "letters",
+      "title": "Glimpses of Bengal (letters 1885-1895)",
+      "author": "Rabindranath Tagore",
+      "date": "1885-1895 (English edition 1921)",
+      "place": "Shelidah, on the Padma river, Bengal",
+      "region": "South Asia (India / Bangladesh)",
+      "author_gender": "male",
+      "position_in_life": "Young writer sent to manage his family's rural estates",
+      "original_language": "Bengali",
+      "recommended_edition": "Glimpses of Bengal (Macmillan, 1921)",
+      "where_to_find": "Project Gutenberg / Internet Archive (search title)",
+      "locator": "Letters from the houseboat on the Padma",
+      "key_line": "The world is so immense, the concourse of men so vast, yet with how few has one any tie!",
+      "summary": "Letters from rural Bengal: hearing a festival he has no part in, he feels how few people in the world he is truly tied to, and how small joys call to you when you're far from home.",
+      "context": "Written to his niece Indira Devi.",
+      "what_happened_next": "In 1913 he became the first non-European to win the Nobel Prize in Literature.",
+      "show_aftermath": true,
+      "situations": [
+        "moving_away",
+        "work_career"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain in the UK (author died 1941)",
+      "extract": "Early this morning, while still lying in bed, I heard the women at the bathing-place sending forth joyous peals of Ulu! Ulu! The sound moved me curiously, though it is difficult to say why. Perhaps such joyful outbursts put one in mind of the great stream of festive activity which goes on in this world, with most of which the individual man has no connection. The world is so immense, the concourse of men so vast, yet with how few has one any tie! Distant sounds of life, wafted near, bearing tidings from unknown homes, make the individual realise that the greater part of the world of men does not, cannot own or know him; then he feels deserted, loosely attached to the world, and a vague sadness creeps over him. [...]\n\nEach of the little joys of life, which remain unappreciated amid the hubbub of the town, send in their claims to the heart when far from home.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Glimpses of Bengal (Macmillan, 1921), Project Gutenberg #7951",
+      "extract_locator": "Letters from Shelidah, 22 June 1892, and Shazadpur, 25 June 1892",
+      "extract_notes": "'Ulu! Ulu!' is a shrill festive cheer given by women.",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Lonely / Isolated",
+          "words": [
+            "Lonely",
+            "Isolated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Thoughtful / Pensive",
+          "words": [
+            "Thoughtful",
+            "Pensive"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Peaceful",
+        "Sad"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W18",
+      "form": "letters",
+      "title": "Letters to Mary Martin",
+      "author": "Toru Dutt",
+      "date": "1874-1877",
+      "place": "Calcutta (after studying in Cambridge)",
+      "region": "South Asia (India)",
+      "author_gender": "female",
+      "position_in_life": "Young Bengali poet and translator back home after Europe; grieving her sister",
+      "original_language": "English",
+      "recommended_edition": "Harihar Das, Life and Letters of Toru Dutt (OUP, 1921)",
+      "where_to_find": "Internet Archive (search title)",
+      "locator": "Letters to Mary Martin, 1874-77",
+      "key_line": "I have not been to one dinner party or any party at all since we left Europe.",
+      "summary": "Writing to her friend from Cambridge, she describes missing college life and friends, feeling isolated at home, and fielding constant questions about when she'll marry.",
+      "context": "She attended the Higher Lectures for Women at Cambridge in 1871-73.",
+      "what_happened_next": "She wrote prolifically in English and French and is now seen as a pioneer of Indian writing in English. She died of tuberculosis aged 21.",
+      "show_aftermath": false,
+      "situations": [
+        "moving_away",
+        "family",
+        "study"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "early death of author (aftermath)"
+      ],
+      "rights": "Public domain",
+      "extract": "We do not go much into society now. The Bengali reunions are always for men. Wives and daughters and all womenkind are confined to the house, under lock and key, a la lettre! and Europeans are generally supercilious and look down on Bengalis. I have not been to one dinner party or any party at all since we left Europe. And then I do not know any people here, except those of our kith and kin, and some of them I do not know. [...] The life we lead here is so retired and quiet that I am afraid you find my letters dull.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Harihar Das, Life and Letters of Toru Dutt (OUP, 1921), via Internet Archive",
+      "extract_locator": "Letter to Mary Martin, 1876",
+      "extract_notes": "Taken from an OCR scan: 'look down' was misread as 'look clown', and 'womenkind' is split across a line. Check both against the page image.",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Lonely / Isolated",
+          "words": [
+            "Lonely",
+            "Isolated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Bored / Apathetic",
+          "words": [
+            "Bored",
+            "Apathetic"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Critical / Skeptical",
+          "words": [
+            "Critical",
+            "Skeptical"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Sad"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W19",
+      "form": "prose meditation",
+      "title": "The Prophet, 'On Pain'",
+      "author": "Kahlil Gibran",
+      "date": "1923",
+      "place": "New York (born in Bsharri, Lebanon)",
+      "region": "West Asia / North America (Lebanese diaspora)",
+      "author_gender": "male",
+      "position_in_life": "Immigrant artist and writer, raised in poverty in Boston",
+      "original_language": "English",
+      "recommended_edition": "1923 first edition",
+      "where_to_find": "Project Gutenberg / Wikisource (search 'The Prophet Gibran')",
+      "locator": "Section 'On Pain'",
+      "key_line": "Your pain is the breaking of the shell that encloses your understanding.",
+      "summary": "A short meditation suggesting that pain is part of growing, like a seed or shell breaking open.",
+      "context": "He lost his mother, brother and sister within about a year as a young man.",
+      "what_happened_next": "The Prophet became one of the best-selling books of the 20th century.",
+      "show_aftermath": true,
+      "situations": [
+        "change_transition",
+        "bereavement"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain (UK and US)",
+      "extract": "And a woman spoke, saying, Tell us of Pain.\n\nAnd he said:\nYour pain is the breaking of the shell that encloses your understanding.\nEven as the stone of the fruit must break, that its heart may stand in the sun, so must you know pain.\nAnd could you keep your heart in wonder at the daily miracles of your life, your pain would not seem less wondrous than your joy;\nAnd you would accept the seasons of your heart, even as you have always accepted the seasons that pass over your fields.\nAnd you would watch with serenity through the winters of your grief.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "The Prophet (Knopf, 1923), Project Gutenberg #58585",
+      "extract_locator": "'On Pain'",
+      "extract_notes": "SAFETY: the section goes on to say 'Much of your pain is self-chosen'. Cut, because it could read as blame to someone struggling.",
+      "wheel_tags": [
+        {
+          "core": "Peaceful",
+          "pair": "Thoughtful / Pensive",
+          "words": [
+            "Thoughtful",
+            "Pensive"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Hopeful / Optimistic",
+          "words": [
+            "Hopeful",
+            "Optimistic"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Peaceful"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W20",
+      "form": "letter",
+      "title": "Letter to the Rev. Samson Occom",
+      "author": "Phillis Wheatley",
+      "date": "11 February 1774",
+      "place": "Boston (born in West Africa)",
+      "region": "Africa / North America (diaspora)",
+      "author_gender": "female",
+      "position_in_life": "Poet, kidnapped as a child and enslaved; newly freed",
+      "original_language": "English",
+      "recommended_edition": "Connecticut Gazette, 11 March 1774",
+      "where_to_find": "Widely transcribed (e.g. Museum of the American Revolution)",
+      "locator": "Full letter",
+      "key_line": "in every human Breast, God has implanted a Principle, which we call Love of Freedom",
+      "summary": "Writing to a Mohegan minister and friend, she argues that the longing for freedom lives in everyone, and calls out those who demand liberty while denying it to others.",
+      "context": "Published widely in New England newspapers in 1774.",
+      "what_happened_next": "She was the first African American woman to publish a book of poetry. She later married John Peters.",
+      "show_aftermath": true,
+      "situations": [
+        "discrimination",
+        "identity"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "slavery"
+      ],
+      "rights": "Public domain",
+      "extract": "[...] for in every human Breast, God has implanted a Principle, which we call Love of Freedom; it is impatient of Oppression, and pants for Deliverance; and by the Leave of our modern Egyptians I will assert, that the same Principle lives in us.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Letter to Samson Occom, 11 Feb 1774, as printed in the Connecticut Gazette (11 March 1774)",
+      "extract_locator": "Central passage",
+      "extract_notes": "Assembled from two published transcriptions that agree. Check against a facsimile if possible.",
+      "wheel_tags": [
+        {
+          "core": "Powerful",
+          "pair": "Faithful / Confident",
+          "words": [
+            "Faithful",
+            "Confident"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Angry / Frustrated",
+          "words": [
+            "Angry",
+            "Frustrated"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Hopeful / Optimistic",
+          "words": [
+            "Hopeful",
+            "Optimistic"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Mad",
+        "Powerful"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W21",
+      "form": "autobiography",
+      "title": "The Interesting Narrative of the Life of Olaudah Equiano, chapter 2",
+      "author": "Olaudah Equiano",
+      "date": "1789",
+      "place": "London (born in Igboland, West Africa)",
+      "region": "Africa / Europe (diaspora)",
+      "author_gender": "male",
+      "position_in_life": "Kidnapped as a child and enslaved; later freed, a writer and abolitionist",
+      "original_language": "English",
+      "recommended_edition": "1789 first edition",
+      "where_to_find": "Project Gutenberg (search title)",
+      "locator": "Chapter 2: kidnapping and separation from his sister",
+      "key_line": "thus for a while we forgot our misfortunes in the joy of being together",
+      "summary": "He describes being taken from home as a boy, briefly reunited with his sister and then separated from her for ever.",
+      "context": "One of the most influential abolitionist books in Britain.",
+      "what_happened_next": "He bought his freedom in 1766, his book became a bestseller, and he campaigned to end the slave trade.",
+      "show_aftermath": true,
+      "situations": [
+        "moving_away",
+        "family"
+      ],
+      "comfort": [
+        "company",
+        "hope"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "slavery",
+        "child kidnapping"
+      ],
+      "rights": "Public domain",
+      "extract": "In this manner I had been travelling for a considerable time, when one evening, to my great surprise, whom should I see brought to the house where I was but my dear sister! As soon as she saw me she gave a loud shriek, and ran into my arms--I was quite overpowered: neither of us could speak; but, for a considerable time, clung to each other in mutual embraces, unable to do any thing but weep. [...] and thus for a while we forgot our misfortunes in the joy of being together: but even this small comfort was soon to have an end; for scarcely had the fatal morning appeared, when she was again torn from me for ever!",
+      "extract_type": "verbatim_pd",
+      "extract_source": "The Interesting Narrative of the Life of Olaudah Equiano (1789), Project Gutenberg #15399",
+      "extract_locator": "Chapter II",
+      "extract_notes": "",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Lonely / Isolated",
+          "words": [
+            "Lonely",
+            "Isolated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Helpless / Insignificant",
+          "words": [
+            "Helpless",
+            "Insignificant"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Loving / Serene",
+          "words": [
+            "Loving",
+            "Serene"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Peaceful",
+        "Sad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W22",
+      "form": "autobiography (dictated)",
+      "title": "The History of Mary Prince, a West Indian Slave",
+      "author": "Mary Prince",
+      "date": "1831",
+      "place": "London (born in Bermuda)",
+      "region": "Caribbean / Europe",
+      "author_gender": "female",
+      "position_in_life": "Formerly enslaved woman living as a domestic worker in London",
+      "original_language": "English",
+      "recommended_edition": "1831 edition",
+      "where_to_find": "Project Gutenberg eBook #17851",
+      "locator": "Closing pages",
+      "key_line": "I have been a slave myself--I know what slaves feel",
+      "summary": "She answers English people who claimed enslaved people were content by insisting that her own experience is the authority.",
+      "context": "The first account of the life of a Black woman published in Britain.",
+      "what_happened_next": "The book went through three editions in its first year and fed the campaign that ended slavery in the British Empire in 1833-34.",
+      "show_aftermath": true,
+      "situations": [
+        "discrimination",
+        "identity"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "slavery",
+        "physical violence"
+      ],
+      "rights": "Public domain",
+      "extract": "All slaves want to be free--to be free is very sweet. I will say the truth to English people who may read this history that my good friend, Miss S----, is now writing down for me. I have been a slave myself--I know what slaves feel--I can tell by myself what other slaves feel, and by what they have told me. The man that says slaves be quite happy in slavery--that they don't want to be free--that man is either ignorant or a lying person. I never heard a slave say so.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "The History of Mary Prince (1831), Project Gutenberg #17851",
+      "extract_locator": "Closing pages",
+      "extract_notes": "",
+      "wheel_tags": [
+        {
+          "core": "Mad",
+          "pair": "Angry / Frustrated",
+          "words": [
+            "Angry",
+            "Frustrated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Faithful / Confident",
+          "words": [
+            "Faithful",
+            "Confident"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Critical / Skeptical",
+          "words": [
+            "Critical",
+            "Skeptical"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Powerful"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W23",
+      "form": "autobiography",
+      "title": "Wonderful Adventures of Mrs Seacole in Many Lands",
+      "author": "Mary Seacole",
+      "date": "1857",
+      "place": "London (born in Kingston, Jamaica)",
+      "region": "Caribbean / Europe",
+      "author_gender": "female",
+      "position_in_life": "Jamaican-Scottish 'doctress' and businesswoman",
+      "original_language": "English",
+      "recommended_edition": "1857 edition",
+      "where_to_find": "Standard Ebooks; Project Gutenberg",
+      "locator": "Chapter on applying to go to the Crimea",
+      "key_line": "Did these ladies shrink from accepting my aid because my blood flowed beneath a somewhat duskier skin than theirs?",
+      "summary": "Turned away by every official channel she tried, she wonders whether her skin colour is the reason, then goes to the war anyway at her own expense.",
+      "context": "She built the 'British Hotel' near Balaclava to feed and nurse soldiers.",
+      "what_happened_next": "Her book was a bestseller. In 2004 she was voted the greatest Black Briton, and her statue stands at St Thomas' Hospital.",
+      "show_aftermath": true,
+      "situations": [
+        "work_career",
+        "discrimination"
+      ],
+      "comfort": [
+        "courage",
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "racism; period language elsewhere in the book"
+      ],
+      "rights": "Public domain",
+      "extract": "[...] one cold evening I stood in the twilight, which was fast deepening into wintry night, and looked back upon the ruins of my last castle in the air. The disappointment seemed a cruel one. I was so conscious of the unselfishness of the motives which induced me to leave England--so certain of the service I could render among the sick soldiery, and yet I found it so difficult to convince others of these facts. Doubts and suspicions arose in my heart for the first and last time, thank Heaven. Was it possible that American prejudices against colour had some root here? Did these ladies shrink from accepting my aid because my blood flowed beneath a somewhat duskier skin than theirs? Tears streamed down my foolish cheeks, as I stood in the fast thinning streets; tears of grief that any should doubt my motives--that Heaven should deny me the opportunity that I sought. Then I stood still, and looking upward through and through the dark clouds that shadowed London, prayed aloud for help.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Wonderful Adventures of Mrs. Seacole in Many Lands (1857), Project Gutenberg #23031",
+      "extract_locator": "Chapter VIII (applying to go to the Crimea)",
+      "extract_notes": "Chapter number to verify.",
+      "wheel_tags": [
+        {
+          "core": "Scared",
+          "pair": "Rejected / Discouraged",
+          "words": [
+            "Rejected",
+            "Discouraged"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Hurt / Distant",
+          "words": [
+            "Hurt",
+            "Distant"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W24",
+      "form": "letter (open)",
+      "title": "Letter to Thomas Auld",
+      "author": "Frederick Douglass",
+      "date": "3 September 1848",
+      "place": "Rochester, New York",
+      "region": "North America",
+      "author_gender": "male",
+      "position_in_life": "Escaped from slavery ten years earlier; editor of The North Star",
+      "original_language": "English",
+      "recommended_edition": "The North Star, 8 September 1848; reprinted in My Bondage and My Freedom (1855)",
+      "where_to_find": "Project Gutenberg (My Bondage and My Freedom, appendix)",
+      "locator": "Full letter",
+      "key_line": "I am your fellow-man, but not your slave.",
+      "summary": "On the tenth anniversary of his escape, he writes directly to the man who enslaved him: firm and unafraid, insisting on his own humanity.",
+      "context": "Published openly as a public act.",
+      "what_happened_next": "He became one of the most important orators and writers of the 19th century. Years later he visited Auld on his deathbed.",
+      "show_aftermath": true,
+      "situations": [
+        "family",
+        "discrimination",
+        "identity"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "slavery",
+        "violence"
+      ],
+      "rights": "Public domain",
+      "extract": "I am myself; you are yourself; we are two distinct persons, equal persons. What you are, I am. You are a man, and so am I. God created both, and made us separate beings. [...]\n\nIn doing this, I entertain no malice toward you personally. There is no roof under which you would be more safe than mine, and there is nothing in my house which you might need for your comfort, which I would not readily grant. [...] I am your fellow-man, but not your slave.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Letter 'To My Old Master, Thomas Auld' (1848), reprinted in My Bondage and My Freedom (1855), Project Gutenberg #202",
+      "extract_locator": "Appendix: 'Letter to his old master'",
+      "extract_notes": "",
+      "wheel_tags": [
+        {
+          "core": "Powerful",
+          "pair": "Respected / Worthwhile",
+          "words": [
+            "Respected",
+            "Worthwhile"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Angry / Frustrated",
+          "words": [
+            "Angry",
+            "Frustrated"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Faithful / Confident",
+          "words": [
+            "Faithful",
+            "Confident"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Powerful"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W25",
+      "form": "essay / reportage",
+      "title": "Native Life in South Africa, chapter 1",
+      "author": "Sol T. Plaatje",
+      "date": "1916",
+      "place": "Kimberley, South Africa (written partly at sea and in London)",
+      "region": "Africa (South Africa, Tswana)",
+      "author_gender": "male",
+      "position_in_life": "Journalist, linguist and campaigner",
+      "original_language": "English",
+      "recommended_edition": "1916 (P. S. King)",
+      "where_to_find": "Project Gutenberg eBook #1452",
+      "locator": "Opening line of chapter 1",
+      "key_line": "not actually a slave, but a pariah in the land of his birth.",
+      "summary": "Overnight, the 1913 Natives Land Act made millions of people strangers in their own country. Plaatje travels to record what it meant for families on the road.",
+      "context": "Written while on a deputation to London to protest the Act.",
+      "what_happened_next": "He was the first Secretary-General of the South African Native National Congress (later the ANC), and wrote one of the first novels in English by a Black South African.",
+      "show_aftermath": true,
+      "situations": [
+        "discrimination",
+        "moving_away"
+      ],
+      "comfort": [
+        "courage",
+        "company"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "racial dispossession"
+      ],
+      "rights": "Public domain",
+      "extract": "Awaking on Friday morning, June 20, 1913, the South African Native found himself, not actually a slave, but a pariah in the land of his birth.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Native Life in South Africa (1916), Project Gutenberg #1452",
+      "extract_locator": "Chapter I, opening",
+      "extract_notes": "Longer passages from the chapter describe families evicted onto the roads. Add one if wanted (all PD).",
+      "wheel_tags": [
+        {
+          "core": "Scared",
+          "pair": "Helpless / Insignificant",
+          "words": [
+            "Helpless",
+            "Insignificant"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Angry / Frustrated",
+          "words": [
+            "Angry",
+            "Frustrated"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W26",
+      "form": "letter",
+      "title": "Reply to Sister Filotea (Respuesta a Sor Filotea de la Cruz)",
+      "author": "Sor Juana Inés de la Cruz",
+      "date": "1 March 1691",
+      "place": "Mexico City (New Spain)",
+      "region": "Latin America (Mexico)",
+      "author_gender": "female",
+      "position_in_life": "Nun, poet and scholar, largely self-taught",
+      "original_language": "Spanish",
+      "recommended_edition": "Spanish original (PD). English translations are in copyright, so paraphrase or translate yourselves.",
+      "where_to_find": "Biblioteca Virtual Miguel de Cervantes (Spanish text)",
+      "locator": "Early autobiographical section about her childhood learning",
+      "key_line": "no punishments or scoldings were enough to stop me.",
+      "summary": "As a small girl she begged her mother to dress her as a boy and send her to Mexico City to study at the University. Refused, she read her grandfather's books instead, and no punishment could stop her.",
+      "context": "The bishop wrote under a woman's pen name, 'Sor Filotea'.",
+      "what_happened_next": "She is now celebrated as one of the great writers of the Spanish-speaking world and an early advocate for women's education.",
+      "show_aftermath": true,
+      "situations": [
+        "study",
+        "identity",
+        "discrimination"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Spanish PD; translations in copyright",
+      "extract": "When I was about six or seven, and could already read and write, along with all the needlework and sewing that women are taught, I heard that in Mexico City there was a University, and schools where the sciences were studied. No sooner had I heard it than I began to wear my mother out with constant, pestering pleas to change my clothes [dress me as a boy] and send me to Mexico City, to some relatives she had there, so that I could study and attend the University. She wouldn't do it, and she was quite right; but I satisfied the longing by reading the many books my grandfather owned, and no punishments or scoldings were enough to stop me.",
+      "extract_type": "own_translation",
+      "extract_source": "Translated for this project from the Spanish original (1691), text via Spanish Wikisource",
+      "extract_locator": "Autobiographical section on her childhood",
+      "extract_original_language_text": "Teniendo yo después como seis o siete años, y sabiendo ya leer y escribir, con todas las otras habilidades de labores y costuras que deprenden las mujeres, oí decir que había Universidad y Escuelas en que se estudiaban las ciencias, en Méjico; y apenas lo oí cuando empecé a matar a mi madre con instantes e importunos ruegos sobre que, mudándome el traje, me enviase a Méjico, en casa de unos deudos que tenía, para estudiar y cursar la Universidad; ella no lo quiso hacer, e hizo muy bien, pero yo despiqué el deseo en leer muchos libros varios que tenía mi abuelo, sin que bastasen castigos ni reprensiones a estorbarlo",
+      "extract_notes": "We deliberately avoided the better-known passage where she cuts her hair to punish herself for learning too slowly, because it models self-punishment.",
+      "wheel_tags": [
+        {
+          "core": "Joyful",
+          "pair": "Excited / Daring",
+          "words": [
+            "Excited",
+            "Daring"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Angry / Frustrated",
+          "words": [
+            "Angry",
+            "Frustrated"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Faithful / Confident",
+          "words": [
+            "Faithful",
+            "Confident"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Mad",
+        "Powerful"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W27",
+      "form": "letter",
+      "title": "First letter to Thomas Wentworth Higginson",
+      "author": "Emily Dickinson",
+      "date": "15 April 1862",
+      "place": "Amherst, Massachusetts",
+      "region": "North America",
+      "author_gender": "female",
+      "position_in_life": "Unpublished poet living in her family home",
+      "original_language": "English",
+      "recommended_edition": "Published by Higginson in The Atlantic Monthly (1891)",
+      "where_to_find": "Dickinson Electronic Archives; Wikisource",
+      "locator": "Opening line",
+      "key_line": "Are you too deeply occupied to say if my verse is alive?",
+      "summary": "She sends four poems to a stranger and asks whether they are 'alive': the terrifying vulnerability of showing someone your work.",
+      "context": "Higginson had just published advice to young writers.",
+      "what_happened_next": "Few poems appeared in her lifetime. After her death, nearly 1,800 were found, and she is now one of the most important poets in English.",
+      "show_aftermath": true,
+      "situations": [
+        "creative_work",
+        "study"
+      ],
+      "comfort": [
+        "company",
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract": "Mr Higginson,--Are you too deeply occupied to say if my verse is alive?\n\nThe mind is so near itself it cannot see distinctly, and I have none to ask.\n\nShould you think it breathed, and had you the leisure to tell me, I should feel quick gratitude.\n\nIf I make the mistake, that you dared to tell me would give me sincerer honor toward you.\n\nI enclose my name, asking you, if you please, sir, to tell me what is true?\n\nThat you will not betray me it is needless to ask, since honor is its own pawn.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Letters of Emily Dickinson, ed. Mabel Loomis Todd (1894), via Internet Archive",
+      "extract_locator": "To T. W. Higginson (dated there April 16, 1862; usually dated 15 April)",
+      "extract_notes": "Todd's 1894 text normalises Dickinson's capitals ('Verse' in the manuscript).",
+      "wheel_tags": [
+        {
+          "core": "Scared",
+          "pair": "Insecure / Embarrassed",
+          "words": [
+            "Insecure",
+            "Embarrassed"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Submissive / Inadequate",
+          "words": [
+            "Submissive",
+            "Inadequate"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Creative / Playful",
+          "words": [
+            "Creative",
+            "Playful"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W28",
+      "form": "letter",
+      "title": "Letter to Fanny McCullough",
+      "author": "Abraham Lincoln",
+      "date": "23 December 1862",
+      "place": "Washington, D.C.",
+      "region": "North America",
+      "author_gender": "male",
+      "position_in_life": "President during the Civil War, himself grieving his son Willie",
+      "original_language": "English",
+      "recommended_edition": "Collected Works of Abraham Lincoln",
+      "where_to_find": "Library of Congress; Abraham Lincoln Online",
+      "locator": "Full letter",
+      "key_line": "You are sure to be happy again.",
+      "summary": "He writes to a young woman whose father has been killed in battle, telling her honestly that the pain feels permanent but isn't.",
+      "context": "Her father, Lt. Col. William McCullough, had been a friend.",
+      "what_happened_next": "She kept the letter. It is often cited as one of the most compassionate condolence letters ever written.",
+      "show_aftermath": true,
+      "situations": [
+        "bereavement",
+        "family"
+      ],
+      "comfort": [
+        "hope"
+      ],
+      "intensity": 3,
+      "content_notes": [
+        "death of a parent in war"
+      ],
+      "rights": "Public domain",
+      "extract": "It is with deep regret that I learn of the death of your kind and brave father, and especially that it is affecting your young heart beyond what is common in such cases. In this sad world of ours sorrow comes to all, and to the young it comes with bittered [usually printed 'bitterest'] agony because it takes them unawares.\n\nThe older have learned ever to expect it. I am anxious to afford some alleviation of your present distress, perfect relief is not possible, except with time. You cannot now realize that you will ever feel better. Is not this so? And yet it is a mistake. You are sure to be happy again. To know this, which is certainly true, will make you some less miserable now. I have had experience enough to know what I say, and you need only to believe it to feel better at once. The memory of your dear father, instead of an agony, will yet be a sad, sweet feeling in your heart, of a purer and holier sort than you have known before.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "The Papers and Writings of Abraham Lincoln, vol. 6 (Constitutional ed.), Project Gutenberg #2658",
+      "extract_locator": "Letter to Miss Fanny McCullough, 23 December 1862",
+      "extract_notes": "Gutenberg text reads 'bittered'; most printings read 'bitterest'. Check against a facsimile and choose one.",
+      "wheel_tags": [
+        {
+          "core": "Joyful",
+          "pair": "Hopeful / Optimistic",
+          "words": [
+            "Hopeful",
+            "Optimistic"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Nurturing / Thankful",
+          "words": [
+            "Nurturing",
+            "Thankful"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Depressed / Inferior",
+          "words": [
+            "Depressed",
+            "Inferior"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Peaceful",
+        "Sad"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W29",
+      "form": "memoir essay",
+      "title": "The School Days of an Indian Girl, 'The Cutting of My Long Hair'",
+      "author": "Zitkala-Ša (Gertrude Simmons Bonnin)",
+      "date": "1900 (Atlantic Monthly)",
+      "place": "Indiana boarding school (from the Yankton Reservation, South Dakota)",
+      "region": "North America (Indigenous: Yankton Dakota)",
+      "author_gender": "female",
+      "position_in_life": "Taken to an assimilationist boarding school aged 8; later a writer, violinist and activist",
+      "original_language": "English",
+      "recommended_edition": "Atlantic Monthly (1900); American Indian Stories (1921)",
+      "where_to_find": "Standard Ebooks; Project Gutenberg (American Indian Stories)",
+      "locator": "Section II, 'The Cutting of My Long Hair'",
+      "key_line": "\"No, I will not submit! I will struggle first!\"",
+      "summary": "Far from home, she hides to stop the school cutting her braids. In her culture, short hair was for mourners or captured enemies. She is found and her hair is cut.",
+      "context": "Part of a series in which she wrote back against the boarding-school system.",
+      "what_happened_next": "She became a celebrated writer and musician and in 1926 founded the National Council of American Indians.",
+      "show_aftermath": true,
+      "situations": [
+        "moving_away",
+        "identity",
+        "study"
+      ],
+      "comfort": [
+        "company",
+        "courage"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "forced assimilation of children"
+      ],
+      "rights": "Public domain",
+      "extract": "Late in the morning, my friend Judéwin gave me a terrible warning. Judéwin knew a few words of English; and she had overheard the paleface woman talk about cutting our long, heavy hair. Our mothers had taught us that only unskilled warriors who were captured had their hair shingled by the enemy. Among our people, short hair was worn by mourners, and shingled hair by cowards!\n\nWe discussed our fate some moments, and when Judéwin said, \"We have to submit, because they are strong,\" I rebelled.\n\n\"No, I will not submit! I will struggle first!\" I answered. [...]\n\nI cried aloud, shaking my head all the while until I felt the cold blades of the scissors against my neck, and heard them gnaw off one of my thick braids. Then I lost my spirit. Since the day I was taken from my mother I had suffered extreme indignities. People had stared at me. I had been tossed about in the air like a wooden puppet. And now my long hair was shingled like a coward's! In my anguish I moaned for my mother, but no one came to comfort me.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "American Indian Stories (1921), Project Gutenberg #10376",
+      "extract_locator": "The School Days of an Indian Girl, II, 'The Cutting of My Long Hair'",
+      "extract_notes": "Opening words 'Late in the morning, my friend' checked against a second transcription.",
+      "wheel_tags": [
+        {
+          "core": "Scared",
+          "pair": "Helpless / Insignificant",
+          "words": [
+            "Helpless",
+            "Insignificant"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Angry / Frustrated",
+          "words": [
+            "Angry",
+            "Frustrated"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Excited / Daring",
+          "words": [
+            "Excited",
+            "Daring"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Mad",
+        "Scared"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W30",
+      "form": "letter (dictated)",
+      "title": "Letter to Mr Phillips, Lord Sydney's steward",
+      "author": "Woollarawarre Bennelong",
+      "date": "29 August 1796",
+      "place": "Sydney Cove, New South Wales",
+      "region": "Oceania (Indigenous Australian: Wangal people)",
+      "author_gender": "male",
+      "position_in_life": "Wangal leader and diplomat, recently returned from nearly three years in England",
+      "original_language": "English (dictated to a scribe)",
+      "recommended_edition": "Original manuscript: National Library of Australia, MS 4005",
+      "where_to_find": "NLA Trove (nla.obj-557679852); AIATSIS",
+      "locator": "Full letter",
+      "key_line": "Not me go to England no more. I am at home now.",
+      "summary": "Home again, he thanks the family who nursed him while he was ill in England, asks for stockings and handkerchiefs, and says simply that he won't go back: he is home now.",
+      "context": "Believed to be the first known text in English by an Aboriginal Australian.",
+      "what_happened_next": "He lived out his life in his own country. His letter is now a treasured document of Aboriginal history.",
+      "show_aftermath": true,
+      "situations": [
+        "moving_away",
+        "change_transition"
+      ],
+      "comfort": [
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "mentions a spear wound from a dispute"
+      ],
+      "rights": "Public domain. Acknowledge the Wangal people; AIATSIS guidance on Indigenous materials is worth reading.",
+      "extract": "All my friends alive and well. Not me go to England no more. I am at home now. I hope Mrs Phillips is very well. You nurse me madam when I sick. You very good madam; thank you madam, and hope you remember me madam, not forget. I know you very well madam. Madam, I want stockings, thank you madam. Send me two pair of stockings.",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Letter of 29 August 1796, National Library of Australia MS 4005 (transcription as published by AIATSIS)",
+      "extract_locator": "Middle of the letter",
+      "extract_notes": "Assembled from two published transcriptions that agree. Check against NLA's digitised manuscript.",
+      "wheel_tags": [
+        {
+          "core": "Peaceful",
+          "pair": "Content / Relaxed",
+          "words": [
+            "Content",
+            "Relaxed"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Trusting / Secure",
+          "words": [
+            "Trusting",
+            "Secure"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Nurturing / Thankful",
+          "words": [
+            "Nurturing",
+            "Thankful"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Peaceful"
+      ],
+      "added_in": "v0.1"
+    },
+    {
+      "id": "W31",
+      "added_for": "Mad > Hostile / Sarcastic",
+      "form": "letters",
+      "title": "Letters to her sister Cassandra",
+      "author": "Jane Austen",
+      "date": "1796 and 24 December 1798",
+      "place": "Rowling (Kent) and Steventon (Hampshire)",
+      "region": "Europe (England)",
+      "author_gender": "female",
+      "position_in_life": "Clergyman's daughter in her twenties, writing novels no one had published yet",
+      "original_language": "English",
+      "summary": "In private letters to her sister, Austen is sharp, dry and very funny about the people around her.",
+      "context": "Written years before any of her novels was published.",
+      "what_happened_next": "She became one of the most loved novelists in English.",
+      "show_aftermath": true,
+      "situations": [
+        "family",
+        "relationships"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "The Letters of Jane Austen, ed. Sarah Chauncey Woolsey (1892), Project Gutenberg #42078",
+      "extract_locator": "Letter from Steventon, 24 December [1798]; letter from Rowling, 18 September [1796]",
+      "extract": "Miss Blackford is agreeable enough. I do not want people to be very agreeable, as it saves me the trouble of liking them a great deal.\n\n[...]\n\nMr. Richard Harvey is going to be married; but as it is a great secret, and only known to half the neighborhood, you must not mention it.",
+      "key_line": "I do not want people to be very agreeable, as it saves me the trouble of liking them a great deal.",
+      "extract_notes": "Years in square brackets come from the edition's ordering; check the Rowling letter's year (1796).",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Mad",
+          "pair": "Hostile / Sarcastic",
+          "words": [
+            "Hostile",
+            "Sarcastic"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Cheerful / Amused",
+          "words": [
+            "Cheerful",
+            "Amused"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Mad"
+      ]
+    },
+    {
+      "id": "W32",
+      "added_for": "Mad > Selfish / Jealous",
+      "form": "diary",
+      "title": "Diary entry for 15 May 1663",
+      "author": "Samuel Pepys",
+      "date": "15 May 1663",
+      "place": "London",
+      "region": "Europe (England)",
+      "author_gender": "male",
+      "position_in_life": "Ambitious young official at the Navy Office",
+      "original_language": "English (written in shorthand)",
+      "summary": "Pepys comes home to find his wife talking alone with her dancing master, and admits, with painful honesty, that his jealousy is eating him alive and that he brought it on himself.",
+      "context": "The dancing master, Pembleton, appears again and again in the diary over the following weeks.",
+      "what_happened_next": "The lessons ended later that month. His diary became one of the most famous ever written.",
+      "show_aftermath": true,
+      "situations": [
+        "relationships"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Diary of Samuel Pepys, 1663 (Wheatley edition), Project Gutenberg #4145",
+      "extract_locator": "Entry for 15 May 1663",
+      "extract": "[...] and so well pleased home, where I found it almost night, and my wife and the dancing-master alone above, not dancing but talking. Now so deadly full of jealousy I am that my heart and head did so cast about and fret that I could not do any business possibly, but went out to my office, and anon late home again and ready to chide at every thing, and then suddenly to bed and could hardly sleep, yet durst not say any thing [...] But it is a deadly folly and plague that I bring upon myself to be so jealous",
+      "key_line": "it is a deadly folly and plague that I bring upon myself to be so jealous",
+      "extract_notes": "One clause describing the dancing master's appearance has been cut.",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Mad",
+          "pair": "Selfish / Jealous",
+          "words": [
+            "Selfish",
+            "Jealous"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Sad",
+          "pair": "Guilty / Remorseful",
+          "words": [
+            "Guilty",
+            "Remorseful"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Sad"
+      ]
+    },
+    {
+      "id": "W33",
+      "added_for": "Mad > Hateful / Irritated",
+      "form": "philosophical notebook",
+      "title": "Meditations, Book II",
+      "author": "Marcus Aurelius",
+      "date": "c. 170-180 CE",
+      "place": "On campaign on the Danube frontier",
+      "region": "Europe (Roman Empire)",
+      "author_gender": "male",
+      "position_in_life": "Roman emperor, writing private notes to himself during years of war and plague",
+      "original_language": "Greek",
+      "summary": "A private note: brace yourself every morning for irritating people, and remember they are your kin, made to work alongside you.",
+      "context": "Never meant for publication. It was his own notebook.",
+      "what_happened_next": "It became one of the most widely read books of practical philosophy.",
+      "show_aftermath": true,
+      "situations": [
+        "work_career",
+        "relationships"
+      ],
+      "comfort": [
+        "advice",
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Meditations, trans. Meric Casaubon (1634), Project Gutenberg #2680",
+      "extract_locator": "Book II, opening",
+      "extract": "Betimes in the morning say to thyself, This day I shalt have to do with an idle curious man, with an unthankful man, a railer, a crafty, false, or an envious man; an unsociable uncharitable man. All these ill qualities have happened unto them, through ignorance of that which is truly good and truly bad. [...] How can I either be hurt by any of those, since it is not in their power to make me incur anything that is truly reproachful? or angry, and ill affected towards him, who by nature is so near unto me? for we are all born to be fellow-workers, as the feet, the hands, and the eyelids; as the rows of the upper and under teeth",
+      "key_line": "for we are all born to be fellow-workers, as the feet, the hands, and the eyelids",
+      "extract_notes": "17th-century translation: 'I shalt' is as printed. 'Betimes' = early.",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Mad",
+          "pair": "Hateful / Irritated",
+          "words": [
+            "Hateful",
+            "Irritated"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Thoughtful / Pensive",
+          "words": [
+            "Thoughtful",
+            "Pensive"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Peaceful"
+      ]
+    },
+    {
+      "id": "W34",
+      "added_for": "Mad > Critical / Skeptical",
+      "form": "essay",
+      "title": "Of Cannibals",
+      "author": "Michel de Montaigne",
+      "date": "c. 1580",
+      "place": "Montaigne, near Bordeaux, France",
+      "region": "Europe (France)",
+      "author_gender": "male",
+      "position_in_life": "Retired magistrate writing essays in his tower library",
+      "original_language": "French",
+      "summary": "After meeting Tupinambá people brought to France from Brazil, Montaigne turns his scepticism on his own society: we call 'barbarous' whatever isn't our own custom.",
+      "context": "Written as Europeans were colonising the Americas and calling its peoples savages.",
+      "what_happened_next": "His Essays invented the essay as a form and are still read worldwide.",
+      "show_aftermath": true,
+      "situations": [
+        "identity",
+        "study"
+      ],
+      "comfort": [
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "uses the period words 'savage' and 'barbarous', which the essay is criticising"
+      ],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Essays of Michel de Montaigne, trans. Charles Cotton, ed. W. C. Hazlitt, Project Gutenberg #3600",
+      "extract_locator": "Book I, 'Of Cannibals'",
+      "extract": "I find that there is nothing barbarous and savage in this nation, by anything that I can gather, excepting, that every one gives the title of barbarism to everything that is not in use in his own country. As, indeed, we have no other level of truth and reason than the example and idea of the opinions and customs of the place wherein we live: there is always the perfect religion, there the perfect government, there the most exact and accomplished usage of all things.",
+      "key_line": "every one gives the title of barbarism to everything that is not in use in his own country.",
+      "extract_notes": "",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Mad",
+          "pair": "Critical / Skeptical",
+          "words": [
+            "Critical",
+            "Skeptical"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Important / Discerning",
+          "words": [
+            "Important",
+            "Discerning"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Powerful"
+      ]
+    },
+    {
+      "id": "W35",
+      "added_for": "Joyful > Sensuous / Fascinating",
+      "form": "letter",
+      "title": "Letter to Charles Wentworth Dilke",
+      "author": "John Keats",
+      "date": "22 September 1819",
+      "place": "Winchester, England",
+      "region": "Europe (England)",
+      "author_gender": "male",
+      "position_in_life": "Young poet, broke, about to move to London to earn a living",
+      "original_language": "English",
+      "summary": "In the middle of a letter about money and lodgings, Keats breaks off to describe the bliss of eating a nectarine.",
+      "context": "Written in the same autumn as his ode 'To Autumn'.",
+      "what_happened_next": "He wrote 'To Autumn' that same week.",
+      "show_aftermath": true,
+      "situations": [
+        "creative_work"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Letters of John Keats to His Family and Friends, ed. Sidney Colvin (1891), Project Gutenberg #35698",
+      "extract_locator": "Letter CXVIII, to C. W. Dilke, Winchester, 22 September 1819",
+      "extract": "Talking of Pleasure, this moment I was writing with one hand, and with the other holding to my Mouth a Nectarine--good God how fine. It went down soft, pulpy, slushy, oozy--all its delicious embonpoint melted down my throat like a large beatified Strawberry.",
+      "key_line": "good God how fine.",
+      "extract_notes": "'embonpoint' = plumpness.",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Joyful",
+          "pair": "Sensuous / Fascinating",
+          "words": [
+            "Sensuous",
+            "Fascinating"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Cheerful / Amused",
+          "words": [
+            "Cheerful",
+            "Amused"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful"
+      ]
+    },
+    {
+      "id": "W36",
+      "added_for": "Joyful > Energetic / Stimulating",
+      "form": "travel diary",
+      "title": "The Narrow Road to the Deep North (Oku no Hosomichi), opening",
+      "author": "Matsuo Bashō",
+      "date": "1689 journey; published 1702",
+      "place": "Edo (Tokyo), Japan",
+      "region": "East Asia (Japan)",
+      "author_gender": "male",
+      "position_in_life": "Famous poet, aged 45, giving up his home to walk about 2,400 km through northern Japan",
+      "original_language": "Classical Japanese",
+      "summary": "Bashō explains why he has sold his house to set off on foot: the urge to travel has taken hold of him and he can't settle to anything else.",
+      "context": "He travelled with one companion, Sora, for about five months.",
+      "what_happened_next": "The diary became the most famous travel book in Japanese literature.",
+      "show_aftermath": true,
+      "situations": [
+        "big_decision",
+        "change_transition",
+        "moving_away"
+      ],
+      "comfort": [
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Original PD; translation is ours",
+      "extract_type": "own_translation",
+      "extract_source": "Translated for this project from the Japanese original, text via Japanese Wikisource",
+      "extract_locator": "Opening section",
+      "extract_original_language_text": "月日は百代の過客にしてゆきかふ年も又旅人なり舟の上に生涯をうかべ馬の口とらへて老をむかふるものは日々旅にして旅を栖とす古人も多く旅に死せるあり予もいづれの年よりか片雲の風にさそはれて漂泊の思ひやまず……春立る霞の空に白川の關越んとそゞろ神の物につきて心をくるはせ道祖神のまねきにあひて取物手につかずもゝひきの破れをつゞり笠の緖付かへて三里に灸すゆるより松島の月先心にかゝりて",
+      "extract": "The months and days are travellers of a hundred ages, and the years that come and go are travellers too. Those who spend their lives on boats, or grow old leading horses by the bridle, make every day a journey and make the journey their home. [...] I too, for some years now, have been drawn by the wind like a scrap of cloud, and could not stop longing to wander. [...] When spring came with its haze, I wanted to cross the Shirakawa barrier. The spirit of restlessness took hold of me and set my heart racing; the gods of the road beckoned, and I couldn't keep my mind on anything. I patched my trousers, put a new cord on my hat, and before I'd even finished treating my legs for the walk, the moon over Matsushima was already filling my thoughts.",
+      "key_line": "the gods of the road beckoned, and I couldn't keep my mind on anything.",
+      "extract_notes": "A line about ancient poets dying on the road has been cut. 'Treating my legs' refers to moxa, a traditional heat treatment for travellers.",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Joyful",
+          "pair": "Energetic / Stimulating",
+          "words": [
+            "Energetic",
+            "Stimulating"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Excited / Daring",
+          "words": [
+            "Excited",
+            "Daring"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful"
+      ]
+    },
+    {
+      "id": "W37",
+      "added_for": "Joyful > Cheerful / Amused",
+      "form": "letter",
+      "title": "Letter IX, to Mr K----",
+      "author": "Ignatius Sancho",
+      "date": "16 July 1770",
+      "place": "Dalkeith, Scotland",
+      "region": "Africa / Europe (Afro-British)",
+      "author_gender": "male",
+      "position_in_life": "Born on a slave ship, enslaved as a child in Greenwich; by now a butler travelling with the Duke of Montagu's household",
+      "original_language": "English",
+      "summary": "Back from a trip to the Highlands, Sancho tells a friend how their coach tipped over, everyone ended up in a heap, and they laughed until they couldn't.",
+      "context": "His letters were published after his death in 1782 and were a bestseller.",
+      "what_happened_next": "He later ran a grocer's shop in Westminster and is believed to be the first Black person known to have voted in a British election.",
+      "show_aftermath": true,
+      "situations": [
+        "relationships"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Letters of the Late Ignatius Sancho, an African (1782), Project Gutenberg #66908",
+      "extract_locator": "Letter IX, Dalkeith, 16 July 1770",
+      "extract": "We came home from our Highland excursion last Monday night, safe and well--after escaping manifold dangers.--Mesdames H----, D----, and self, went into the post-coach, and were honour'd with the freedom of Dumbarton. By an overset, the ladies shewed their--delicacy--and I my activity--Mr. B---- his humanity;--all was soon to rights--nothing broke--and no one hurt--and laughter had its fill.--Inverary is a charming place--the beauties various--and the whole plan majestic;--there are some worthy souls on the spot, which I admire more than the buildings and prospects.--We had herrings in perfection--and would have had mackarel; but the scoundrels were too sharp for us--and would not be caught.\n\n[The 1782 editor's footnote: Mr. Sancho was remarkably unwieldy and inactive, and never gave a greater proof of it than at this overset, when he and a goose-pye were equally incapable of raising themselves.]",
+      "key_line": "all was soon to rights--nothing broke--and no one hurt--and laughter had its fill.",
+      "extract_notes": "'overset' = the coach overturning. Check the voting claim before using it on screen.",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Joyful",
+          "pair": "Cheerful / Amused",
+          "words": [
+            "Cheerful",
+            "Amused"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Content / Relaxed",
+          "words": [
+            "Content",
+            "Relaxed"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Peaceful"
+      ]
+    },
+    {
+      "id": "W38",
+      "added_for": "Joyful > Creative / Playful",
+      "form": "letter",
+      "title": "Letter to Theo van Gogh, 14 August 1882",
+      "author": "Vincent van Gogh",
+      "date": "14 August 1882",
+      "place": "The Hague, Netherlands",
+      "region": "Europe (Netherlands)",
+      "author_gender": "male",
+      "position_in_life": "Aged 29, just starting to paint in oils after years of drawing",
+      "original_language": "Dutch",
+      "summary": "Two years after the despairing letter in W06, Vincent writes again just to tell Theo how much joy painting gives him, and how surprised he is that his first attempts are good.",
+      "context": "Pairs well with W06 (his 1880 low point): same person, very different day.",
+      "what_happened_next": "He painted almost 900 pictures over the next eight years.",
+      "show_aftermath": true,
+      "situations": [
+        "creative_work",
+        "study"
+      ],
+      "comfort": [
+        "hope",
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "keep the aftermath to his painting; do not reference his death"
+      ],
+      "rights": "WebExhibits states the letter may be freely used",
+      "extract_type": "verbatim_pd",
+      "extract_source": "WebExhibits 'Van Gogh's Letters', letter 225 (trans. Johanna van Gogh-Bonger, ed. Robert Harrison)",
+      "extract_locator": "Letter 225, The Hague, 14 August 1882",
+      "extract": "You must not take it amiss if I write you again - it is only to tell you that painting is such a joy to me. [...]\n\nTo tell you the truth, it surprises me a little. I had expected the first things to be a failure, though I supposed they would improve later on; but though I say so myself, they are not bad at all, and I repeat, it surprises me a little. [...]\n\nI simply couldn't restrain myself or keep my hands off it or allow myself any rest.",
+      "key_line": "it is only to tell you that painting is such a joy to me.",
+      "extract_notes": "",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Joyful",
+          "pair": "Creative / Playful",
+          "words": [
+            "Creative",
+            "Playful"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Energetic / Stimulating",
+          "words": [
+            "Energetic",
+            "Stimulating"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Aware / Surprised",
+          "words": [
+            "Aware",
+            "Surprised"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Powerful"
+      ]
+    },
+    {
+      "id": "W39",
+      "added_for": "Sad > Bored / Apathetic",
+      "form": "letter",
+      "title": "Letter to her sister Emily",
+      "author": "Charlotte Brontë",
+      "date": "8 June 1839",
+      "place": "Stonegappe, Yorkshire (as a governess)",
+      "region": "Europe (England, Northern)",
+      "author_gender": "female",
+      "position_in_life": "Aged 23, working as a live-in governess for a wealthy family",
+      "original_language": "English",
+      "summary": "Stuck in a job that uses none of her mind, Charlotte describes endless sewing, children who won't listen, an employer who doesn't care to know her, and feeling she doesn't exist except as a worker.",
+      "context": "She lasted only a few months in this post.",
+      "what_happened_next": "Eight years later she published Jane Eyre, with a heroine who is a governess.",
+      "show_aftermath": true,
+      "situations": [
+        "work_career",
+        "moving_away"
+      ],
+      "comfort": [
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Elizabeth Gaskell, The Life of Charlotte Brontë, vol. 1 (1857), Project Gutenberg #1827",
+      "extract_locator": "Letter to Emily Brontë, 8 June 1839",
+      "extract": "I have striven hard to be pleased with my new situation. The country, the house and the grounds are, as I have said, divine; but, alack-a-day! there is such a thing as seeing all beautiful around you--pleasant woods, white paths, green lawns, and blue sunshiny sky--and not having a free moment or a free thought left to enjoy them. [...] she cares nothing about me, except to contrive how the greatest possible quantity of labour may be got out of me; and to that end she overwhelms me with oceans of needle-work; yards of cambric to hem, muslin nightcaps to make, and, above all things, dolls to dress. [...] I used to think I should like to be in the stir of grand folks' society; but I have had enough of it--it is dreary work to look on and listen. I see more clearly than I have ever done before, that a private governess has no existence, is not considered as a living rational being, except as connected with the wearisome duties she has to fulfil",
+      "key_line": "it is dreary work to look on and listen.",
+      "extract_notes": "",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Sad",
+          "pair": "Bored / Apathetic",
+          "words": [
+            "Bored",
+            "Apathetic"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Scared",
+          "pair": "Helpless / Insignificant",
+          "words": [
+            "Helpless",
+            "Insignificant"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Mad",
+          "pair": "Hurt / Distant",
+          "words": [
+            "Hurt",
+            "Distant"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Mad",
+        "Sad",
+        "Scared"
+      ]
+    },
+    {
+      "id": "W40",
+      "added_for": "Peaceful > Intimate / Responsive (and Nurturing / Thankful)",
+      "form": "letter",
+      "title": "Reply to Robert Browning's first letter",
+      "author": "Elizabeth Barrett Barrett",
+      "date": "11 January 1845",
+      "place": "50 Wimpole Street, London",
+      "region": "Europe (England)",
+      "author_gender": "female",
+      "position_in_life": "Celebrated poet, chronically ill and largely confined to her room",
+      "original_language": "English",
+      "summary": "A stranger, the poet Robert Browning, has written to say he loves her poems. She writes back at once, warmly, and the exchange of sympathy and gratitude begins.",
+      "context": "His letter of the day before began: 'I love your verses with all my heart, dear Miss Barrett.'",
+      "what_happened_next": "They wrote almost 600 letters over the next 20 months, married secretly in 1846 and moved to Italy.",
+      "show_aftermath": true,
+      "situations": [
+        "relationships",
+        "creative_work"
+      ],
+      "comfort": [
+        "company",
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "The Letters of Robert Browning and Elizabeth Barrett Barrett, vol. 1 (1899), Project Gutenberg #16182",
+      "extract_locator": "E.B.B. to R.B., 50 Wimpole Street, 11 January 1845",
+      "extract": "I thank you, dear Mr. Browning, from the bottom of my heart. You meant to give me pleasure by your letter--and even if the object had not been answered, I ought still to thank you. But it is thoroughly answered. Such a letter from such a hand! Sympathy is dear--very dear to me: but the sympathy of a poet, and of such a poet, is the quintessence of sympathy to me! Will you take back my gratitude for it?--agreeing, too, that of all the commerce done in the world, from Tyre to Carthage, the exchange of sympathy for gratitude is the most princely thing!",
+      "key_line": "the exchange of sympathy for gratitude is the most princely thing!",
+      "extract_notes": "",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Peaceful",
+          "pair": "Intimate / Responsive",
+          "words": [
+            "Intimate",
+            "Responsive"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Peaceful",
+          "pair": "Nurturing / Thankful",
+          "words": [
+            "Nurturing",
+            "Thankful"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Appreciated / Valuable",
+          "words": [
+            "Appreciated",
+            "Valuable"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Peaceful",
+        "Powerful"
+      ]
+    },
+    {
+      "id": "W41",
+      "added_for": "Peaceful > Trusting / Secure",
+      "form": "spiritual memoir",
+      "title": "Revelations of Divine Love, chapter 27",
+      "author": "Julian of Norwich",
+      "date": "c. 1373 visions; written c. 1390s",
+      "place": "Norwich, England",
+      "region": "Europe (England)",
+      "author_gender": "female",
+      "position_in_life": "Anchoress living in a cell beside a church; had visions while gravely ill at 30",
+      "original_language": "Middle English",
+      "summary": "Julian admits she has often wondered why things had to go wrong at all, and the answer she receives is one of the most famous sentences of comfort in English.",
+      "context": "Thought to be the earliest surviving book in English written by a woman.",
+      "what_happened_next": "Her words are still quoted by people of every faith and none.",
+      "show_aftermath": true,
+      "situations": [
+        "change_transition",
+        "big_decision"
+      ],
+      "comfort": [
+        "hope"
+      ],
+      "intensity": 1,
+      "content_notes": [
+        "religious text: present as history and comfort, not preaching"
+      ],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Revelations of Divine Love, ed. Grace Warrack (1901), Project Gutenberg #52958",
+      "extract_locator": "The Thirteenth Revelation, chapter XXVII",
+      "extract": "And thus, in my folly, afore this time often I wondered why by the great foreseeing wisdom of God the beginning of sin was not letted: for then, methought, all should have been well. [...] But Jesus, who in this Vision informed me of all that is needful to me, answered by this word and said: It behoved that there should be sin; but all shall be well, and all shall be well, and all manner of thing shall be well. [...] All this was shewed in a touch and quickly passed over into comfort",
+      "key_line": "all shall be well, and all shall be well, and all manner of thing shall be well.",
+      "extract_notes": "'letted' = prevented.",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Peaceful",
+          "pair": "Trusting / Secure",
+          "words": [
+            "Trusting",
+            "Secure"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Hopeful / Optimistic",
+          "words": [
+            "Hopeful",
+            "Optimistic"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Peaceful"
+      ]
+    },
+    {
+      "id": "W42",
+      "added_for": "Powerful > Aware / Surprised",
+      "form": "autobiography",
+      "title": "Narrative of the Life of Frederick Douglass, chapter VI",
+      "author": "Frederick Douglass",
+      "date": "1845 (events c. 1826)",
+      "place": "Baltimore, Maryland",
+      "region": "North America",
+      "author_gender": "male",
+      "position_in_life": "An enslaved boy of about eight, just starting to learn the alphabet",
+      "original_language": "English",
+      "summary": "Overhearing his enslaver forbid anyone to teach him to read, because reading would 'spoil' him for slavery, the boy suddenly understands where freedom lies.",
+      "context": "Pairs with W24 (his 1848 letter to Thomas Auld).",
+      "what_happened_next": "He taught himself to read in secret, escaped in 1838, and became one of the great writers and speakers of his century.",
+      "show_aftermath": true,
+      "situations": [
+        "study",
+        "discrimination",
+        "identity"
+      ],
+      "comfort": [
+        "courage",
+        "hope"
+      ],
+      "intensity": 2,
+      "content_notes": [
+        "slavery; the enslaver's quoted speech (cut) contains racial slurs"
+      ],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Narrative of the Life of Frederick Douglass (1845), Project Gutenberg #23",
+      "extract_locator": "Chapter VI",
+      "extract": "These words sank deep into my heart, stirred up sentiments within that lay slumbering, and called into existence an entirely new train of thought. It was a new and special revelation, explaining dark and mysterious things, with which my youthful understanding had struggled, but struggled in vain. [...] It was a grand achievement, and I prized it highly. From that moment, I understood the pathway from slavery to freedom. It was just what I wanted, and I got it at a time when I the least expected it.",
+      "key_line": "From that moment, I understood the pathway from slavery to freedom.",
+      "extract_notes": "The preceding speech by his enslaver contains slurs and is not shown; the summary explains it.",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Powerful",
+          "pair": "Aware / Surprised",
+          "words": [
+            "Aware",
+            "Surprised"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Hopeful / Optimistic",
+          "words": [
+            "Hopeful",
+            "Optimistic"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Powerful"
+      ]
+    },
+    {
+      "id": "W43",
+      "added_for": "Powerful > Proud / Successful",
+      "form": "autobiography",
+      "title": "Up from Slavery, chapter III",
+      "author": "Booker T. Washington",
+      "date": "1901 (events 1872)",
+      "place": "Hampton Institute, Virginia",
+      "region": "North America",
+      "author_gender": "male",
+      "position_in_life": "A teenager born into slavery, who had travelled about 500 miles, mostly on foot, to try to get into college",
+      "original_language": "English",
+      "summary": "Dirty and penniless after the journey, he is told to sweep a classroom as a test. He cleans it so thoroughly that the teacher can't find a speck of dust, and he's admitted.",
+      "context": "He worked as the school's janitor to pay his way.",
+      "what_happened_next": "He became founding head of the Tuskegee Institute. (His politics were later criticised by W. E. B. Du Bois and others, worth knowing for the team.)",
+      "show_aftermath": true,
+      "situations": [
+        "study",
+        "work_career"
+      ],
+      "comfort": [
+        "hope",
+        "courage"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Up from Slavery (1901), Project Gutenberg #2376",
+      "extract_locator": "Chapter III, 'The Struggle for an Education'",
+      "extract": "After some hours had passed, the head teacher said to me: \"The adjoining recitation-room needs sweeping. Take the broom and sweep it.\"\n\nIt occurred to me at once that here was my chance. Never did I receive an order with more delight. [...]\n\nI swept the recitation-room three times. Then I got a dusting-cloth and dusted it four times. [...] When she was unable to find one bit of dirt on the floor, or a particle of dust on any of the furniture, she quietly remarked, \"I guess you will do to enter this institution.\"\n\nI was one of the happiest souls on Earth. The sweeping of that room was my college examination, and never did any youth pass an examination for entrance into Harvard or Yale that gave him more genuine satisfaction.",
+      "key_line": "The sweeping of that room was my college examination",
+      "extract_notes": "",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Powerful",
+          "pair": "Proud / Successful",
+          "words": [
+            "Proud",
+            "Successful"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Respected / Worthwhile",
+          "words": [
+            "Respected",
+            "Worthwhile"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Powerful"
+      ]
+    },
+    {
+      "id": "W44",
+      "added_for": "Powerful > Appreciated / Valuable",
+      "form": "autobiography",
+      "title": "Wonderful Adventures of Mrs Seacole in Many Lands: meeting at Gibraltar",
+      "author": "Mary Seacole",
+      "date": "1857 (events 1855)",
+      "place": "Gibraltar, on the way to the Crimea",
+      "region": "Caribbean / Europe",
+      "author_gender": "female",
+      "position_in_life": "Jamaican-Scottish nurse and businesswoman, travelling at her own expense after being turned down by officials",
+      "original_language": "English",
+      "summary": "On the way to the war, Seacole bumps into two soldiers she had nursed in Jamaica. They call her 'mother' and warn her how hard it will be, and she asks the only question that matters to her.",
+      "context": "Pairs with W23 (her rejection by officials in London).",
+      "what_happened_next": "Soldiers called her 'Mother Seacole', and when she was bankrupt after the war they raised funds for her.",
+      "show_aftermath": true,
+      "situations": [
+        "work_career"
+      ],
+      "comfort": [
+        "courage",
+        "company"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Public domain",
+      "extract_type": "verbatim_pd",
+      "extract_source": "Wonderful Adventures of Mrs. Seacole in Many Lands (1857), Project Gutenberg #23031",
+      "extract_locator": "Chapter on the voyage out (Gibraltar)",
+      "extract": "\"And you are going to the front, old lady--you, of all people in the world?\"\n\n\"Why not, my sons?--won't they be glad to have me there?\"\n\n\"By Jove! yes, mother,\" answered one, an Irishman. \"It isn't many women--God bless them!--we've had to spoil us out there. But it's not the place even for you, who know what hardship is.\" [...]\n\n\"Do you think I shall be of any use to you when I get there?\"\n\n\"Surely.\"\n\n\"Then I'll go, were the place a hundred times worse than you describe it.\" ",
+      "key_line": "\"Do you think I shall be of any use to you when I get there?\" \"Surely.\"",
+      "extract_notes": "Check the aftermath detail (fundraising festival, 1857) before putting it on screen.",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Powerful",
+          "pair": "Appreciated / Valuable",
+          "words": [
+            "Appreciated",
+            "Valuable"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Excited / Daring",
+          "words": [
+            "Excited",
+            "Daring"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Powerful"
+      ]
+    },
+    {
+      "id": "W45",
+      "added_for": "Powerful > Important / Discerning",
+      "form": "essay",
+      "title": "Our America (Nuestra América)",
+      "author": "José Martí",
+      "date": "1891",
+      "place": "New York (in exile from Cuba)",
+      "region": "Latin America / Caribbean (Cuba)",
+      "author_gender": "male",
+      "position_in_life": "Cuban poet and journalist living in exile, organising for independence",
+      "original_language": "Spanish",
+      "summary": "Martí urges Latin Americans to stop copying Europe and the US and trust their own judgement: take what's useful from the world, but build on your own roots, even if the result is imperfect.",
+      "context": "Published in New York and Mexico City in 1891.",
+      "what_happened_next": "He is now Cuba's national hero and one of the most widely read writers in Latin America.",
+      "show_aftermath": true,
+      "situations": [
+        "identity",
+        "creative_work",
+        "big_decision"
+      ],
+      "comfort": [
+        "courage",
+        "perspective"
+      ],
+      "intensity": 1,
+      "content_notes": [],
+      "rights": "Spanish original PD; translation is ours",
+      "extract_type": "own_translation",
+      "extract_source": "Translated for this project from the Spanish original (1891), text via Spanish Wikisource",
+      "extract_locator": "Middle section",
+      "extract_original_language_text": "Injértese en nuestras repúblicas el mundo; pero el tronco ha de ser el de nuestras repúblicas. [...] Se ponen en pie los pueblos, y se saludan. \"¿Cómo somos?\" se preguntan; y unos a otros se van diciendo cómo son. Cuando aparece en Cojímar un problema, no van a buscar la solución a Dantzig. Las levitas son todavía de Francia, pero el pensamiento empieza a ser de América. Los jóvenes de América se ponen la camisa al codo, hunden las manos en la masa, y la levantan con la levadura de su sudor. Entienden que se imita demasiado, y que la salvación está en crear. Crear es la palabra de pase de esta generación. El vino, de plátano; y si sale agrio, ¡es nuestro vino!",
+      "extract": "Let the world be grafted onto our republics; but the trunk must be our own. [...]\n\nPeoples are getting to their feet and greeting one another. \"What are we like?\" they ask, and they begin telling each other what they are like. When a problem comes up in Cojímar, they don't go looking for the answer in Danzig. The frock coats are still French, but the thinking is beginning to be our own. The young people of America are rolling their sleeves up to the elbow, plunging their hands into the dough and making it rise with the yeast of their own sweat. They understand that there is too much imitation, and that salvation lies in creating. Create is this generation's password. Wine made from plantains; and if it comes out sour, it's our wine!",
+      "key_line": "Wine made from plantains; and if it comes out sour, it's our wine!",
+      "extract_notes": "'America' here means Latin America; we rendered one instance as 'our own' to make that clear. Cojímar is a Cuban fishing village; Danzig a European port.",
+      "added_in": "v0.3 gap fill",
+      "wheel_tags": [
+        {
+          "core": "Powerful",
+          "pair": "Important / Discerning",
+          "words": [
+            "Important",
+            "Discerning"
+          ],
+          "weight": "primary"
+        },
+        {
+          "core": "Joyful",
+          "pair": "Creative / Playful",
+          "words": [
+            "Creative",
+            "Playful"
+          ],
+          "weight": "secondary"
+        },
+        {
+          "core": "Powerful",
+          "pair": "Proud / Successful",
+          "words": [
+            "Proud",
+            "Successful"
+          ],
+          "weight": "secondary"
+        }
+      ],
+      "wheel_cores": [
+        "Joyful",
+        "Powerful"
+      ]
+    }
+  ],
+  "picture_route": [
+    {
+      "id": "A01",
+      "title": "Under the Wave off Kanagawa (The Great Wave)",
+      "artist": "Katsushika Hokusai",
+      "date": "c. 1830-32",
+      "region": "East Asia (Japan)",
+      "artist_gender": "male",
+      "medium": "Woodblock print",
+      "collection": "Many impressions: the Met (New York), Art Institute of Chicago, British Museum and others",
+      "accession": "verify (e.g. Met impression)",
+      "image_source": "Met Open Access or AIC (CC0)",
+      "image_rights": "Public domain; CC0 images available",
+      "description": "Three boats of rowers duck under a giant clawing wave while Mount Fuji sits small and still in the distance.",
+      "zoom_detail": "The crouching rowers inside the boats; then pull back to the tiny, steady Mount Fuji",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Scared",
+            "pair": "Anxious / Overwhelmed",
+            "words": [
+              "Anxious",
+              "Overwhelmed"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Scared",
+            "pair": "Helpless / Insignificant",
+            "words": [
+              "Helpless",
+              "Insignificant"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling anxious or overwhelmed. Does that fit?",
+        "in_default_set": true,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A02",
+      "title": "Travelers among Mountains and Streams",
+      "artist": "Fan Kuan",
+      "date": "c. 1000",
+      "region": "East Asia (China, Northern Song)",
+      "artist_gender": "male",
+      "medium": "Ink and colour on silk (hanging scroll)",
+      "collection": "National Palace Museum, Taipei",
+      "accession": "verify",
+      "image_source": "NPM Open Data (check resolution and terms)",
+      "image_rights": "Artwork PD; check NPM image terms",
+      "description": "A colossal mountain fills the scroll. At the bottom, almost invisible, a tiny mule train of travellers makes its way along the path.",
+      "zoom_detail": "The tiny mule train and travellers in the lower right",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Scared",
+            "pair": "Helpless / Insignificant",
+            "words": [
+              "Helpless",
+              "Insignificant"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Peaceful",
+            "pair": "Thoughtful / Pensive",
+            "words": [
+              "Thoughtful",
+              "Pensive"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling helpless or insignificant. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A03",
+      "title": "Jahangir Preferring a Sufi Shaikh to Kings",
+      "artist": "Bichitr",
+      "date": "c. 1615-18",
+      "region": "South Asia (Mughal India)",
+      "artist_gender": "male",
+      "medium": "Opaque watercolour, ink and gold on paper",
+      "collection": "Freer Gallery of Art, Smithsonian National Museum of Asian Art",
+      "accession": "F1942.15a",
+      "image_source": "asia.si.edu (Smithsonian Open Access; check usage label)",
+      "image_rights": "Artwork PD; Smithsonian usage conditions apply",
+      "description": "The emperor sits on an hourglass throne and hands a book to a Sufi holy man, ignoring the kings (including James I of England) waiting below. Status matters less than meaning.",
+      "zoom_detail": "The painter's own tiny self-portrait in the lower left corner; or the hourglass throne",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Powerful",
+            "pair": "Important / Discerning",
+            "words": [
+              "Important",
+              "Discerning"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Peaceful",
+            "pair": "Thoughtful / Pensive",
+            "words": [
+              "Thoughtful",
+              "Pensive"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling important or discerning. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A04",
+      "title": "The Passing of Shah Jahan",
+      "artist": "Abanindranath Tagore",
+      "date": "1902",
+      "region": "South Asia (India, Bengal School)",
+      "artist_gender": "male",
+      "medium": "Watercolour (miniature style)",
+      "collection": "Victoria Memorial Hall, Kolkata",
+      "accession": "verify",
+      "image_source": "Google Arts & Culture (Victoria Memorial Hall); Wikimedia Commons",
+      "image_rights": "Artwork PD in the UK and India (artist died 1951); check photo terms",
+      "description": "The dying, imprisoned emperor lies gazing across the river at the Taj Mahal he built for his late wife, with his daughter Jahanara at the foot of his bed.",
+      "zoom_detail": "The distant, glowing Taj Mahal; then Jahanara sitting with her father",
+      "zoom_box_pct": null,
+      "intensity": 2,
+      "content_notes": [
+        "deathbed scene"
+      ],
+      "context_note": "The artist painted it while grieving his young daughter, who died in the 1902 Calcutta plague.",
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Sad",
+            "pair": "Guilty / Remorseful",
+            "words": [
+              "Guilty",
+              "Remorseful"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Sad",
+            "pair": "Lonely / Isolated",
+            "words": [
+              "Lonely",
+              "Isolated"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling guilty or remorseful. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A05",
+      "title": "Three Girls",
+      "artist": "Amrita Sher-Gil",
+      "date": "1935",
+      "region": "South Asia (India; Hungarian-Indian artist)",
+      "artist_gender": "female",
+      "medium": "Oil on canvas",
+      "collection": "National Gallery of Modern Art, New Delhi",
+      "accession": "verify",
+      "image_source": "Wikimedia Commons",
+      "image_rights": "Artwork PD (artist died 1941); check photo terms",
+      "description": "Three young women sit close together in silence, waiting, their faces unreadable. Often read as being about women's futures being decided for them.",
+      "zoom_detail": "The faces and folded hands of the three women",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Sad",
+            "pair": "Bored / Apathetic",
+            "words": [
+              "Bored",
+              "Apathetic"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Scared",
+            "pair": "Confused / Bewildered",
+            "words": [
+              "Confused",
+              "Bewildered"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling bored or apathetic. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A06",
+      "title": "Portrait of a Young Woman in Red (Fayum mummy portrait)",
+      "artist": "Unknown painter, Roman Egypt",
+      "date": "c. 90-120 CE",
+      "region": "Africa (Egypt)",
+      "artist_gender": "unknown",
+      "medium": "Encaustic on wood",
+      "collection": "The Metropolitan Museum of Art, New York",
+      "accession": "verify",
+      "image_source": "Met Open Access (CC0)",
+      "image_rights": "Public domain; CC0",
+      "description": "A real young woman who lived about 1,900 years ago looks straight at you. It's one of the most direct 'you are not the first' images in existence.",
+      "zoom_detail": "Her eyes",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [
+        "funerary object; show respectfully"
+      ],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Sad",
+            "pair": "Lonely / Isolated",
+            "words": [
+              "Lonely",
+              "Isolated"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Peaceful",
+            "pair": "Intimate / Responsive",
+            "words": [
+              "Intimate",
+              "Responsive"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling lonely or isolated. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A07",
+      "title": "Virgin and Child with Archangels Michael and Gabriel (right panel of a diptych)",
+      "artist": "Fǝre Ṣǝyon (Fre Seyon)",
+      "date": "c. 1445-1480",
+      "region": "Africa (Ethiopia)",
+      "artist_gender": "male",
+      "medium": "Glue tempera on panel",
+      "collection": "Institute of Ethiopian Studies, Addis Ababa (lent to the Walters Art Museum, IL.1999.4)",
+      "accession": "IL.1999.4 (loan)",
+      "image_source": "Loaned work: image terms uncertain. CC0 alternative: Walters Art Museum Ethiopian icons by a follower of Fre Seyon (art.thewalters.org).",
+      "image_rights": "Artwork PD; use a Walters CC0 icon image if the loan image isn't licensed",
+      "description": "Mother and child sit protected by two archangels who guard them with drawn swords and shelter them with their wings.",
+      "zoom_detail": "The archangels' wings curving protectively around mother and child",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [
+        "religious image: present as art and history, not as preaching"
+      ],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Peaceful",
+            "pair": "Trusting / Secure",
+            "words": [
+              "Trusting",
+              "Secure"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Peaceful",
+            "pair": "Nurturing / Thankful",
+            "words": [
+              "Nurturing",
+              "Thankful"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling trusting or secure. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A08",
+      "title": "Hagar",
+      "artist": "Edmonia Lewis",
+      "date": "1875",
+      "region": "North America (African American and Ojibwe artist, worked in Rome)",
+      "artist_gender": "female",
+      "medium": "Carved marble",
+      "collection": "Smithsonian American Art Museum",
+      "accession": "1983.95.178",
+      "image_source": "americanart.si.edu (CC0)",
+      "image_rights": "Public domain; CC0",
+      "description": "Hagar, cast out into the wilderness after being enslaved and used, stands with clasped hands, praying for her survival and her child's.",
+      "zoom_detail": "Her clasped hands and upturned face",
+      "zoom_box_pct": null,
+      "intensity": 2,
+      "content_notes": [
+        "references slavery and abandonment"
+      ],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Scared",
+            "pair": "Rejected / Discouraged",
+            "words": [
+              "Rejected",
+              "Discouraged"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Mad",
+            "pair": "Hurt / Distant",
+            "words": [
+              "Hurt",
+              "Distant"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling rejected or discouraged. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A09",
+      "title": "Approaching Storm",
+      "artist": "Edward Mitchell Bannister",
+      "date": "1886",
+      "region": "North America (African Canadian-American artist)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Smithsonian American Art Museum",
+      "accession": "1983.95.62",
+      "image_source": "americanart.si.edu (marked free to use)",
+      "image_rights": "Public domain; free to use",
+      "description": "A dark storm gathers over a landscape. In the centre, a lone figure walks on, small against the weather.",
+      "zoom_detail": "The small walking figure in the centre",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Scared",
+            "pair": "Anxious / Overwhelmed",
+            "words": [
+              "Anxious",
+              "Overwhelmed"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Scared",
+            "pair": "Confused / Bewildered",
+            "words": [
+              "Confused",
+              "Bewildered"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling anxious or overwhelmed. Does that fit?",
+        "in_default_set": true,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A10",
+      "title": "Landscape with Rainbow",
+      "artist": "Robert S. Duncanson",
+      "date": "1859",
+      "region": "North America (African American artist)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Smithsonian American Art Museum",
+      "accession": "verify",
+      "image_source": "americanart.si.edu",
+      "image_rights": "Public domain; check usage label",
+      "description": "A calm pastoral landscape with a rainbow arching across the sky after rain.",
+      "zoom_detail": "The rainbow; then the small figures in the landscape below",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Joyful",
+            "pair": "Hopeful / Optimistic",
+            "words": [
+              "Hopeful",
+              "Optimistic"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Peaceful",
+            "pair": "Content / Relaxed",
+            "words": [
+              "Content",
+              "Relaxed"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling hopeful or optimistic. Does that fit?",
+        "in_default_set": true,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A11",
+      "title": "Anna Washington Derry",
+      "artist": "Laura Wheeler Waring",
+      "date": "1927",
+      "region": "North America (African American artist)",
+      "artist_gender": "female",
+      "medium": "Oil on canvas",
+      "collection": "Smithsonian American Art Museum",
+      "accession": "1967.91.1",
+      "image_source": "americanart.si.edu",
+      "image_rights": "Artist died 1948, so PD in the UK. Check the SAAM usage label for US status.",
+      "description": "A dignified portrait of a working laundress: arms folded, face steady, given the gravity usually reserved for the powerful.",
+      "zoom_detail": "Her folded hands; then her face",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Powerful",
+            "pair": "Respected / Worthwhile",
+            "words": [
+              "Respected",
+              "Worthwhile"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Sad",
+            "pair": "Tired / Sleepy",
+            "words": [
+              "Tired",
+              "Sleepy"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling respected or worthwhile. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A12",
+      "title": "Ceremony (also catalogued as 'Figures in possum skin cloaks')",
+      "artist": "William Barak (Beruk)",
+      "date": "1898",
+      "region": "Oceania (Indigenous Australian: Wurundjeri)",
+      "artist_gender": "male",
+      "medium": "Pencil, wash, charcoal, gouache and earth pigments on paper",
+      "collection": "National Gallery of Victoria, Melbourne",
+      "accession": "verify",
+      "image_source": "NGV Collection Online",
+      "image_rights": "Artwork PD (artist died 1903), but some collections say reuse of Barak images requires cultural approval. Ask NGV / Wurundjeri Woi-wurrung, or link out instead of embedding.",
+      "description": "Rows of figures in patterned possum-skin cloaks gather for ceremony, painted by a Wurundjeri leader keeping his culture visible under colonial rule.",
+      "zoom_detail": "The patterned cloaks of the figures standing together",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [
+        "Indigenous cultural material: needs permission and acknowledgement"
+      ],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Peaceful",
+            "pair": "Trusting / Secure",
+            "words": [
+              "Trusting",
+              "Secure"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Sad",
+            "pair": "Lonely / Isolated",
+            "words": [
+              "Lonely",
+              "Isolated"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling trusting or secure. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A13",
+      "title": "La ofrenda (The Offering)",
+      "artist": "Saturnino Herrán",
+      "date": "1913",
+      "region": "Latin America (Mexico)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Museo Nacional de Arte (MUNAL), Mexico City",
+      "accession": "verify",
+      "image_source": "MUNAL / INBAL; Wikimedia Commons",
+      "image_rights": "Artwork PD (artist died 1918); check photo terms",
+      "description": "A family of every age travels in a canal boat heaped with marigolds, the flowers that guide the dead home for the Day of the Dead.",
+      "zoom_detail": "The man at the prow, whose face is never shown; then the marigolds",
+      "zoom_box_pct": null,
+      "intensity": 2,
+      "content_notes": [
+        "theme of death and remembrance"
+      ],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Sad",
+            "pair": "Lonely / Isolated",
+            "words": [
+              "Lonely",
+              "Isolated"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Peaceful",
+            "pair": "Loving / Serene",
+            "words": [
+              "Loving",
+              "Serene"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling lonely or isolated. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A14",
+      "title": "Landscape with the Fall of Icarus",
+      "artist": "Attributed to Pieter Bruegel the Elder (probably a copy of his lost original)",
+      "date": "c. 1560s",
+      "region": "Europe (Southern Netherlands)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Royal Museums of Fine Arts of Belgium, Brussels",
+      "accession": "verify",
+      "image_source": "Wikimedia Commons",
+      "image_rights": "Public domain",
+      "description": "A ploughman, a shepherd and a ship carry on with their day. In the corner, almost unnoticed, a boy's legs disappear into the sea.",
+      "zoom_detail": "Icarus's legs splashing in the water near the ship, lower right",
+      "zoom_box_pct": null,
+      "intensity": 2,
+      "content_notes": [
+        "implied drowning: avoid for users flagged at risk"
+      ],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Scared",
+            "pair": "Helpless / Insignificant",
+            "words": [
+              "Helpless",
+              "Insignificant"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Mad",
+            "pair": "Hurt / Distant",
+            "words": [
+              "Hurt",
+              "Distant"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling helpless or insignificant. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": true
+      }
+    },
+    {
+      "id": "A15",
+      "title": "The Monk by the Sea",
+      "artist": "Caspar David Friedrich",
+      "date": "1808-10",
+      "region": "Europe (Germany)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Alte Nationalgalerie, Berlin",
+      "accession": "verify",
+      "image_source": "Wikimedia Commons; SMB-digital (check licence)",
+      "image_rights": "Public domain; check photo licence",
+      "description": "A tiny figure stands on a strip of shore before a vast dark sea and an even vaster sky.",
+      "zoom_detail": "The tiny monk on the shore",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Sad",
+            "pair": "Lonely / Isolated",
+            "words": [
+              "Lonely",
+              "Isolated"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Peaceful",
+            "pair": "Thoughtful / Pensive",
+            "words": [
+              "Thoughtful",
+              "Pensive"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling lonely or isolated. Does that fit?",
+        "in_default_set": true,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A16",
+      "title": "Self Portrait at the Age of 63",
+      "artist": "Rembrandt van Rijn",
+      "date": "1669",
+      "region": "Europe (Netherlands)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "The National Gallery, London",
+      "accession": "NG221 (verify)",
+      "image_source": "National Gallery (check licence); Wikimedia Commons",
+      "image_rights": "Public domain; check photo licence",
+      "description": "An old man looks at himself without flattery. He had been bankrupt and had lost his wife and son, yet the painting is calm and honest.",
+      "zoom_detail": "His eyes",
+      "zoom_box_pct": null,
+      "intensity": 2,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Sad",
+            "pair": "Guilty / Remorseful",
+            "words": [
+              "Guilty",
+              "Remorseful"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Peaceful",
+            "pair": "Thoughtful / Pensive",
+            "words": [
+              "Thoughtful",
+              "Pensive"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling guilty or remorseful. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A17",
+      "title": "Sorrowing Old Man ('At Eternity's Gate')",
+      "artist": "Vincent van Gogh",
+      "date": "1890",
+      "region": "Europe (Netherlands / France)",
+      "artist_gender": "male",
+      "medium": "Oil on canvas",
+      "collection": "Kröller-Müller Museum, Otterlo",
+      "accession": "verify",
+      "image_source": "Kröller-Müller Museum; Wikimedia Commons",
+      "image_rights": "Public domain",
+      "description": "An old man sits by the fire, bent forward with his face buried in his fists.",
+      "zoom_detail": "The hands pressed against his face",
+      "zoom_box_pct": null,
+      "intensity": 3,
+      "content_notes": [
+        "painted weeks before the artist's death: never show if the crisis check fires; never mention the aftermath"
+      ],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Sad",
+            "pair": "Depressed / Inferior",
+            "words": [
+              "Depressed",
+              "Inferior"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Sad",
+            "pair": "Tired / Sleepy",
+            "words": [
+              "Tired",
+              "Sleepy"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling depressed or inferior. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": true
+      }
+    },
+    {
+      "id": "A18",
+      "title": "Self-Portrait as the Allegory of Painting",
+      "artist": "Artemisia Gentileschi",
+      "date": "c. 1638-39",
+      "region": "Europe (Italy)",
+      "artist_gender": "female",
+      "medium": "Oil on canvas",
+      "collection": "Royal Collection, UK",
+      "accession": "RCIN 405551 (verify)",
+      "image_source": "Royal Collection Trust (check licence); Wikimedia Commons",
+      "image_rights": "Public domain; check photo licence",
+      "description": "The painter shows herself mid-work, sleeves up, brush raised, completely absorbed. She is painting herself as Painting itself.",
+      "zoom_detail": "Her raised brush hand and focused face",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Powerful",
+            "pair": "Faithful / Confident",
+            "words": [
+              "Faithful",
+              "Confident"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Joyful",
+            "pair": "Creative / Playful",
+            "words": [
+              "Creative",
+              "Playful"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling faithful or confident. Does that fit?",
+        "in_default_set": true,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A19",
+      "title": "A Corner of the Artist's Room in Paris",
+      "artist": "Gwen John",
+      "date": "1907-09",
+      "region": "Europe (Wales / France)",
+      "artist_gender": "female",
+      "medium": "Oil on canvas on board",
+      "collection": "Amgueddfa Cymru – Museum Wales (a second version is at Sheffield Museums)",
+      "accession": "NMW A 3397",
+      "image_source": "museum.wales collections online; Art UK",
+      "image_rights": "Artwork PD (artist died 1939); check museum image terms",
+      "description": "A quiet attic room: a wicker chair with a dress thrown over it, an open book on a table beneath a half-open window. The artist isn't in the picture but seems present.",
+      "zoom_detail": "The open book under the window; then the empty chair",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "context_note": "John wrote of the contentment her room gave her. Solitude here is chosen, not imposed.",
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Peaceful",
+            "pair": "Content / Relaxed",
+            "words": [
+              "Content",
+              "Relaxed"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Sad",
+            "pair": "Lonely / Isolated",
+            "words": [
+              "Lonely",
+              "Isolated"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling content or relaxed. Does that fit?",
+        "in_default_set": true,
+        "exclude_if_taking_over": false
+      }
+    },
+    {
+      "id": "A20",
+      "title": "The Ten Largest, No. 7, Adulthood",
+      "artist": "Hilma af Klint",
+      "date": "1907",
+      "region": "Europe (Sweden)",
+      "artist_gender": "female",
+      "medium": "Tempera on paper mounted on canvas",
+      "collection": "Hilma af Klint Foundation (often shown at Moderna Museet, Stockholm)",
+      "accession": "verify",
+      "image_source": "Wikimedia Commons; Hilma af Klint Foundation",
+      "image_rights": "Artwork PD (artist died 1944); check photo terms",
+      "description": "A huge abstract painting of swirling shapes and soft colours about a stage of life: feeling painted without words.",
+      "zoom_detail": "Any spiral or flower-like form at the centre",
+      "zoom_box_pct": null,
+      "intensity": 1,
+      "content_notes": [],
+      "context_note": "Perfect for the 'when words fail' premise: abstract art made before abstraction was 'invented'.",
+      "picture_route": {
+        "suggests": [
+          {
+            "core": "Joyful",
+            "pair": "Creative / Playful",
+            "words": [
+              "Creative",
+              "Playful"
+            ],
+            "weight": "primary"
+          },
+          {
+            "core": "Scared",
+            "pair": "Confused / Bewildered",
+            "words": [
+              "Confused",
+              "Bewildered"
+            ],
+            "weight": "secondary"
+          }
+        ],
+        "reflect_prompt": "That one often goes with feeling creative or playful. Does that fit?",
+        "in_default_set": false,
+        "exclude_if_taking_over": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+{
+  "version": "0.3",
+  "prompt": "How does today feel?",
+  "structure": "6 core feelings; each has 6 pairs (inner word / outer word). User taps a core, then up to 3 pairs.",
+  "cores": [
+    {
+      "id": "Mad",
+      "label": "Mad",
+      "colour": "#DB4B52",
+      "pairs": [
+        {
+          "id": "Hurt / Distant",
+          "inner": "Hurt",
+          "outer": "Distant"
+        },
+        {
+          "id": "Hostile / Sarcastic",
+          "inner": "Hostile",
+          "outer": "Sarcastic"
+        },
+        {
+          "id": "Angry / Frustrated",
+          "inner": "Angry",
+          "outer": "Frustrated"
+        },
+        {
+          "id": "Selfish / Jealous",
+          "inner": "Selfish",
+          "outer": "Jealous"
+        },
+        {
+          "id": "Hateful / Irritated",
+          "inner": "Hateful",
+          "outer": "Irritated"
+        },
+        {
+          "id": "Critical / Skeptical",
+          "inner": "Critical",
+          "outer": "Skeptical"
+        }
+      ]
+    },
+    {
+      "id": "Scared",
+      "label": "Scared",
+      "colour": "#E99048",
+      "pairs": [
+        {
+          "id": "Confused / Bewildered",
+          "inner": "Confused",
+          "outer": "Bewildered"
+        },
+        {
+          "id": "Rejected / Discouraged",
+          "inner": "Rejected",
+          "outer": "Discouraged"
+        },
+        {
+          "id": "Helpless / Insignificant",
+          "inner": "Helpless",
+          "outer": "Insignificant"
+        },
+        {
+          "id": "Submissive / Inadequate",
+          "inner": "Submissive",
+          "outer": "Inadequate"
+        },
+        {
+          "id": "Insecure / Embarrassed",
+          "inner": "Insecure",
+          "outer": "Embarrassed"
+        },
+        {
+          "id": "Anxious / Overwhelmed",
+          "inner": "Anxious",
+          "outer": "Overwhelmed"
+        }
+      ]
+    },
+    {
+      "id": "Joyful",
+      "label": "Joyful",
+      "colour": "#D3CC52",
+      "pairs": [
+        {
+          "id": "Excited / Daring",
+          "inner": "Excited",
+          "outer": "Daring"
+        },
+        {
+          "id": "Sensuous / Fascinating",
+          "inner": "Sensuous",
+          "outer": "Fascinating"
+        },
+        {
+          "id": "Energetic / Stimulating",
+          "inner": "Energetic",
+          "outer": "Stimulating"
+        },
+        {
+          "id": "Cheerful / Amused",
+          "inner": "Cheerful",
+          "outer": "Amused"
+        },
+        {
+          "id": "Creative / Playful",
+          "inner": "Creative",
+          "outer": "Playful"
+        },
+        {
+          "id": "Hopeful / Optimistic",
+          "inner": "Hopeful",
+          "outer": "Optimistic"
+        }
+      ]
+    },
+    {
+      "id": "Sad",
+      "label": "Sad",
+      "colour": "#E26AC6",
+      "pairs": [
+        {
+          "id": "Tired / Sleepy",
+          "inner": "Tired",
+          "outer": "Sleepy"
+        },
+        {
+          "id": "Bored / Apathetic",
+          "inner": "Bored",
+          "outer": "Apathetic"
+        },
+        {
+          "id": "Lonely / Isolated",
+          "inner": "Lonely",
+          "outer": "Isolated"
+        },
+        {
+          "id": "Depressed / Inferior",
+          "inner": "Depressed",
+          "outer": "Inferior"
+        },
+        {
+          "id": "Ashamed / Stupid",
+          "inner": "Ashamed",
+          "outer": "Stupid"
+        },
+        {
+          "id": "Guilty / Remorseful",
+          "inner": "Guilty",
+          "outer": "Remorseful"
+        }
+      ]
+    },
+    {
+      "id": "Peaceful",
+      "label": "Peaceful",
+      "colour": "#6984DD",
+      "pairs": [
+        {
+          "id": "Nurturing / Thankful",
+          "inner": "Nurturing",
+          "outer": "Thankful"
+        },
+        {
+          "id": "Trusting / Secure",
+          "inner": "Trusting",
+          "outer": "Secure"
+        },
+        {
+          "id": "Loving / Serene",
+          "inner": "Loving",
+          "outer": "Serene"
+        },
+        {
+          "id": "Intimate / Responsive",
+          "inner": "Intimate",
+          "outer": "Responsive"
+        },
+        {
+          "id": "Thoughtful / Pensive",
+          "inner": "Thoughtful",
+          "outer": "Pensive"
+        },
+        {
+          "id": "Content / Relaxed",
+          "inner": "Content",
+          "outer": "Relaxed"
+        }
+      ]
+    },
+    {
+      "id": "Powerful",
+      "label": "Powerful",
+      "colour": "#9AE478",
+      "pairs": [
+        {
+          "id": "Aware / Surprised",
+          "inner": "Aware",
+          "outer": "Surprised"
+        },
+        {
+          "id": "Proud / Successful",
+          "inner": "Proud",
+          "outer": "Successful"
+        },
+        {
+          "id": "Respected / Worthwhile",
+          "inner": "Respected",
+          "outer": "Worthwhile"
+        },
+        {
+          "id": "Appreciated / Valuable",
+          "inner": "Appreciated",
+          "outer": "Valuable"
+        },
+        {
+          "id": "Important / Discerning",
+          "inner": "Important",
+          "outer": "Discerning"
+        },
+        {
+          "id": "Faithful / Confident",
+          "inner": "Faithful",
+          "outer": "Confident"
+        }
+      ]
+    }
+  ],
+  "not_sure": {
+    "label": "I'm not sure / it's mixed",
+    "colour": "#9A9A9A",
+    "route": "picture_route",
+    "prompt": "Which one feels like today?",
+    "show": 6,
+    "default_set": [
+      "A09",
+      "A01",
+      "A15",
+      "A19",
+      "A10",
+      "A18"
+    ],
+    "rule": "Never show A14 or A17 if the user later picks 'it's taking over'."
+  },
+  "max_pairs": 3,
+  "intensity": {
+    "applies_to": [
+      "Mad",
+      "Scared",
+      "Sad"
+    ],
+    "levels": [
+      {
+        "id": 1,
+        "label": "a little"
+      },
+      {
+        "id": 2,
+        "label": "a lot"
+      },
+      {
+        "id": 3,
+        "label": "it's taking over",
+        "rule": "support options first; only sources with intensity <= 2; hide aftermath where show_aftermath is false"
+      }
+    ]
+  },
+  "situations": [
+    {
+      "label": "Study",
+      "tag": "study"
+    },
+    {
+      "label": "Work",
+      "tag": "work_career"
+    },
+    {
+      "label": "Family",
+      "tag": "family"
+    },
+    {
+      "label": "Relationships",
+      "tag": "relationships"
+    },
+    {
+      "label": "Moving away",
+      "tag": "moving_away"
+    },
+    {
+      "label": "Who I am",
+      "tag": "identity"
+    },
+    {
+      "label": "Losing someone",
+      "tag": "bereavement"
+    },
+    {
+      "label": "Something I'm making",
+      "tag": "creative_work"
+    },
+    {
+      "label": "Being treated differently",
+      "tag": "discrimination"
+    },
+    {
+      "label": "A big decision",
+      "tag": "big_decision"
+    },
+    {
+      "label": "Speaking up / performing",
+      "tag": "public_speaking"
+    },
+    {
+      "label": "Change",
+      "tag": "change_transition"
+    },
+    {
+      "label": "Something else",
+      "tag": null
+    }
+  ],
+  "optional_text": {
+    "starters": [
+      "Today I…",
+      "I can't stop thinking about…",
+      "I wish…"
+    ]
+  },
+  "reflect_back_template": "So today feels {core}, mostly {pairs}{situation_clause}. Is that right?",
+  "scoring": {
+    "pair_primary": 3,
+    "pair_secondary": 1.5,
+    "core_only": 1,
+    "situation": 2,
+    "intensity_rule": "if intensity == 3 exclude sources with intensity 3"
+  },
+  "positive_days": "For Joyful, Peaceful and Powerful the app shows someone who felt the same good thing, and the diary prompt invites the user to record it."
+}
