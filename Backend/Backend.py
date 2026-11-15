@@ -21,7 +21,6 @@ Without an API key, steps 1 and 3 are skipped and the person's own words are sea
 """
 import json
 import os
-import re
 import threading
 
 import numpy as np

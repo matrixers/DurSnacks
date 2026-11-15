@@ -24,24 +24,21 @@
       {
         "quote": "Either it is very bad of you to cut me off, or you are ill; on each side anxiety, thinking that you suffer or that your friendship diminishes.",
         "name": "Honoré de Balzac",
-        "years": "1799–1850",
-        "info": "From a letter: Letters to Madame Hanska"
+        "years": "1799–1850"
       },
       {
         "quote": "The teachers never speak to me at all. I go to the college and return after class,--always alone, no mental company but books.",
         "name": "Nina H. Kennard",
-        "years": "1844–1926",
-        "info": "From a letter: Lafcadio Hearn"
+        "years": "1844–1926"
       },
       {
         "quote": "I have lost my social standing in the community in which I reside and my wimmen folks are laughing at me and at this time of the year. . .",
         "name": "Andrew Everett Durham",
-        "years": "1882–1954",
-        "info": "From a letter: Epistles from Pap"
+        "years": "1882–1954"
       }
     ],
     "no_match": false,
-    "message": "“Either it is very bad of you to cut me off, or you are ill; on each side anxiety, thinking that you suffer or that your friendship diminishes.”\n    — Honoré de Balzac (1799–1850)\n    From a letter: Letters to Madame Hanska\n\n“The teachers never speak to me at all. I go to the college and return after class,--always alone, no mental company but books.”\n    — Nina H. Kennard (1844–1926)\n    From a letter: Lafcadio Hearn\n\n“I have lost my social standing in the community in which I reside and my wimmen folks are laughing at me and at this time of the year. . .”\n    — Andrew Everett Durham (1882–1954)\n    From a letter: Epistles from Pap",
+    "message": "“Either it is very bad of you to cut me off, or you are ill; on each side anxiety, thinking that you suffer or that your friendship diminishes.”\n    — Honoré de Balzac (1799–1850)\n\n“The teachers never speak to me at all. I go to the college and return after class,--always alone, no mental company but books.”\n    — Nina H. Kennard (1844–1926)\n\n“I have lost my social standing in the community in which I reside and my wimmen folks are laughing at me and at this time of the year. . .”\n    — Andrew Everett Durham (1882–1954)",
     "poem": "",
     "results": [
       {
@@ -53,7 +50,6 @@
         "context_after": "Well, adieu. I meant to write you only one word: there is truce between misfortune and me. But when once I begin to talk to you, the pen is never heavy in my fingers. I wish you all mercies in your life, for this letter and its wishes will reach you, I suppose, about Christmas day.",
         "author": "Honoré de Balzac",
         "title": "Letters to Madame Hanska, born Countess Rzewuska, afterwards Madame Honoré de Balzac, 1833-1846",
-        "kind": "letters",
         "when": "1799–1850",
         "translator": "Katharine Prescott Wormeley",
         "url": "https://www.gutenberg.org/ebooks/54466",
@@ -68,7 +64,6 @@
         "context_after": "But at home everything is sweet.\"\nIn consequence of this isolation, or because of the softening influence of matrimony, here at Kumamoto he seemed for the first time to awake to the fact of having relations in that distant western land he had left so many years before. \"Our soul, or souls, ever wanders back to its own kindred,\" he says to his sister.\nHis father, Charles Bush Hearn, had left three children by his second wife (daughters), all born in India.",
         "author": "Nina H. Kennard",
         "title": "Lafcadio Hearn",
-        "kind": "letters",
         "when": "1844–1926",
         "translator": null,
         "url": "https://www.gutenberg.org/ebooks/33345",
@@ -83,7 +78,6 @@
         "context_after": "Oh, grave, where is thy sting. . .\nIf you care to apologize for your hasty remarks about bull mental pain and anguish, you may address me as: Respectfully, The Bull",
         "author": "Andrew Everett Durham",
         "title": "Epistles from Pap: Letters from the man known as 'The Will Rogers of Indiana'",
-        "kind": "letters",
         "when": "1882–1954",
         "translator": null,
         "url": "https://www.gutenberg.org/ebooks/2677",
