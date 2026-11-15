@@ -1,0 +1,42 @@
+
+==============================================================================
+path: Heavy > grieving    tags: grief
+What's happened?  My grandad died last month
+Why do you think you feel grieving?  I never got to say goodbye
+searched for: My grandfather died last month, and I feel heavy with grief because I never got to say goodbye. I am afraid of what that silence means, and I have not told anyone how much it hurts.
+
+  Helen Keller, The Story of My Life With her letters (1887-1901) and a supplementary account of her education, including passages from the reports and letters of her teacher, Anne Mansfield Sullivan, by John Albert Macy (1880–1968)    match 0.84
+  https://www.gutenberg.org/ebooks/2397
+
+    But, however this may be, I cannot now write the letter which has
+    lain in my thought for you so long. My heart is too full of sadness
+    to dwell upon the happiness the summer has brought me.
+  > My father is dead. He died last Saturday at my home in Tuscumbia,
+  > and I was not there.
+    My own dear loving father! Oh, dear friend, how shall I ever bear
+    it!...
+
+  judge: emotion yes, situation yes, cause yes, fear partly; coping: struggling. Her beloved father died while she was not there, and she pours out her grief to a friend, asking how she will ever bear it.
+
+==============================================================================
+path: Heavy > lonely    tags: loneliness
+What's happened?  My best friend stopped replying to my messages
+Why do you think you feel lonely?  I think I did something wrong
+searched for: I have been carrying a heavy loneliness since the friend I was closest to stopped answering me, and I think I must have done something wrong, though I am afraid to ask what it was.
+
+  Honoré de Balzac, Letters to Madame Hanska, born Countess Rzewuska, afterwards Madame Honoré de Balzac, 1833-1846 (1799–1850), translated by Katharine Prescott Wormeley    match 0.77
+  https://www.gutenberg.org/ebooks/54466
+
+    I spare you the details of the agreement, which has been the object
+    of long examination by my lawyers, and business agents, very devoted
+    men, who think it good and honourable. You could never believe how I
+    miss the bulletin of your calm and solitary life, what interest I
+    take in that life, and what peace the contemplation of it sheds upon
+    my agitated life.
+  > Either it is very bad of you to cut me off, or you are ill; on each
+  > side anxiety, thinking that you suffer or that your friendship
+  > diminishes.
+    Well, adieu. I meant to write you only one word: there is truce
+    between misfortune and me.
+
+  judge: emotion partly, situation yes, cause partly, fear yes; coping: struggling. His dear correspondent has stopped writing and he fears her friendship is diminishing, yet he keeps writing to her.

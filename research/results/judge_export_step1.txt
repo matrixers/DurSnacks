@@ -1,0 +1,3 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   9%|9         | 18/199 [00:00<00:01, 164.40it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 950.12it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+wrote C:\Users\emile_uw\Documents\GitHub\DurSnacks-backend\results\judge_input_step1.json and C:\Users\emile_uw\Documents\GitHub\DurSnacks-backend\results\judge_input_step1.md (10 cases x 20 candidates)
