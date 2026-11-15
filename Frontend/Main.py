@@ -24,6 +24,8 @@ from kivy.uix.widget import Widget
 from kivy.utils import get_color_from_hex
 from client import fetch_guidance
 
+from doodle import DoodleBox
+
 
 Window.clearcolor = get_color_from_hex("#12271D")  # dark forest green
 
@@ -506,12 +508,12 @@ ScreenManager:
                 size_hint_y: None
                 height: self.texture_size[1] + dp(8)
             Label:
-                text: "Sub feeling of " + (app.core).lower()
+                text: "Branching from the emotion: " + (app.core).lower()
                 font_size: "18sp"
                 size_hint_y: None
                 height: self.texture_size[1] + dp(8)
             Label:
-                text: "Deeper down, it might be the feeling of " + (app.deeper).lower()
+                text: "Deeper down, you might be " + (app.deeper).lower()
                 font_size: "18sp"
                 size_hint_y: None
                 height: self.texture_size[1] + dp(8)  
@@ -729,18 +731,32 @@ ScreenManager:
                 hint_text: "Let's write it out..."
                 multiline: True
                 size_hint_y: None
-                height: dp(400)
+                height: dp(300)
                 background_color: 1, 1, 1, 0.95
                 foreground_color: 0.1, 0.1, 0.1, 1
-                padding: dp(30)    
+                padding: dp(50)   
+            Label:
+                text: "Or draw out your feelings..."
+                font_size: "20sp"
 
+            DoodleBox:
+                id: doodle
+                size_hint_y: None
+                height: dp(300)
+            Button:
+                text: "Plant the thoughts"
+                size_hint_y: None
+                height: dp(56)
+                background_normal: ""
+                background_color: 0.42, 0.27, 0.14, 1
+                on_release: root.manager.current = "home"               
             Button:
                 text: "Back"
                 size_hint_y: None
                 height: dp(56)
                 background_normal: ""
                 background_color: 0.42, 0.27, 0.14, 1
-                on_release: root.manager.current = "home"
+                on_release: root.manager.current = "inspo"
                 
 
 """
